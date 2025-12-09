@@ -47,7 +47,7 @@ export function Pricing() {
               {/* Prix */}
               <div className="mb-6">
                 <div className="flex items-baseline justify-center gap-2">
-                  <span className="text-5xl font-bold">3,99€</span>
+                  <span className="text-5xl font-bold">4,99€</span>
                   <span className="text-[var(--muted-foreground)]">/mois</span>
                 </div>
                 <p className="text-sm text-[var(--muted-foreground)] mt-2">

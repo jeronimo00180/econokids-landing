@@ -7,15 +7,13 @@ export function CTA() {
       <div className="container">
         <div className="rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-700)] px-6 py-16 text-center text-white">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
-            Votre enfant mérite d&apos;être préparé.
-            <br />
-            Commencez aujourd&apos;hui.
+            Prêt à lui donner un avantage pour la vie ?
           </h2>
 
           <p className="mx-auto max-w-[600px] text-white/80 md:text-lg mb-8">
-            Dans 10 ans, votre enfant vous remerciera. Pas pour les jouets, pas
-            pour les vacances. Pour lui avoir appris à gérer son argent. Cette
-            compétence changera sa vie.
+            En quelques semaines, votre enfant saura budgéter, épargner et faire
+            des choix réfléchis. Des compétences que la plupart des adultes
+            n&apos;ont toujours pas. Et tout ça en s&apos;amusant.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row justify-center mb-8">
@@ -26,7 +24,7 @@ export function CTA() {
               asChild
             >
               <a href="https://app.econokids.fr/inscription">
-                Commencer maintenant - 9,90€/mois
+                Essayer gratuitement 14 jours
               </a>
             </Button>
           </div>

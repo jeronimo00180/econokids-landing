@@ -82,7 +82,7 @@ export default function CGUPage() {
               L&apos;offre actuelle comprend :
             </p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Abonnement mensuel : 3,99€/mois</li>
+              <li>Abonnement mensuel : 4,99€/mois</li>
               <li>Abonnement annuel : 49€/an</li>
             </ul>
 
