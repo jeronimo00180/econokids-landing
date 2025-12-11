@@ -17,11 +17,17 @@ export function HeroB2B() {
             à gérer leur argent
           </h1>
 
-          <p className="text-lg text-[var(--muted-foreground)] md:text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-[var(--muted-foreground)] md:text-xl mb-6 max-w-2xl mx-auto">
             0 heure d&apos;éducation financière au programme scolaire. Pourtant,
             gérer un budget est une compétence essentielle pour la vie. Econo&apos;kids
             permet à vos élèves du 3ème cycle (CM1/CM2/6ème) d&apos;apprendre en s&apos;amusant.
           </p>
+
+          {/* EDUCFI inspiration */}
+          <div className="mb-8 inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-2">
+            <span className="text-blue-600 font-medium text-sm">🎓 Inspiré des recommandations EDUCFI</span>
+            <span className="text-blue-500 text-xs">(Éducation budgétaire et financière dès le plus jeune âge)</span>
+          </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 mb-10 max-w-lg mx-auto">

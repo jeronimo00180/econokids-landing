@@ -8,21 +8,23 @@ import { CTAB2B } from "@/components/landing/cta-b2b";
 import { Footer } from "@/components/landing/footer";
 
 export const metadata: Metadata = {
-  title: "Econo'kids pour les écoles et mairies | Éducation financière",
+  title: "Econo'kids pour Écoles & Mairies | Programme EDUCFI",
   description:
-    "Formez vos citoyens de demain ! Econo'kids permet aux élèves du 3ème cycle (CM1/CM2/6ème) d'apprendre à gérer un budget en s'amusant.",
+    "Programme pédagogique EDUCFI clé en main. Vos élèves CM1/CM2/6ème apprennent à gérer un budget en jouant. Démo gratuite.",
   keywords: [
     "éducation financière école",
+    "EDUCFI",
     "mairie éducation",
     "application pédagogique",
     "CM1 CM2 6ème",
     "3ème cycle",
     "budget école",
+    "programme scolaire",
   ],
   openGraph: {
-    title: "Econo'kids pour les écoles et mairies",
+    title: "Econo'kids pour Écoles & Mairies | Programme EDUCFI",
     description:
-      "Formez vos citoyens de demain à gérer leur argent.",
+      "Programme pédagogique aligné EDUCFI. Formez vos citoyens de demain à gérer leur argent.",
     url: "https://econokids.fr/mairies",
   },
 };

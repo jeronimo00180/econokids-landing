@@ -2,7 +2,7 @@ import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { Problem } from "@/components/landing/problem";
 import { Features } from "@/components/landing/features";
-import { Testimonials } from "@/components/landing/testimonials";
+// import { Testimonials } from "@/components/landing/testimonials"; // Masqué temporairement - en attente de vrais témoignages
 import { Pricing } from "@/components/landing/pricing";
 import { FAQ } from "@/components/landing/faq";
 import { CTA } from "@/components/landing/cta";
@@ -16,7 +16,7 @@ export default function HomePage() {
         <Hero />
         <Problem />
         <Features />
-        <Testimonials />
+        {/* <Testimonials /> */}{/* Masqué temporairement - en attente de vrais témoignages */}
         <Pricing />
         <FAQ />
         <CTA />

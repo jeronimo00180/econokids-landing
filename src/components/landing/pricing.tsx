@@ -1,7 +1,10 @@
+"use client";
+
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { usePostHog } from "posthog-js/react";
 
 const features = [
   "Jusqu'à 3 enfants",
@@ -16,6 +19,15 @@ const features = [
 ];
 
 export function Pricing() {
+  const posthog = usePostHog();
+
+  const trackCTA = () => {
+    posthog?.capture("cta_clicked", {
+      cta_name: "essai_gratuit_pricing",
+      cta_location: "pricing_section",
+    });
+  };
+
   return (
     <section id="tarifs" className="py-16 md:py-24">
       <div className="container">
@@ -68,7 +80,10 @@ export function Pricing() {
 
             <CardFooter className="flex flex-col gap-3">
               <Button size="xl" className="w-full" asChild>
-                <a href="https://app.econokids.fr/inscription">
+                <a
+                  href="https://app.econokids.fr/inscription"
+                  onClick={trackCTA}
+                >
                   Essayer 14 jours gratuitement
                 </a>
               </Button>

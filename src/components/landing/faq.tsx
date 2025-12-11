@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { usePostHog } from "posthog-js/react";
 
 const faqs = [
   {
@@ -51,6 +52,14 @@ const faqs = [
 ];
 
 export function FAQ() {
+  const posthog = usePostHog();
+
+  const trackFAQOpen = (question: string) => {
+    posthog?.capture("faq_opened", {
+      question: question,
+    });
+  };
+
   return (
     <section id="faq" className="py-16 md:py-24 bg-slate-50">
       <div className="container">
@@ -69,9 +78,11 @@ export function FAQ() {
           <Accordion type="single" collapsible>
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left">
-                  {faq.question}
-                </AccordionTrigger>
+                <div onClick={() => trackFAQOpen(faq.question)}>
+                  <AccordionTrigger className="text-left">
+                    {faq.question}
+                  </AccordionTrigger>
+                </div>
                 <AccordionContent>{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}

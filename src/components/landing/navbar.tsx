@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePostHog } from "posthog-js/react";
 
 const navLinks = [
   { href: "#fonctionnalites", label: "Fonctionnalités" },
@@ -14,6 +15,14 @@ const navLinks = [
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const posthog = usePostHog();
+
+  const trackClick = (ctaName: string) => {
+    posthog?.capture("cta_clicked", {
+      cta_name: ctaName,
+      cta_location: "navbar",
+    });
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--border)] bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -46,10 +55,20 @@ export function Navbar() {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" asChild>
-            <a href="https://app.econokids.fr/login?tab=parent">Se connecter</a>
+            <a
+              href="https://app.econokids.fr/login?tab=parent"
+              onClick={() => trackClick("se_connecter")}
+            >
+              Se connecter
+            </a>
           </Button>
           <Button asChild>
-            <a href="https://app.econokids.fr/inscription">Commencer</a>
+            <a
+              href="https://app.econokids.fr/inscription"
+              onClick={() => trackClick("commencer")}
+            >
+              Commencer
+            </a>
           </Button>
         </div>
 
@@ -84,10 +103,20 @@ export function Navbar() {
             ))}
             <div className="pt-4 space-y-2">
               <Button variant="outline" className="w-full" asChild>
-                <a href="https://app.econokids.fr/login?tab=parent">Se connecter</a>
+                <a
+                  href="https://app.econokids.fr/login?tab=parent"
+                  onClick={() => trackClick("se_connecter_mobile")}
+                >
+                  Se connecter
+                </a>
               </Button>
               <Button className="w-full" asChild>
-                <a href="https://app.econokids.fr/inscription">Commencer</a>
+                <a
+                  href="https://app.econokids.fr/inscription"
+                  onClick={() => trackClick("commencer_mobile")}
+                >
+                  Commencer
+                </a>
               </Button>
             </div>
           </div>

@@ -1,7 +1,19 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Shield, Clock, CreditCard } from "lucide-react";
+import { usePostHog } from "posthog-js/react";
 
 export function CTA() {
+  const posthog = usePostHog();
+
+  const trackCTA = () => {
+    posthog?.capture("cta_clicked", {
+      cta_name: "essai_gratuit_bottom",
+      cta_location: "cta_section",
+    });
+  };
+
   return (
     <section className="py-16 md:py-24">
       <div className="container">
@@ -23,7 +35,10 @@ export function CTA() {
               className="bg-white text-[var(--primary)] hover:bg-white/90"
               asChild
             >
-              <a href="https://app.econokids.fr/inscription">
+              <a
+                href="https://app.econokids.fr/inscription"
+                onClick={trackCTA}
+              >
                 Essayer gratuitement 14 jours
               </a>
             </Button>

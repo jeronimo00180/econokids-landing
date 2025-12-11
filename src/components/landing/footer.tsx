@@ -108,13 +108,16 @@ export function Footer() {
             {/* B2B link */}
             <div className="mt-6 p-4 bg-slate-50 rounded-lg">
               <p className="text-sm font-medium mb-2">
-                Vous êtes une école ou une mairie ?
+                Programme Pédagogique : Econo&apos;kids en Classe
+              </p>
+              <p className="text-xs text-[var(--muted-foreground)] mb-2">
+                Pour les mairies et écoles
               </p>
               <Link
                 href="/mairies"
                 className="text-sm text-[var(--primary)] hover:underline font-medium"
               >
-                Découvrez notre offre établissements →
+                Demander une Démo Gratuite pour Mon Établissement →
               </Link>
             </div>
           </div>

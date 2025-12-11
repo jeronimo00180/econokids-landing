@@ -25,9 +25,9 @@ const features = [
   },
   {
     icon: Heart,
-    title: "Patience, effort, générosité",
+    title: "Patience et Valeur de l'Argent",
     description:
-      "Votre enfant apprend à attendre pour obtenir ce qu'il veut vraiment. À faire des choix. À donner aux autres (3 associations dans le jeu).",
+      "Finie l'impatience ! L'enfant apprend à épargner pour un objectif (un vélo, un jeu) et à comprendre la valeur de chaque euro. Il découvre aussi la générosité avec 3 associations dans le jeu.",
     highlight: "Des valeurs pour la vie",
   },
   {
@@ -60,8 +60,8 @@ export function Features() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
-            Une année de vie, en accéléré.{" "}
-            <span className="text-[var(--primary)]">Pour apprendre sans les erreurs.</span>
+            Econo&apos;kids : Une simulation de vie ludique{" "}
+            <span className="text-[var(--primary)]">pour maîtriser le budget.</span>
           </h2>
           <p className="text-lg text-[var(--muted-foreground)]">
             Econo&apos;kids plonge votre enfant dans une simulation de vie réaliste.

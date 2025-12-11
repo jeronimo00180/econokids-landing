@@ -1,13 +1,27 @@
-import { Clock, Rocket, BarChart3, Shield } from "lucide-react";
+import { Clock, Rocket, BarChart3, Shield, GraduationCap, Users } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const benefits = [
+  {
+    icon: GraduationCap,
+    title: "Inspiré des recommandations EDUCFI",
+    description:
+      "Econo'kids s'inscrit dans l'esprit de l'éducation budgétaire et financière prônée dès le plus jeune âge. Compétences développées : comprendre un budget, épargner, faire des choix financiers réfléchis.",
+    highlight: "Éducation financière dès l'enfance",
+  },
   {
     icon: Clock,
     title: "Clé en main pour vos enseignants",
     description:
       "Tout est prêt : 40 cours structurés, 200+ exercices, dashboard de suivi. Les enseignants supervisent des sessions de 30 minutes. Ils ne préparent rien, tout est dans l'app.",
     highlight: "Gain de temps considérable",
+  },
+  {
+    icon: Users,
+    title: "Déploiement simple et sécurisé",
+    description:
+      "Licence multi-élèves, gestion centralisée des comptes, suivi par classe. Interface d'administration pour les responsables éducation. Formation enseignants incluse.",
+    highlight: "Intégration facile",
   },
   {
     icon: Rocket,
@@ -48,7 +62,7 @@ export function BenefitsB2B() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit) => (
             <Card key={benefit.title}>
               <CardHeader>

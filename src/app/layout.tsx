@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Econo'kids - Éducation financière pour enfants",
+  title: "Econo'kids | Éducation financière ludique pour enfants 9-12 ans",
   description:
-    "La première application française d'éducation financière pour les enfants de 9-12 ans. Apprenez à vos enfants à gérer un budget, épargner et faire des choix financiers intelligents.",
+    "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire. Essai gratuit 14 jours.",
   keywords: [
     "éducation financière",
     "enfants",
@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "jeu éducatif",
     "CM1",
     "CM2",
+    "argent de poche",
+    "simulation",
   ],
   authors: [{ name: "Econo'kids" }],
   creator: "Econo'kids",
@@ -33,23 +35,23 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://econokids.fr",
     siteName: "Econo'kids",
-    title: "Econo'kids - Éducation financière pour enfants",
+    title: "Econo'kids | Éducation financière ludique pour enfants 9-12 ans",
     description:
-      "La première application française d'éducation financière pour les enfants de 9-12 ans.",
+      "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Econo'kids - Éducation financière pour enfants",
+        alt: "Econo'kids - Éducation financière ludique pour enfants",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Econo'kids - Éducation financière pour enfants",
+    title: "Econo'kids | Éducation financière ludique pour enfants 9-12 ans",
     description:
-      "La première application française d'éducation financière pour les enfants de 9-12 ans.",
+      "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
     images: ["/images/og-image.png"],
   },
   metadataBase: new URL("https://econokids.fr"),

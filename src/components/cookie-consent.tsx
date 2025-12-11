@@ -157,8 +157,8 @@ export function CookieConsent() {
                     Cookies d&apos;analyse
                   </label>
                   <p className="text-xs text-gray-500">
-                    Nous aident à comprendre comment vous utilisez le site (Plausible Analytics -
-                    respectueux de la vie privée, pas de données personnelles).
+                    Nous aident à comprendre comment vous utilisez le site (PostHog -
+                    hébergé en Europe, données anonymisées).
                   </p>
                 </div>
               </div>
