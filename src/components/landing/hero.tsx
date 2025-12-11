@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
 
@@ -22,14 +21,10 @@ export function Hero() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           {/* Contenu texte */}
           <div className="flex flex-col justify-center space-y-6">
-            <Badge variant="secondary" className="w-fit">
-              Première application française
-            </Badge>
-
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-              À 10 ans, apprenez-lui à gérer son argent comme un pro{" "}
+              A 10 ans, apprenez-lui à gérer son argent{" "}
               <span className="text-[var(--primary)]">
-                (et en s&apos;amusant)
+                en s&apos;amusant
               </span>
             </h1>
 
@@ -88,7 +83,7 @@ export function Hero() {
               {/* Screenshot du dashboard */}
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-[var(--border)]">
                 <Image
-                  src="/images/dashboard-preview-.png"
+                  src="/images/dashboard-preview.png"
                   alt="Dashboard Econo'kids - Interface de simulation budgétaire pour enfants"
                   width={800}
                   height={600}
