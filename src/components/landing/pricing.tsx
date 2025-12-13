@@ -43,11 +43,7 @@ export function Pricing() {
 
         {/* Pricing card */}
         <div className="max-w-lg mx-auto">
-          <Card className="relative overflow-hidden border-2 border-[var(--primary)]">
-            <div className="absolute top-0 right-0">
-              <Badge className="rounded-none rounded-bl-lg">Le plus populaire</Badge>
-            </div>
-
+          <Card className="border-2 border-[var(--primary)]">
             <CardHeader className="text-center pt-8">
               <CardTitle className="text-2xl">Abonnement Famille</CardTitle>
               <CardDescription>

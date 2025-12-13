@@ -1,5 +1,8 @@
+"use client";
+
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -43,45 +46,54 @@ export function Testimonials() {
         </div>
 
         {/* Testimonials grid */}
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-white">
-              <CardContent className="p-6">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <Card className="bg-white h-full shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-t-primary">
+                <CardContent className="p-6">
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
+                    ))}
+                  </div>
 
-                {/* Quote */}
-                <Quote className="h-8 w-8 text-[var(--primary-200)] mb-3" />
-                <p className="text-[var(--foreground)] mb-4 leading-relaxed">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
+                  {/* Quote */}
+                  <Quote className="h-8 w-8 text-primary/30 mb-3" />
+                  <p className="text-foreground mb-4 leading-relaxed">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
 
-                {/* Author */}
-                <div className="border-t border-[var(--border)] pt-4">
-                  <p className="font-semibold">{testimonial.author}</p>
-                  <p className="text-sm text-[var(--muted-foreground)]">
-                    {testimonial.role}
-                  </p>
-                  <p className="text-xs text-[var(--primary)] mt-2 font-medium">
-                    ✓ {testimonial.result}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+                  {/* Author */}
+                  <div className="border-t border-border pt-4">
+                    <p className="font-semibold">{testimonial.author}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </p>
+                    <p className="text-xs text-primary mt-2 font-medium">
+                      ✓ {testimonial.result}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
         {/* Trust badges */}
-        <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-[var(--muted-foreground)]">
+        <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
-            <span className="text-[var(--success)]">🔒</span>
+            <span>🔒</span>
             <span>Conforme RGPD</span>
           </div>
           <div className="flex items-center gap-2">
