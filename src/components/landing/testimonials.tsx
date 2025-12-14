@@ -40,7 +40,7 @@ export function Testimonials() {
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Ce qu&apos;en disent les familles
           </h2>
-          <p className="text-lg text-[var(--muted-foreground)]">
+          <p className="text-lg text-muted-foreground">
             Des parents comme vous ont déjà fait le choix de préparer leurs enfants.
           </p>
         </div>

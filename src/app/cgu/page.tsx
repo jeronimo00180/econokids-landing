@@ -16,7 +16,7 @@ export default function CGUPage() {
           <h1 className="text-3xl font-bold mb-8">Conditions Générales d&apos;Utilisation</h1>
 
           <div className="prose prose-slate max-w-none">
-            <p className="text-sm text-[var(--muted-foreground)] mb-8">
+            <p className="text-sm text-muted-foreground mb-8">
               Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
             </p>
 
@@ -191,7 +191,7 @@ export default function CGUPage() {
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 11 - Données personnelles</h2>
             <p>
               Le traitement des données personnelles est régi par notre{" "}
-              <a href="/confidentialite" className="text-[var(--primary)] hover:underline">
+              <a href="/confidentialite" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>, conforme au RGPD.
             </p>
@@ -224,7 +224,7 @@ export default function CGUPage() {
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 14 - Contact</h2>
             <p>
               Pour toute question concernant ces CGU, contactez-nous à :{" "}
-              <a href="mailto:support@econokids.fr" className="text-[var(--primary)] hover:underline">
+              <a href="mailto:support@econokids.fr" className="text-primary hover:underline">
                 support@econokids.fr
               </a>
             </p>

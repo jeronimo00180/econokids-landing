@@ -53,9 +53,9 @@ export function BenefitsB2B() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Econo&apos;kids : l&apos;outil pédagogique{" "}
-            <span className="text-[var(--primary)]">qui manquait à vos écoles</span>
+            <span className="text-primary">qui manquait à vos écoles</span>
           </h2>
-          <p className="text-lg text-[var(--muted-foreground)]">
+          <p className="text-lg text-muted-foreground">
             Une application web utilisable sur les tablettes et ordinateurs de
             vos écoles. En sessions de 30 minutes, vos élèves du 3ème cycle (CM1/CM2/6ème)
             vivent une année de simulation budgétaire.
@@ -66,16 +66,16 @@ export function BenefitsB2B() {
           {benefits.map((benefit) => (
             <Card key={benefit.title}>
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-[var(--primary-100)] flex items-center justify-center mb-4">
-                  <benefit.icon className="h-6 w-6 text-[var(--primary)]" />
+                <div className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+                  <benefit.icon className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle className="text-lg">{benefit.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[var(--muted-foreground)] mb-3">
+                <p className="text-sm text-muted-foreground mb-3">
                   {benefit.description}
                 </p>
-                <span className="inline-block text-xs font-medium text-[var(--success)] bg-green-50 px-2 py-1 rounded">
+                <span className="inline-block text-xs font-medium text-success bg-green-50 px-2 py-1 rounded">
                   ✓ {benefit.highlight}
                 </span>
               </CardContent>

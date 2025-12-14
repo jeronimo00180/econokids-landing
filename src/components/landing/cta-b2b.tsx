@@ -6,7 +6,7 @@ export function CTAB2B() {
     <section className="py-16 md:py-24">
       <div className="container">
         <div className="max-w-3xl mx-auto">
-          <div className="rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-600)] px-6 py-12 md:px-12 md:py-16 text-center text-white">
+          <div className="rounded-2xl bg-linear-to-br from-primary to-primary-600 px-6 py-12 md:px-12 md:py-16 text-center text-white">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
               Prêt à former les citoyens de demain ?
             </h2>
@@ -19,7 +19,7 @@ export function CTAB2B() {
 
             <Button
               size="xl"
-              className="bg-white text-[var(--primary)] hover:bg-white/90"
+              className="bg-white text-primary hover:bg-white/90"
               asChild
             >
               <a href="/contact">Demander une démo gratuite</a>

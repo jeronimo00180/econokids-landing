@@ -16,7 +16,7 @@ export default function MentionsLegalesPage() {
           <h1 className="text-3xl font-bold mb-8">Mentions légales</h1>
 
           <div className="prose prose-slate max-w-none">
-            <p className="text-sm text-[var(--muted-foreground)] mb-8">
+            <p className="text-sm text-muted-foreground mb-8">
               Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
             </p>
 
@@ -59,7 +59,7 @@ export default function MentionsLegalesPage() {
             <p>
               Les informations concernant la collecte et le traitement des données
               personnelles sont détaillées dans notre{" "}
-              <a href="/confidentialite" className="text-[var(--primary)] hover:underline">
+              <a href="/confidentialite" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>.
             </p>
@@ -75,7 +75,7 @@ export default function MentionsLegalesPage() {
               Le site utilise des cookies essentiels au fonctionnement du service et
               des cookies d&apos;analyse pour améliorer l&apos;expérience utilisateur. Pour plus
               d&apos;informations, consultez notre{" "}
-              <a href="/confidentialite" className="text-[var(--primary)] hover:underline">
+              <a href="/confidentialite" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>.
             </p>
@@ -97,7 +97,7 @@ export default function MentionsLegalesPage() {
             <h2 className="text-xl font-semibold mt-8 mb-4">9. Contact</h2>
             <p>
               Pour toute question concernant ces mentions légales, vous pouvez nous
-              contacter à : <a href="mailto:support@econokids.fr" className="text-[var(--primary)] hover:underline">support@econokids.fr</a>
+              contacter à : <a href="mailto:support@econokids.fr" className="text-primary hover:underline">support@econokids.fr</a>
             </p>
           </div>
         </div>

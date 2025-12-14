@@ -67,7 +67,7 @@ export default function RootLayout({
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className="min-h-screen bg-[var(--background)] font-sans antialiased">
+      <body className="min-h-screen bg-background font-sans antialiased">
         <PostHogProvider>
           {children}
           <CookieConsent />

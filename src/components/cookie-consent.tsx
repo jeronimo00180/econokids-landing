@@ -85,7 +85,7 @@ export function CookieConsent() {
                 Les cookies essentiels sont nécessaires au fonctionnement du site.{" "}
                 <Link
                   href="/confidentialite"
-                  className="text-[var(--primary)] hover:underline"
+                  className="text-primary hover:underline"
                 >
                   En savoir plus
                 </Link>
@@ -150,7 +150,7 @@ export function CookieConsent() {
                   onChange={(e) =>
                     setPreferences({ ...preferences, analytics: e.target.checked })
                   }
-                  className="mt-1 h-4 w-4 accent-[var(--primary)]"
+                  className="mt-1 h-4 w-4 accent-primary"
                 />
                 <div>
                   <label htmlFor="analytics" className="font-medium text-sm">
@@ -172,7 +172,7 @@ export function CookieConsent() {
                   onChange={(e) =>
                     setPreferences({ ...preferences, marketing: e.target.checked })
                   }
-                  className="mt-1 h-4 w-4 accent-[var(--primary)]"
+                  className="mt-1 h-4 w-4 accent-primary"
                 />
                 <div>
                   <label htmlFor="marketing" className="font-medium text-sm">
@@ -203,7 +203,7 @@ export function CookieConsent() {
               &quot;Cookies&quot; en bas de page.{" "}
               <Link
                 href="/confidentialite"
-                className="text-[var(--primary)] hover:underline"
+                className="text-primary hover:underline"
               >
                 Politique de confidentialité
               </Link>

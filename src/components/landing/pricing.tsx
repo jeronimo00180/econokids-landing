@@ -3,7 +3,6 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { usePostHog } from "posthog-js/react";
 
 const features = [
@@ -36,14 +35,14 @@ export function Pricing() {
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Un investissement pour toute sa vie
           </h2>
-          <p className="text-lg text-[var(--muted-foreground)]">
+          <p className="text-lg text-muted-foreground">
             Moins qu&apos;un café par semaine pour des compétences qui dureront toute sa vie.
           </p>
         </div>
 
         {/* Pricing card */}
         <div className="max-w-lg mx-auto">
-          <Card className="border-2 border-[var(--primary)]">
+          <Card className="border-2 border-primary">
             <CardHeader className="text-center pt-8">
               <CardTitle className="text-2xl">Abonnement Famille</CardTitle>
               <CardDescription>
@@ -56,9 +55,9 @@ export function Pricing() {
               <div className="mb-6">
                 <div className="flex items-baseline justify-center gap-2">
                   <span className="text-5xl font-bold">4,99€</span>
-                  <span className="text-[var(--muted-foreground)]">/mois</span>
+                  <span className="text-muted-foreground">/mois</span>
                 </div>
-                <p className="text-sm text-[var(--muted-foreground)] mt-2">
+                <p className="text-sm text-muted-foreground mt-2">
                   ou <strong>49€/an</strong> (économisez 2 mois)
                 </p>
               </div>
@@ -67,7 +66,7 @@ export function Pricing() {
               <ul className="space-y-3 text-left">
                 {features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-[var(--success)] flex-shrink-0 mt-0.5" />
+                    <Check className="h-5 w-5 text-success shrink-0 mt-0.5" />
                     <span className="text-sm">{feature}</span>
                   </li>
                 ))}
@@ -83,7 +82,7 @@ export function Pricing() {
                   Essayer 14 jours gratuitement
                 </a>
               </Button>
-              <p className="text-xs text-[var(--muted-foreground)] text-center">
+              <p className="text-xs text-muted-foreground text-center">
                 14 jours d&apos;essai gratuit · Satisfait ou remboursé 30 jours · Annulable à tout moment
               </p>
             </CardFooter>

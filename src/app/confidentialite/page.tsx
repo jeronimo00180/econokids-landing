@@ -16,7 +16,7 @@ export default function ConfidentialitePage() {
           <h1 className="text-3xl font-bold mb-8">Politique de confidentialité</h1>
 
           <div className="prose prose-slate max-w-none">
-            <p className="text-sm text-[var(--muted-foreground)] mb-8">
+            <p className="text-sm text-muted-foreground mb-8">
               Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
             </p>
 
@@ -49,7 +49,7 @@ export default function ConfidentialitePage() {
               <li>Progression dans le jeu</li>
               <li>Résultats des calculs et cours</li>
             </ul>
-            <p className="mt-2 text-sm text-[var(--muted-foreground)]">
+            <p className="mt-2 text-sm text-muted-foreground">
               <strong>Important :</strong> Nous ne collectons pas le nom de famille,
               l&apos;adresse, la date de naissance, ni aucune autre donnée sensible des enfants.
             </p>
@@ -118,7 +118,7 @@ export default function ConfidentialitePage() {
             </ul>
             <p className="mt-4">
               Pour exercer ces droits, contactez-nous à :{" "}
-              <a href="mailto:support@econokids.fr" className="text-[var(--primary)] hover:underline">
+              <a href="mailto:support@econokids.fr" className="text-primary hover:underline">
                 support@econokids.fr
               </a>
             </p>
@@ -174,7 +174,7 @@ export default function ConfidentialitePage() {
                 href="https://www.cnil.fr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--primary)] hover:underline"
+                className="text-primary hover:underline"
               >
                 www.cnil.fr
               </a>
@@ -183,7 +183,7 @@ export default function ConfidentialitePage() {
             <h2 className="text-xl font-semibold mt-8 mb-4">14. Contact</h2>
             <p>
               Pour toute question concernant cette politique, contactez-nous à :{" "}
-              <a href="mailto:support@econokids.fr" className="text-[var(--primary)] hover:underline">
+              <a href="mailto:support@econokids.fr" className="text-primary hover:underline">
                 support@econokids.fr
               </a>
             </p>

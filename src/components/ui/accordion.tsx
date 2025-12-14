@@ -71,7 +71,7 @@ const AccordionItemContext = React.createContext<string | null>(null);
 function AccordionItem({ value, children, className }: AccordionItemProps) {
   return (
     <AccordionItemContext.Provider value={value}>
-      <div className={cn("border-b border-[var(--border)]", className)}>
+      <div className={cn("border-b border-border", className)}>
         {children}
       </div>
     </AccordionItemContext.Provider>
@@ -106,7 +106,7 @@ function AccordionTrigger({ children, className }: AccordionTriggerProps) {
       {children}
       <ChevronDown
         className={cn(
-          "h-4 w-4 shrink-0 text-[var(--muted-foreground)] transition-transform duration-200",
+          "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
           isOpen && "rotate-180"
         )}
       />
@@ -134,7 +134,7 @@ function AccordionContent({ children, className }: AccordionContentProps) {
   return (
     <div
       className={cn(
-        "overflow-hidden text-sm pb-4 text-[var(--muted-foreground)]",
+        "overflow-hidden text-sm pb-4 text-muted-foreground",
         className
       )}
     >

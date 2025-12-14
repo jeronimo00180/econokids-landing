@@ -60,11 +60,11 @@ export function FAQB2B() {
 
         {/* Contact */}
         <div className="mt-12 text-center">
-          <p className="text-[var(--muted-foreground)]">
+          <p className="text-muted-foreground">
             Une autre question ?{" "}
             <a
               href="mailto:support@econokids.fr"
-              className="text-[var(--primary)] hover:underline font-medium"
+              className="text-primary hover:underline font-medium"
             >
               Contactez-nous
             </a>

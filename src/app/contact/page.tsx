@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header simple */}
-      <header className="bg-white border-b border-[var(--border)]">
+      <header className="bg-white border-b border-border">
         <div className="container py-4">
           <Link href="/">
             <Image
@@ -41,7 +41,7 @@ export default function ContactPage() {
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
               Demandez une démo gratuite
             </h1>
-            <p className="text-lg text-[var(--muted-foreground)]">
+            <p className="text-lg text-muted-foreground">
               Prenez 30 minutes pour découvrir Econo&apos;kids en conditions
               réelles. Sans engagement.
             </p>
@@ -51,19 +51,19 @@ export default function ContactPage() {
           <Card className="mb-8">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Mail className="h-5 w-5 text-[var(--primary)]" />
+                <Mail className="h-5 w-5 text-primary" />
                 Contactez-nous par email
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-[var(--muted-foreground)]">
+              <p className="text-muted-foreground">
                 Envoyez-nous un email avec les informations suivantes et nous
                 vous recontacterons sous 48h pour planifier une démo.
               </p>
 
               <div className="bg-slate-50 rounded-lg p-4 text-sm">
                 <p className="font-medium mb-2">À inclure dans votre email :</p>
-                <ul className="space-y-1 text-[var(--muted-foreground)]">
+                <ul className="space-y-1 text-muted-foreground">
                   <li>• Nom de votre commune/établissement</li>
                   <li>• Nombre approximatif d&apos;élèves CM1/CM2</li>
                   <li>• Votre fonction (élu, directeur, enseignant...)</li>
@@ -82,29 +82,29 @@ export default function ContactPage() {
 
           {/* Benefits */}
           <div className="grid gap-4 md:grid-cols-3 mb-8">
-            <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-[var(--border)]">
-              <Clock className="h-5 w-5 text-[var(--primary)] flex-shrink-0" />
+            <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-border">
+              <Clock className="h-5 w-5 text-primary shrink-0" />
               <div>
                 <p className="font-medium text-sm">Réponse rapide</p>
-                <p className="text-xs text-[var(--muted-foreground)]">
+                <p className="text-xs text-muted-foreground">
                   Sous 48h ouvrées
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-[var(--border)]">
-              <Shield className="h-5 w-5 text-[var(--primary)] flex-shrink-0" />
+            <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-border">
+              <Shield className="h-5 w-5 text-primary shrink-0" />
               <div>
                 <p className="font-medium text-sm">Sans engagement</p>
-                <p className="text-xs text-[var(--muted-foreground)]">
+                <p className="text-xs text-muted-foreground">
                   Démo gratuite de 30 min
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-[var(--border)]">
-              <Building2 className="h-5 w-5 text-[var(--primary)] flex-shrink-0" />
+            <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-border">
+              <Building2 className="h-5 w-5 text-primary shrink-0" />
               <div>
                 <p className="font-medium text-sm">Devis personnalisé</p>
-                <p className="text-xs text-[var(--muted-foreground)]">
+                <p className="text-xs text-muted-foreground">
                   Adapté à votre taille
                 </p>
               </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
           <div className="text-center">
             <Link
               href="/mairies"
-              className="text-[var(--primary)] hover:underline text-sm"
+              className="text-primary hover:underline text-sm"
             >
               ← Retour à la page mairies
             </Link>
@@ -124,8 +124,8 @@ export default function ContactPage() {
       </main>
 
       {/* Footer simple */}
-      <footer className="border-t border-[var(--border)] bg-white py-6">
-        <div className="container text-center text-sm text-[var(--muted-foreground)]">
+      <footer className="border-t border-border bg-white py-6">
+        <div className="container text-center text-sm text-muted-foreground">
           © {new Date().getFullYear()} Econo&apos;kids. Tous droits réservés.
         </div>
       </footer>

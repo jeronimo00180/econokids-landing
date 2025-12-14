@@ -7,7 +7,7 @@ const stats = [
   },
   {
     value: "1 sur 2",
-    label: "Français n'a aucune épargne de précaution",
+    label: "1 Français sur 2 n'a aucune épargne de précaution",
   },
   {
     value: "800 000",
@@ -22,7 +22,7 @@ export function StatsB2B() {
         <div className="text-center mb-12">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Le constat est alarmant.{" "}
-            <span className="text-[var(--primary)]">Vous pouvez agir.</span>
+            <span className="text-primary">Vous pouvez agir.</span>
           </h2>
         </div>
 
@@ -30,12 +30,12 @@ export function StatsB2B() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 text-center shadow-sm border border-[var(--border)]"
+              className="bg-white rounded-xl p-6 text-center shadow-sm border border-border"
             >
-              <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {stat.value}
               </div>
-              <p className="text-sm text-[var(--muted-foreground)]">
+              <p className="text-sm text-muted-foreground">
                 {stat.label}
               </p>
             </div>
@@ -44,7 +44,7 @@ export function StatsB2B() {
 
         <div className="mt-10 max-w-3xl mx-auto text-center">
           <div className="inline-flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-lg p-4 text-left">
-            <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
             <p className="text-sm text-amber-800">
               Ces adultes en difficulté financière étaient des enfants il y a
               10-15 ans. Des enfants de vos écoles. En tant qu&apos;élu ou

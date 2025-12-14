@@ -23,7 +23,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-white">
+    <footer className="border-t border-border bg-white">
       <div className="container py-12">
         <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
@@ -37,11 +37,11 @@ export function Footer() {
                 className="h-9 w-auto"
               />
             </Link>
-            <p className="text-sm text-[var(--muted-foreground)] mb-4">
+            <p className="text-sm text-muted-foreground mb-4">
               La première application française d&apos;éducation financière pour
               les enfants de 9-12 ans.
             </p>
-            <p className="text-sm text-[var(--muted-foreground)]">
+            <p className="text-sm text-muted-foreground">
               Fabriqué avec ❤️ en France
             </p>
           </div>
@@ -54,7 +54,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </a>
@@ -72,14 +72,14 @@ export function Footer() {
                   {link.isCookieLink ? (
                     <button
                       onClick={openCookieSettings}
-                      className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}
                     </button>
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -97,7 +97,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </a>
@@ -110,12 +110,12 @@ export function Footer() {
               <p className="text-sm font-medium mb-2">
                 Programme Pédagogique : Econo&apos;kids en Classe
               </p>
-              <p className="text-xs text-[var(--muted-foreground)] mb-2">
+              <p className="text-xs text-muted-foreground mb-2">
                 Pour les mairies et écoles
               </p>
               <Link
                 href="/mairies"
-                className="text-sm text-[var(--primary)] hover:underline font-medium"
+                className="text-sm text-primary hover:underline font-medium"
               >
                 Demander une Démo Gratuite pour Mon Établissement →
               </Link>
@@ -124,8 +124,8 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-[var(--border)] mt-8 pt-8 text-center">
-          <p className="text-sm text-[var(--muted-foreground)]">
+        <div className="border-t border-border mt-8 pt-8 text-center">
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Econo&apos;kids. Tous droits réservés.
           </p>
         </div>

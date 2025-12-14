@@ -68,7 +68,7 @@ export function FAQ() {
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Questions fréquentes
           </h2>
-          <p className="text-lg text-[var(--muted-foreground)]">
+          <p className="text-lg text-muted-foreground">
             Tout ce que vous devez savoir avant de commencer.
           </p>
         </div>
@@ -91,11 +91,11 @@ export function FAQ() {
 
         {/* Contact */}
         <div className="mt-12 text-center">
-          <p className="text-[var(--muted-foreground)]">
+          <p className="text-muted-foreground">
             Une autre question ?{" "}
             <a
               href="mailto:support@econokids.fr"
-              className="text-[var(--primary)] hover:underline font-medium"
+              className="text-primary hover:underline font-medium"
             >
               Contactez-nous
             </a>

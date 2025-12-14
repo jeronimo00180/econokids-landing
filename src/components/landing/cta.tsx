@@ -17,7 +17,7 @@ export function CTA() {
   return (
     <section className="py-16 md:py-24">
       <div className="container">
-        <div className="rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--primary-700)] px-6 py-16 text-center text-white">
+        <div className="rounded-2xl bg-linear-to-br from-primary to-primary-700 px-6 py-16 text-center text-white">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Prêt à lui donner un avantage pour la vie ?
           </h2>
@@ -32,7 +32,7 @@ export function CTA() {
             <Button
               size="xl"
               variant="secondary"
-              className="bg-white text-[var(--primary)] hover:bg-white/90"
+              className="bg-white text-primary hover:bg-white/90"
               asChild
             >
               <a

@@ -61,9 +61,9 @@ export function Features() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Econo&apos;kids : Une simulation de vie ludique{" "}
-            <span className="text-[var(--primary)]">pour maîtriser le budget.</span>
+            <span className="text-primary">pour maîtriser le budget.</span>
           </h2>
-          <p className="text-lg text-[var(--muted-foreground)]">
+          <p className="text-lg text-muted-foreground">
             Econo&apos;kids plonge votre enfant dans une simulation de vie réaliste.
             En toute sécurité. En s&apos;amusant. Et en apprenant des leçons qui
             dureront toute sa vie.
@@ -75,8 +75,8 @@ export function Features() {
           {features.map((feature) => (
             <Card key={feature.title} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-[var(--primary-100)] flex items-center justify-center mb-4">
-                  <feature.icon className="h-6 w-6 text-[var(--primary)]" />
+                <div className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+                  <feature.icon className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle className="text-lg">{feature.title}</CardTitle>
               </CardHeader>
@@ -84,7 +84,7 @@ export function Features() {
                 <CardDescription className="text-sm mb-3">
                   {feature.description}
                 </CardDescription>
-                <span className="inline-block text-xs font-medium text-[var(--primary)] bg-[var(--primary-50)] px-2 py-1 rounded">
+                <span className="inline-block text-xs font-medium text-primary bg-primary-50 px-2 py-1 rounded">
                   {feature.highlight}
                 </span>
               </CardContent>

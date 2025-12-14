@@ -29,7 +29,7 @@ export function PricingB2B() {
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Tarifs transparents, adaptés à votre taille
           </h2>
-          <p className="text-lg text-[var(--muted-foreground)]">
+          <p className="text-lg text-muted-foreground">
             Plus vous avez d&apos;élèves, moins c&apos;est cher par élève.
             Contrat 3 ans : -10% supplémentaire.
           </p>
@@ -37,9 +37,9 @@ export function PricingB2B() {
 
         {/* Pricing table */}
         <div className="overflow-x-auto mb-10">
-          <table className="w-full bg-white rounded-xl shadow-sm border border-[var(--border)]">
+          <table className="w-full bg-white rounded-xl shadow-sm border border-border">
             <thead>
-              <tr className="border-b border-[var(--border)]">
+              <tr className="border-b border-border">
                 <th className="px-4 py-3 text-left text-sm font-semibold">Taille</th>
                 <th className="px-4 py-3 text-left text-sm font-semibold">Élèves primaires</th>
                 <th className="px-4 py-3 text-left text-sm font-semibold">Prix/an</th>
@@ -50,32 +50,32 @@ export function PricingB2B() {
               {tiers.map((tier, index) => (
                 <tr
                   key={tier.name}
-                  className={`border-b border-[var(--border)] last:border-b-0 ${
-                    tier.popular ? "bg-[var(--primary-50)]" : ""
+                  className={`border-b border-border last:border-b-0 ${
+                    tier.popular ? "bg-primary-50" : ""
                   }`}
                 >
                   <td className="px-4 py-3">
                     <span className="font-medium">{tier.name}</span>
                     {tier.popular && (
-                      <span className="ml-2 text-xs bg-[var(--primary)] text-white px-2 py-0.5 rounded">
+                      <span className="ml-2 text-xs bg-primary text-white px-2 py-0.5 rounded">
                         Populaire
                       </span>
                     )}
                   </td>
-                  <td className="px-4 py-3 text-sm text-[var(--muted-foreground)]">
+                  <td className="px-4 py-3 text-sm text-muted-foreground">
                     {tier.eleves}
                   </td>
                   <td className="px-4 py-3 font-semibold">{tier.prix}</td>
-                  <td className="px-4 py-3 text-sm text-[var(--muted-foreground)]">
+                  <td className="px-4 py-3 text-sm text-muted-foreground">
                     {tier.prixEleve}
                   </td>
                 </tr>
               ))}
               <tr className="bg-slate-50">
                 <td className="px-4 py-3 font-medium">Enterprise</td>
-                <td className="px-4 py-3 text-sm text-[var(--muted-foreground)]">5 001+</td>
+                <td className="px-4 py-3 text-sm text-muted-foreground">5 001+</td>
                 <td colSpan={2} className="px-4 py-3 text-sm">
-                  <a href="/contact" className="text-[var(--primary)] hover:underline">
+                  <a href="/contact" className="text-primary hover:underline">
                     Sur devis →
                   </a>
                 </td>
@@ -90,7 +90,7 @@ export function PricingB2B() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {inclus.map((item) => (
               <div key={item} className="flex items-start gap-2 text-sm">
-                <Check className="h-4 w-4 text-[var(--success)] flex-shrink-0 mt-0.5" />
+                <Check className="h-4 w-4 text-success shrink-0 mt-0.5" />
                 <span>{item}</span>
               </div>
             ))}
@@ -105,23 +105,23 @@ export function PricingB2B() {
         </div>
 
         {/* ROI */}
-        <div className="mt-12 max-w-3xl mx-auto bg-white rounded-xl p-6 border border-[var(--border)]">
+        <div className="mt-12 max-w-3xl mx-auto bg-white rounded-xl p-6 border border-border">
           <h3 className="font-semibold mb-4 text-center">Retour sur investissement</h3>
           <div className="grid md:grid-cols-3 gap-4 text-center text-sm">
             <div className="p-4 bg-slate-50 rounded-lg">
-              <p className="text-2xl font-bold text-[var(--primary)]">4.2x</p>
-              <p className="text-[var(--muted-foreground)]">ROI moyen (100 élèves)</p>
+              <p className="text-2xl font-bold text-primary">4.2x</p>
+              <p className="text-muted-foreground">ROI moyen (100 élèves)</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-lg">
-              <p className="text-2xl font-bold text-[var(--muted-foreground)]">34,50€</p>
-              <p className="text-[var(--muted-foreground)]">Budget numérique moyen/élève</p>
+              <p className="text-2xl font-bold text-muted-foreground">34,50€</p>
+              <p className="text-muted-foreground">Budget numérique moyen/élève</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-lg">
-              <p className="text-2xl font-bold text-[var(--primary)]">5-10€</p>
-              <p className="text-[var(--muted-foreground)]">Econo&apos;kids/élève</p>
+              <p className="text-2xl font-bold text-primary">5-10€</p>
+              <p className="text-muted-foreground">Econo&apos;kids/élève</p>
             </div>
           </div>
-          <p className="text-center text-sm text-[var(--muted-foreground)] mt-4">
+          <p className="text-center text-sm text-muted-foreground mt-4">
             C&apos;est l&apos;équivalent d&apos;un café par élève et par an pour leur apprendre
             à gérer leur argent toute leur vie.
           </p>
