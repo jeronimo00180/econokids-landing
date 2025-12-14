@@ -3,29 +3,29 @@ import { AlertTriangle, BookX, TrendingDown, ShoppingCart } from "lucide-react";
 const problems = [
   {
     icon: BookX,
-    title: "Le vide éducatif",
-    stat: "0 heure",
+    title: "L'école fait l'impasse",
+    stat: "0h au programme",
     description:
       "0 heure d'éducation financière au programme scolaire français. Vos enfants apprennent les fractions, mais pas comment faire un budget.",
   },
   {
     icon: TrendingDown,
-    title: "Les conséquences",
-    stat: "1 sur 2",
+    title: "Des adultes en difficulté",
+    stat: "1 adulte sur 2",
     description:
       "1 Français sur 2 n'a aucune épargne de précaution. 800 000 dossiers de surendettement chaque année.",
   },
   {
     icon: AlertTriangle,
-    title: "L'impuissance parentale",
-    stat: "Comment ?",
+    title: "Seul face au défi",
+    stat: "Par où commencer ?",
     description:
       "Vous voulez leur apprendre, mais par où commencer ? Quels mots utiliser pour un enfant de 10 ans ?",
   },
   {
     icon: ShoppingCart,
-    title: "L'impatience enfantine",
-    stat: '"Je veux ça !"',
+    title: "La tentation immédiate",
+    stat: "Tout, maintenant",
     description:
       'Votre enfant ne comprend pas pourquoi il faut attendre, économiser, choisir.',
   },
