@@ -1,4 +1,4 @@
-import { AlertTriangle, BookX, TrendingDown, ShoppingCart } from "lucide-react";
+import { HelpCircle, BookX, TrendingDown, ShoppingCart } from "lucide-react";
 
 const problems = [
   {
@@ -16,9 +16,9 @@ const problems = [
       "1 Français sur 2 n'a aucune épargne de précaution. 800 000 dossiers de surendettement chaque année.",
   },
   {
-    icon: AlertTriangle,
+    icon: HelpCircle,
     title: "Seul face au défi",
-    stat: "Par où commencer ?",
+    stat: "Où commencer ?",
     description:
       "Vous voulez leur apprendre, mais par où commencer ? Quels mots utiliser pour un enfant de 10 ans ?",
   },
