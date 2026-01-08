@@ -15,6 +15,11 @@ const faqs = [
       "Econo'kids est conçu pour les enfants de 9 à 12 ans (CM1/CM2/6ème). C'est l'âge idéal : ils maîtrisent la lecture, les opérations de base, et commencent à comprendre la valeur des choses. Un enfant de 8 ans très à l'aise en maths peut aussi commencer.",
   },
   {
+    question: "Mon enfant a 8 ans ou 13 ans, est-ce adapté ?",
+    answer:
+      "Le cœur du programme est conçu pour le niveau CM1-6ème (9-12 ans). Cependant, un enfant de 8 ans bon lecteur s'y amusera tout autant avec un peu d'aide au démarrage. Pour les 13 ans, c'est une excellente révision des bases avant notre future version dédiée aux adolescents (13-16 ans), actuellement en préparation !",
+  },
+  {
     question: "Combien de temps par session ?",
     answer:
       "Une session typique dure 30 minutes. C'est le temps de recevoir son salaire (ou payer ses factures), faire quelques calculs, et peut-être suivre un cours. Votre enfant avance à son rythme, il peut jouer 15 minutes ou 1 heure selon son envie.",
@@ -61,7 +66,7 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-slate-50">
+    <section id="faq" className="py-12 md:py-16 bg-slate-50">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -90,14 +95,14 @@ export function FAQ() {
         </div>
 
         {/* Contact */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <p className="text-muted-foreground">
             Une autre question ?{" "}
             <a
               href="mailto:support@econokids.fr"
               className="text-primary hover:underline font-medium"
             >
-              Contactez-nous
+              support@econokids.fr
             </a>
           </p>
         </div>

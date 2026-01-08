@@ -6,8 +6,8 @@ const stats = [
     label: "d'éducation financière au programme scolaire français",
   },
   {
-    value: "1 sur 2",
-    label: "1 Français sur 2 n'a aucune épargne de précaution",
+    value: "1 adulte sur 2",
+    label: "n'a aucune épargne de précaution en France",
   },
   {
     value: "800 000",

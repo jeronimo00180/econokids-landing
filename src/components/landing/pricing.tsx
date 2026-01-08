@@ -8,7 +8,7 @@ import { usePostHog } from "posthog-js/react";
 const features = [
   "Jusqu'à 3 enfants",
   "Simulation budgétaire complète (12 mois virtuels)",
-  "40 cours pédagogiques",
+  "Mini-cours thématiques",
   "200+ calculs avec système d'aide",
   "9 badges à débloquer",
   "Dashboard parent",
@@ -28,7 +28,7 @@ export function Pricing() {
   };
 
   return (
-    <section id="tarifs" className="py-16 md:py-24">
+    <section id="tarifs" className="py-12 md:py-16">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -54,11 +54,11 @@ export function Pricing() {
               {/* Prix */}
               <div className="mb-6">
                 <div className="flex items-baseline justify-center gap-2">
-                  <span className="text-5xl font-bold">4,99€</span>
+                  <span className="text-5xl font-bold text-primary">4,99€</span>
                   <span className="text-muted-foreground">/mois</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  ou <strong>49€/an</strong> (économisez 2 mois)
+                  ou <strong className="text-primary">49€/an</strong> (économisez 2 mois)
                 </p>
               </div>
 

@@ -39,10 +39,10 @@ const features = [
   },
   {
     icon: BookOpen,
-    title: "40 cours pédagogiques",
+    title: "Mini-cours thématiques",
     description:
       "7 thèmes essentiels, 3 niveaux de difficulté. L'argent au quotidien, le travail, l'inflation, l'économie circulaire, les pièges de la pub.",
-    highlight: "Conforme aux programmes scolaires",
+    highlight: "Apprentissage progressif",
   },
   {
     icon: Trophy,
@@ -55,7 +55,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="fonctionnalites" className="py-16 md:py-24">
+    <section id="fonctionnalites" className="py-12 md:py-16">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -71,11 +71,11 @@ export function Features() {
         </div>
 
         {/* Features grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <Card key={feature.title} className="hover:shadow-lg transition-shadow">
+            <Card key={feature.title} className="hover:shadow-lg transition-shadow dark:bg-slate-800">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle className="text-lg">{feature.title}</CardTitle>
@@ -84,7 +84,7 @@ export function Features() {
                 <CardDescription className="text-sm mb-3">
                   {feature.description}
                 </CardDescription>
-                <span className="inline-block text-xs font-medium text-primary bg-primary-50 px-2 py-1 rounded">
+                <span className="inline-block text-xs font-medium text-primary bg-primary-50 dark:bg-primary-900/30 px-2 py-1 rounded">
                   {feature.highlight}
                 </span>
               </CardContent>

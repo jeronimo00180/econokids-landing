@@ -13,15 +13,15 @@ const benefits = [
     icon: Clock,
     title: "Clé en main pour vos enseignants",
     description:
-      "Tout est prêt : 40 cours structurés, 200+ exercices, dashboard de suivi. Les enseignants supervisent des sessions de 30 minutes. Ils ne préparent rien, tout est dans l'app.",
+      "Tout est prêt : mini-cours thématiques, exercices pratiques, dashboard de suivi. Les enseignants supervisent des sessions de 30 minutes. Ils ne préparent rien, tout est dans l'app.",
     highlight: "Gain de temps considérable",
   },
   {
     icon: Users,
-    title: "Déploiement simple et sécurisé",
+    title: "Zéro intervention technique requise",
     description:
-      "Licence multi-élèves, gestion centralisée des comptes, suivi par classe. Interface d'administration pour les responsables éducation. Formation enseignants incluse.",
-    highlight: "Intégration facile",
+      "Econo'kids fonctionne directement via le navigateur web (Chrome, Safari, Firefox). Aucune installation sur les serveurs de la mairie. Pour un confort optimal, l'app peut s'ajouter en un clic sur l'écran d'accueil des tablettes.",
+    highlight: "Web App prête à l'emploi",
   },
   {
     icon: Rocket,
@@ -48,7 +48,7 @@ const benefits = [
 
 export function BenefitsB2B() {
   return (
-    <section id="avantages" className="py-16 md:py-24">
+    <section id="avantages" className="py-12 md:py-16">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
@@ -62,11 +62,11 @@ export function BenefitsB2B() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit) => (
-            <Card key={benefit.title}>
+            <Card key={benefit.title} className="dark:bg-slate-800">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-4">
                   <benefit.icon className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle className="text-lg">{benefit.title}</CardTitle>
@@ -75,7 +75,7 @@ export function BenefitsB2B() {
                 <p className="text-sm text-muted-foreground mb-3">
                   {benefit.description}
                 </p>
-                <span className="inline-block text-xs font-medium text-success bg-green-50 px-2 py-1 rounded">
+                <span className="inline-block text-xs font-medium text-success bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">
                   ✓ {benefit.highlight}
                 </span>
               </CardContent>

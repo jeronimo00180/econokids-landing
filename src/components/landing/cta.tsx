@@ -15,7 +15,7 @@ export function CTA() {
   };
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16">
       <div className="container">
         <div className="rounded-2xl bg-linear-to-br from-primary to-primary-700 px-6 py-16 text-center text-white">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">

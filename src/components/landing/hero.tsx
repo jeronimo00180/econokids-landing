@@ -1,9 +1,49 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
+import { Carousel, CarouselSlide } from "@/components/ui/carousel";
+
+// TODO: Remplacer par vos vraies captures d'écran
+const heroSlides: CarouselSlide[] = [
+  {
+    src: "/images/dashboard-preview.png",
+    alt: "Dashboard Econo'kids - Vue principale",
+    legend: "Un tableau de bord ludique et coloré",
+    subtext: "Votre enfant visualise son argent, ses projets, ses progrès",
+  },
+  {
+    src: "/images/carousel/choix-metier.png",
+    alt: "Choix du métier dans Econo'kids",
+    legend: "Léo choisit son métier et signe son contrat",
+    subtext: "Vétérinaire, pompier, boulanger... chaque métier a son salaire",
+  },
+  {
+    src: "/images/carousel/facture.png",
+    alt: "Calcul de facture dans Econo'kids",
+    legend: "Il reçoit sa paie et doit régler son loyer",
+    subtext: "Les vraies charges de la vie, adaptées aux enfants",
+  },
+  {
+    src: "/images/carousel/epargne.png",
+    alt: "Projets d'épargne dans Econo'kids",
+    legend: "Il économise pour s'acheter le vélo de ses rêves",
+    subtext: "Apprendre à épargner pour un objectif concret",
+  },
+  {
+    src: "/images/carousel/evenement.png",
+    alt: "Événement surprise dans Econo'kids",
+    legend: "Surprise ! Un événement inattendu",
+    subtext: "La vie réserve des surprises, bonnes comme mauvaises",
+  },
+  {
+    src: "/images/carousel/dashboard-parent.png",
+    alt: "Dashboard parent Econo'kids",
+    legend: "Suivez ses progrès depuis votre espace parent",
+    subtext: "Badges, calculs réussis, cours terminés... tout est visible",
+  },
+];
 
 export function Hero() {
   const posthog = usePostHog();
@@ -77,35 +117,16 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Image/Illustration */}
-          <div className="relative flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-lg">
-              {/* Screenshot du dashboard */}
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
-                <Image
-                  src="/images/dashboard-preview.png"
-                  alt="Dashboard Econo'kids - Interface de simulation budgétaire pour enfants"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-
-              {/* Badge flottant */}
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-border">
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-primary-200 flex items-center justify-center text-xs">👧</div>
-                    <div className="w-8 h-8 rounded-full bg-primary-300 flex items-center justify-center text-xs">👦</div>
-                    <div className="w-8 h-8 rounded-full bg-primary-400 flex items-center justify-center text-xs">👧</div>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">CM1 / CM2 / 6ème</p>
-                    <p className="text-xs text-muted-foreground">9-12 ans</p>
-                  </div>
-                </div>
-              </div>
+          {/* Carrousel d'images */}
+          <div className="flex items-center justify-center lg:justify-end">
+            <div className="w-full max-w-lg">
+              <Carousel
+                slides={heroSlides}
+                autoPlay={true}
+                autoPlayInterval={5000}
+                showArrows={true}
+                showDots={true}
+              />
             </div>
           </div>
         </div>

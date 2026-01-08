@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Building2, GraduationCap, Users } from "lucide-react";
+import { Building2, GraduationCap, Users, Globe } from "lucide-react";
 
 export function HeroB2B() {
   return (
@@ -23,25 +23,33 @@ export function HeroB2B() {
             permet à vos élèves du 3ème cycle (CM1/CM2/6ème) d&apos;apprendre en s&apos;amusant.
           </p>
 
-          {/* EDUCFI inspiration */}
-          <div className="mb-8 inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-2">
-            <span className="text-blue-600 font-medium text-sm">🎓 Inspiré des recommandations EDUCFI</span>
-            <span className="text-blue-500 text-xs">(Éducation budgétaire et financière dès le plus jeune âge)</span>
+          {/* Badges rassurants */}
+          <div className="mb-6 flex flex-wrap justify-center gap-3">
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-2">
+              <span className="text-blue-600 font-medium text-sm">🎓 Inspiré des recommandations EDUCFI</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-4 py-2">
+              <span className="text-green-600 font-medium text-sm">💰 Moins de 10€/élève/an</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-purple-50 border border-purple-200 rounded-lg px-4 py-2">
+              <Globe className="h-4 w-4 text-purple-600" />
+              <span className="text-purple-600 font-medium text-sm">Web App - Zéro installation</span>
+            </div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 mb-10 max-w-lg mx-auto">
+          <div className="grid grid-cols-3 gap-6 mb-10 max-w-xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">200+</div>
-              <div className="text-sm text-muted-foreground">calculs pédagogiques</div>
+              <div className="text-3xl font-bold text-primary">0</div>
+              <div className="text-sm text-muted-foreground">préparation enseignant</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">40</div>
-              <div className="text-sm text-muted-foreground">cours structurés</div>
+              <div className="text-3xl font-bold text-primary">100%</div>
+              <div className="text-sm text-muted-foreground">autonome pour l&apos;élève</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">30 min</div>
-              <div className="text-sm text-muted-foreground">par session</div>
+              <div className="text-3xl font-bold text-primary">1 clic</div>
+              <div className="text-sm text-muted-foreground">pour démarrer</div>
             </div>
           </div>
 

@@ -11,12 +11,12 @@ const faqs = [
   {
     question: "Comment les enseignants sont-ils accompagnés ?",
     answer:
-      "Nous fournissons des fiches explicatives claires pour démarrer rapidement. L'application est intuitive et ne nécessite pas de formation particulière. Notre équipe support est disponible par email pour répondre à toutes vos questions.",
+      "Un tutoriel intégré guide l'enseignant et les élèves au premier lancement. L'application est intuitive et ne nécessite pas de formation particulière. Notre équipe support est disponible par email pour répondre à toutes vos questions.",
   },
   {
     question: "Quels équipements sont nécessaires ?",
     answer:
-      "Econo'kids fonctionne sur vos PC et tablettes existants, via un simple navigateur web. Une connexion internet est requise. Pas d'installation, pas de téléchargement. Si vous avez 4-5 équipements par classe, vous pouvez faire des rotations.",
+      "Econo'kids fonctionne sur vos PC et tablettes existants, via un simple navigateur web. Une connexion internet est requise. Pas d'installation, pas de téléchargement. Chaque élève dispose de son propre compte et progresse à son rythme. Alternative possible : utilisation en groupe ou classe entière sur écran partagé.",
   },
   {
     question: "Comment est gérée la conformité RGPD ?",
@@ -31,13 +31,13 @@ const faqs = [
   {
     question: "Comment obtenir un devis ?",
     answer:
-      "Contactez-nous via le formulaire ou par email à support@econokids.fr. Nous vous proposerons une offre adaptée au nombre d'élèves de votre commune.",
+      "Contactez-nous par email à support@econokids.fr. Nous vous proposerons une offre adaptée au nombre d'élèves de votre commune sous 48h.",
   },
 ];
 
 export function FAQB2B() {
   return (
-    <section id="faq" className="py-16 md:py-24 bg-slate-50">
+    <section id="faq" className="py-12 md:py-16 bg-slate-50">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
@@ -59,14 +59,14 @@ export function FAQB2B() {
         </div>
 
         {/* Contact */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <p className="text-muted-foreground">
             Une autre question ?{" "}
             <a
               href="mailto:support@econokids.fr"
               className="text-primary hover:underline font-medium"
             >
-              Contactez-nous
+              support@econokids.fr
             </a>
           </p>
         </div>
