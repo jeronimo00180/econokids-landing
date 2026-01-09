@@ -5,40 +5,40 @@ import { Check } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
 import { Carousel, CarouselSlide } from "@/components/ui/carousel";
 
-// TODO: Remplacer par vos vraies captures d'écran
+// Images du carrousel (WebP optimisées via npm run optimize-images)
 const heroSlides: CarouselSlide[] = [
   {
-    src: "/images/dashboard-preview.png",
+    src: "/images/carousel/dashboard.webp",
     alt: "Dashboard Econo'kids - Vue principale",
     legend: "Un tableau de bord ludique et coloré",
     subtext: "Votre enfant visualise son argent, ses projets, ses progrès",
   },
   {
-    src: "/images/carousel/choix-metier.png",
+    src: "/images/carousel/choix-metier.webp",
     alt: "Choix du métier dans Econo'kids",
     legend: "Léo choisit son métier et signe son contrat",
     subtext: "Vétérinaire, pompier, boulanger... chaque métier a son salaire",
   },
   {
-    src: "/images/carousel/facture.png",
+    src: "/images/carousel/facture.webp",
     alt: "Calcul de facture dans Econo'kids",
     legend: "Il reçoit sa paie et doit régler son loyer",
     subtext: "Les vraies charges de la vie, adaptées aux enfants",
   },
   {
-    src: "/images/carousel/epargne.png",
+    src: "/images/carousel/epargne.webp",
     alt: "Projets d'épargne dans Econo'kids",
     legend: "Il économise pour s'acheter le vélo de ses rêves",
     subtext: "Apprendre à épargner pour un objectif concret",
   },
   {
-    src: "/images/carousel/evenement.png",
+    src: "/images/carousel/evenement.webp",
     alt: "Événement surprise dans Econo'kids",
     legend: "Surprise ! Un événement inattendu",
     subtext: "La vie réserve des surprises, bonnes comme mauvaises",
   },
   {
-    src: "/images/carousel/dashboard-parent.png",
+    src: "/images/carousel/dashboard-parent.webp",
     alt: "Dashboard parent Econo'kids",
     legend: "Suivez ses progrès depuis votre espace parent",
     subtext: "Badges, calculs réussis, cours terminés... tout est visible",

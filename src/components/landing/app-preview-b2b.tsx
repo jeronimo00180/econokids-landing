@@ -2,40 +2,40 @@
 
 import { Carousel, CarouselSlide } from "@/components/ui/carousel";
 
-// TODO: Remplacer par vos vraies captures d'écran
+// Images du carrousel (WebP optimisées via npm run optimize-images)
 const previewSlides: CarouselSlide[] = [
   {
-    src: "/images/dashboard-preview.png",
+    src: "/images/carousel/dashboard.webp",
     alt: "Dashboard élève Econo'kids",
     legend: "Un tableau de bord ludique et intuitif",
     subtext: "L'élève visualise son argent, ses projets, sa progression",
   },
   {
-    src: "/images/carousel/choix-metier.png",
+    src: "/images/carousel/choix-metier.webp",
     alt: "Choix du métier dans Econo'kids",
     legend: "Chaque élève choisit son métier",
     subtext: "Vétérinaire, pompier, boulanger... chaque métier a son salaire réaliste",
   },
   {
-    src: "/images/carousel/facture.png",
+    src: "/images/carousel/facture.webp",
     alt: "Calcul de facture dans Econo'kids",
     legend: "Des calculs concrets : loyer, courses, factures",
     subtext: "L'élève découvre les charges de la vie quotidienne",
   },
   {
-    src: "/images/carousel/epargne.png",
+    src: "/images/carousel/epargne.webp",
     alt: "Projets d'épargne dans Econo'kids",
     legend: "Épargner pour un objectif",
     subtext: "Vélo, console, voyage... apprendre à se fixer des objectifs",
   },
   {
-    src: "/images/carousel/evenement.png",
+    src: "/images/carousel/evenement.webp",
     alt: "Événement surprise dans Econo'kids",
     legend: "Des événements surprises",
     subtext: "Bonus, imprévus... la vie réserve des surprises !",
   },
   {
-    src: "/images/carousel/dashboard-enseignant.png",
+    src: "/images/carousel/dashboard-enseignant.webp",
     alt: "Dashboard enseignant Econo'kids",
     legend: "Un tableau de bord enseignant complet",
     subtext: "Suivi par élève, par classe, progression détaillée",
