@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Combien de temps par session ?",
     answer:
-      "Une session typique dure 30 minutes. C'est le temps de recevoir son salaire (ou payer ses factures), faire quelques calculs, et peut-être suivre un cours. Votre enfant avance à son rythme, il peut jouer 15 minutes ou 1 heure selon son envie.",
+      "Econo'kids suit le rythme de la vraie vie : une semaine dans le jeu = une semaine réelle. Votre enfant se connecte quelques minutes par semaine pour gérer son budget, payer ses factures et faire ses choix. C'est idéal pour apprendre sans excès de temps d'écran ! Et s'il ne joue pas pendant quelques semaines ? Pas de souci, il pourra rattraper les semaines manquées à son retour.",
   },
   {
     question: "Mon enfant va-t-il se décourager s'il fait des erreurs ?",

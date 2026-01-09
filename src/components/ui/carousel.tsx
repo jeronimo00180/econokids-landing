@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
 
 export interface CarouselSlide {
   src: string;
@@ -31,6 +31,7 @@ export function Carousel({
   className = "",
 }: CarouselProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const autoplayPlugin = Autoplay({
     delay: autoPlayInterval,
@@ -72,6 +73,38 @@ export function Carousel({
     };
   }, [emblaApi, onSelect]);
 
+  // Lightbox: fermer avec Escape et bloquer scroll
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Empêcher la propagation pour sécurité
+      e.stopPropagation();
+
+      switch (e.key) {
+        case "Escape":
+          setLightboxOpen(false);
+          break;
+        case "ArrowLeft":
+          e.preventDefault();
+          scrollPrev();
+          break;
+        case "ArrowRight":
+          e.preventDefault();
+          scrollNext();
+          break;
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown, { capture: true });
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown, { capture: true });
+    };
+  }, [lightboxOpen, scrollPrev, scrollNext]);
+
   const currentSlide = slides[selectedIndex];
 
   return (
@@ -95,7 +128,10 @@ export function Carousel({
             <div className="flex touch-pan-y">
               {slides.map((slide, index) => (
                 <div key={index} className="flex-[0_0_100%] min-w-0">
-                  <div className="relative aspect-13/10">
+                  <div
+                    className="relative aspect-13/10 cursor-zoom-in group"
+                    onClick={() => setLightboxOpen(true)}
+                  >
                     <Image
                       src={slide.src}
                       alt={slide.alt}
@@ -103,6 +139,10 @@ export function Carousel({
                       className="object-contain"
                       priority={index === 0}
                     />
+                    {/* Zoom hint */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-70 transition-opacity drop-shadow-lg" />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -163,6 +203,71 @@ export function Carousel({
               aria-label={`Aller à l'image ${index + 1}`}
             />
           ))}
+        </div>
+      )}
+
+      {/* Lightbox modal */}
+      {lightboxOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image agrandie"
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setLightboxOpen(false)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            aria-label="Fermer"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Navigation arrows */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              scrollPrev();
+            }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            aria-label="Image précédente"
+          >
+            <ChevronLeft className="w-6 h-6 text-white" />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              scrollNext();
+            }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            aria-label="Image suivante"
+          >
+            <ChevronRight className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Image */}
+          <div
+            className="relative w-full h-full max-w-5xl max-h-[85vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={currentSlide?.src || ""}
+              alt={currentSlide?.alt || ""}
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          {/* Legend */}
+          <div className="absolute bottom-8 left-0 right-0 text-center">
+            <p className="text-white text-lg font-semibold">
+              {currentSlide?.legend}
+            </p>
+            {currentSlide?.subtext && (
+              <p className="text-white/70 mt-1">{currentSlide.subtext}</p>
+            )}
+          </div>
         </div>
       )}
     </div>
