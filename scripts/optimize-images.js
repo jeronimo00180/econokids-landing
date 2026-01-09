@@ -21,10 +21,8 @@ const INPUT_DIR = path.join(__dirname, '../public/images/carousel/originals');
 const OUTPUT_DIR = path.join(__dirname, '../public/images/carousel');
 
 const CONFIG = {
-  width: 1600,
-  height: 1200,
+  maxWidth: 1600, // Largeur max, hauteur calculée automatiquement pour garder le ratio
   quality: 85, // Qualité WebP (0-100)
-  fit: 'cover', // cover, contain, fill, inside, outside
 };
 
 async function optimizeImage(inputPath, outputPath) {
@@ -33,10 +31,7 @@ async function optimizeImage(inputPath, outputPath) {
 
   try {
     await sharp(inputPath)
-      .resize(CONFIG.width, CONFIG.height, {
-        fit: CONFIG.fit,
-        position: 'center',
-      })
+      .resize(CONFIG.maxWidth, null) // null = hauteur auto pour garder le ratio
       .webp({ quality: CONFIG.quality })
       .toFile(outputFile);
 
@@ -56,7 +51,7 @@ async function optimizeImage(inputPath, outputPath) {
 
 async function main() {
   console.log('\n🖼️  Optimisation des images du carrousel\n');
-  console.log(`Config: ${CONFIG.width}x${CONFIG.height}px, WebP qualité ${CONFIG.quality}\n`);
+  console.log(`Config: largeur max ${CONFIG.maxWidth}px (ratio préservé), WebP qualité ${CONFIG.quality}\n`);
 
   // Créer les dossiers si nécessaire
   if (!fs.existsSync(INPUT_DIR)) {
