@@ -139,9 +139,12 @@ export function Carousel({
                       className="object-contain"
                       priority={index === 0}
                     />
-                    {/* Zoom hint */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-70 transition-opacity drop-shadow-lg" />
+                    {/* Zoom hint - avec texte pour accessibilité */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center gap-1">
+                        <ZoomIn className="w-8 h-8 text-white drop-shadow-lg" />
+                        <span className="text-white text-sm font-medium drop-shadow-lg">Agrandir</span>
+                      </div>
                     </div>
                   </div>
                 </div>
