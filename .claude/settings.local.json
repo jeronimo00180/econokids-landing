@@ -13,7 +13,9 @@
       "Bash(npm outdated:*)",
       "Bash(npm update:*)",
       "Bash(tree:*)",
-      "Bash(npm run optimize-images:*)"
+      "Bash(npm run optimize-images:*)",
+      "Bash(npm audit:*)",
+      "Bash(rsync:*)"
     ]
   }
 }

@@ -1,0 +1,20 @@
+# Robots.txt pour Econo'kids
+# https://econokids.fr
+
+User-agent: *
+Allow: /
+
+# Pages à indexer
+Allow: /
+Allow: /mairies/
+Allow: /cgu/
+Allow: /confidentialite/
+Allow: /mentions-legales/
+
+# Ressources à ne pas indexer
+Disallow: /api/
+Disallow: /_next/
+Disallow: /contact/
+
+# Sitemap
+Sitemap: https://econokids.fr/sitemap.xml
