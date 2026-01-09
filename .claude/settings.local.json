@@ -12,7 +12,8 @@
       "Bash(npx next lint:*)",
       "Bash(npm outdated:*)",
       "Bash(npm update:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(npm run optimize-images:*)"
     ]
   }
 }
