@@ -84,7 +84,7 @@ export default function ConfidentialitePage() {
             <ul className="list-disc pl-6 space-y-1">
               <li><strong>Stripe :</strong> traitement des paiements</li>
               <li><strong>OVH :</strong> hébergement (France)</li>
-              <li><strong>Plausible :</strong> analytics respectueux de la vie privée</li>
+              <li><strong>PostHog :</strong> analytics hébergé en Europe (eu.i.posthog.com), soumis au consentement cookies</li>
             </ul>
             <p className="mt-2 font-semibold">
               Nous ne vendons jamais vos données personnelles.
@@ -136,8 +136,11 @@ export default function ConfidentialitePage() {
 
             <h3 className="text-lg font-medium mt-6 mb-3">Cookies d&apos;analyse</h3>
             <p>
-              Nous utilisons Plausible Analytics, une solution respectueuse de la vie
-              privée qui ne dépose pas de cookies et ne collecte pas de données personnelles.
+              Nous utilisons PostHog Analytics, hébergé en Europe (eu.i.posthog.com).
+              PostHog dépose des cookies uniquement après votre consentement explicite.
+              Les données collectées incluent : pages visitées, temps de session,
+              et données de navigation anonymisées. Vous pouvez refuser ces cookies
+              via la bannière de consentement.
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">10. Protection des mineurs</h2>

@@ -34,7 +34,13 @@ export function CookieConsent() {
       // Charger les préférences existantes
       const savedPrefs = localStorage.getItem(COOKIE_PREFERENCES_KEY);
       if (savedPrefs) {
-        setPreferences(JSON.parse(savedPrefs));
+        try {
+          setPreferences(JSON.parse(savedPrefs));
+        } catch {
+          localStorage.removeItem(COOKIE_PREFERENCES_KEY);
+          localStorage.removeItem(COOKIE_CONSENT_KEY);
+          setShowBanner(true);
+        }
       }
     }
   }, []);
@@ -226,7 +232,11 @@ export function useCookieConsent() {
   useEffect(() => {
     const savedPrefs = localStorage.getItem(COOKIE_PREFERENCES_KEY);
     if (savedPrefs) {
-      setConsent(JSON.parse(savedPrefs));
+      try {
+        setConsent(JSON.parse(savedPrefs));
+      } catch {
+        localStorage.removeItem(COOKIE_PREFERENCES_KEY);
+      }
     }
 
     const handleConsentChange = (e: CustomEvent<CookiePreferences>) => {
