@@ -56,11 +56,11 @@ export function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-primary-50 to-white py-16 md:py-24">
+    <section className="relative overflow-hidden bg-linear-to-b from-primary-50 to-white py-10 md:py-16">
       <div className="container">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
           {/* Contenu texte */}
-          <div className="flex flex-col justify-center space-y-6">
+          <div className="flex flex-col justify-center space-y-5">
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
               À 10 ans, apprenez-lui à gérer son argent{" "}
               <span className="text-primary">
@@ -73,7 +73,7 @@ export function Hero() {
             </p>
 
             <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl">
-              Econo&apos;kids transforme l&apos;argent de poche en jeu : une simulation de vie 100% sécurisée pour les 9-12 ans. Sans carte bancaire réelle.
+              Econo&apos;kids transforme l&apos;argent de poche en jeu : une simulation de vie 100% sécurisée pour les 8-13 ans. Sans carte bancaire réelle.
             </p>
 
             {/* Trust indicators */}
@@ -99,12 +99,12 @@ export function Hero() {
                   href="https://app.econokids.fr/inscription"
                   onClick={() => trackCTA("essai_gratuit_hero")}
                 >
-                  Démarrer l&apos;Essai Gratuit de 14 Jours
+                  Démarrer l&apos;essai gratuit de 14 jours
                 </a>
               </Button>
               <Button size="xl" variant="outline" asChild>
                 <a
-                  href="#fonctionnalites"
+                  href="#comment-ca-marche"
                   onClick={() => trackCTA("voir_fonctionnalites")}
                 >
                   Voir comment ça marche

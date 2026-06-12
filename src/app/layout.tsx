@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Econo'kids | Éducation financière ludique pour enfants 9-12 ans",
+  title: "Econo'kids | Éducation financière ludique pour enfants de 8 à 13 ans",
   description:
     "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire. Essai gratuit 14 jours.",
   keywords: [
@@ -21,8 +21,7 @@ export const metadata: Metadata = {
     "épargne",
     "apprentissage",
     "jeu éducatif",
-    "CM1",
-    "CM2",
+    "8-13 ans",
     "argent de poche",
     "simulation",
   ],
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://econokids.fr",
     siteName: "Econo'kids",
-    title: "Econo'kids | Éducation financière ludique pour enfants 9-12 ans",
+    title: "Econo'kids | Éducation financière ludique pour enfants de 8 à 13 ans",
     description:
       "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
     images: [
@@ -49,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Econo'kids | Éducation financière ludique pour enfants 9-12 ans",
+    title: "Econo'kids | Éducation financière ludique pour enfants de 8 à 13 ans",
     description:
       "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
     images: ["/images/og-image.png"],

@@ -33,10 +33,10 @@ const problems = [
 
 export function Problem() {
   return (
-    <section className="py-12 md:py-16 bg-slate-50 dark:bg-slate-900/50">
+    <section className="py-10 md:py-14 bg-amber-50">
       <div className="container">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
             L&apos;école leur apprend les maths.{" "}
             <span className="text-primary">Pas à gérer leur argent.</span>
@@ -48,10 +48,10 @@ export function Problem() {
           {problems.map((problem) => (
             <div
               key={problem.title}
-              className="bg-white dark:bg-slate-800 rounded-xl p-5 sm:p-6 shadow-sm border border-border hover:shadow-md transition-shadow"
+              className="bg-white rounded-xl p-5 shadow-sm border border-border hover:shadow-md transition-shadow"
             >
-              <problem.icon className="h-10 w-10 text-primary mb-4" />
-              <div className="text-2xl font-bold text-primary mb-2">
+              <problem.icon className="h-8 w-8 text-primary mb-3" />
+              <div className="text-xl font-bold text-primary mb-1.5">
                 {problem.stat}
               </div>
               <h3 className="font-semibold mb-2">{problem.title}</h3>
@@ -63,7 +63,7 @@ export function Problem() {
         </div>
 
         {/* Agitation paragraph */}
-        <div className="mt-10 max-w-3xl mx-auto text-center">
+        <div className="mt-8 max-w-3xl mx-auto text-center">
           <p className="text-muted-foreground leading-relaxed">
             Chaque jour qui passe sans éducation financière, votre enfant prend
             des habitudes. La gratification instantanée. L&apos;envie de tout

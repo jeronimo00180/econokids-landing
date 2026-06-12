@@ -15,9 +15,9 @@ export function CTA() {
   };
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-10 md:py-14">
       <div className="container">
-        <div className="rounded-2xl bg-linear-to-br from-primary to-primary-700 px-6 py-16 text-center text-white">
+        <div className="rounded-2xl bg-linear-to-br from-primary to-primary-700 px-6 py-10 md:py-12 text-center text-white">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Prêt à lui donner un avantage pour la vie ?
           </h2>
@@ -39,7 +39,7 @@ export function CTA() {
                 href="https://app.econokids.fr/inscription"
                 onClick={trackCTA}
               >
-                Essayer gratuitement 14 jours
+                Démarrer l&apos;essai gratuit de 14 jours
               </a>
             </Button>
           </div>

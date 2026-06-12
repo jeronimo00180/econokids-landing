@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* La landing est exclusivement claire : le variant dark: ne doit jamais
+   s'activer via prefers-color-scheme (comportement par défaut de Tailwind v4),
+   uniquement via une classe .dark — qui n'est jamais posée. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ========================================
    ECONO'KIDS LANDING - DESIGN SYSTEM
    ======================================== */
@@ -64,27 +69,6 @@
   --radius: 0.5rem;
 }
 
-/* Dark mode (optionnel pour landing) */
-.dark {
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --primary: #60a5fa;
-  --primary-foreground: #0f172a;
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  --card: #1e293b;
-  --card-foreground: #f8fafc;
-  --popover: #1e293b;
-  --popover-foreground: #f8fafc;
-  --border: #334155;
-  --input: #334155;
-  --ring: #60a5fa;
-}
-
 /* ========================================
    BASE STYLES
    ======================================== */
@@ -94,6 +78,20 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -129,6 +127,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* Empêche les navigateurs (auto dark mode) d'assombrir la page */
+  color-scheme: only light;
 }
 
 /* ========================================

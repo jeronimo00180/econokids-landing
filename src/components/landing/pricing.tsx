@@ -28,10 +28,10 @@ export function Pricing() {
   };
 
   return (
-    <section id="tarifs" className="py-12 md:py-16">
+    <section id="tarifs" className="py-10 md:py-14">
       <div className="container">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
             Un investissement pour toute sa vie
           </h2>
@@ -79,7 +79,7 @@ export function Pricing() {
                   href="https://app.econokids.fr/inscription"
                   onClick={trackCTA}
                 >
-                  Essayer 14 jours gratuitement
+                  Démarrer l&apos;essai gratuit de 14 jours
                 </a>
               </Button>
               <p className="text-xs text-muted-foreground text-center">

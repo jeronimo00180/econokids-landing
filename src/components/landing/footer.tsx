@@ -39,7 +39,7 @@ export function Footer() {
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               La première application française d&apos;éducation financière pour
-              les enfants de 9-12 ans.
+              les enfants de 8 à 13 ans.
             </p>
             <p className="text-sm text-muted-foreground">
               Fabriqué avec ❤️ en France

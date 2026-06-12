@@ -64,9 +64,9 @@ export function BenefitsB2B() {
 
         <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit) => (
-            <Card key={benefit.title} className="dark:bg-slate-800">
+            <Card key={benefit.title}>
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
                   <benefit.icon className="h-6 w-6 text-primary" />
                 </div>
                 <CardTitle className="text-lg">{benefit.title}</CardTitle>
@@ -75,7 +75,7 @@ export function BenefitsB2B() {
                 <p className="text-sm text-muted-foreground mb-3">
                   {benefit.description}
                 </p>
-                <span className="inline-block text-xs font-medium text-success bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">
+                <span className="inline-block text-xs font-medium text-success bg-green-50 px-2 py-1 rounded">
                   ✓ {benefit.highlight}
                 </span>
               </CardContent>

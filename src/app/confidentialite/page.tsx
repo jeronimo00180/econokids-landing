@@ -145,7 +145,7 @@ export default function ConfidentialitePage() {
 
             <h2 className="text-xl font-semibold mt-8 mb-4">10. Protection des mineurs</h2>
             <p>
-              Econo&apos;kids est destiné aux enfants de 9 à 12 ans, sous la supervision
+              Econo&apos;kids est destiné aux enfants de 8 à 13 ans, sous la supervision
               de leurs parents. Nous appliquons des mesures renforcées :
             </p>
             <ul className="list-disc pl-6 space-y-1">
