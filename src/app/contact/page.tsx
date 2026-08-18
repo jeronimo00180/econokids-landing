@@ -3,16 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Mail, Clock, Shield, Building2 } from "lucide-react";
+import { Mail, MessageCircle, Shield, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact | Econo'kids",
   description:
     "Contactez-nous pour une démo gratuite d'Econo'kids, l'application d'éducation financière pour les écoles et mairies.",
+  alternates: { canonical: "/contact/" },
   openGraph: {
     title: "Contact | Econo'kids",
     description: "Contactez-nous pour une démo gratuite d'Econo'kids.",
-    url: "https://econokids.fr/contact",
+    url: "https://www.econokids.fr/contact/",
   },
 };
 
@@ -42,8 +43,8 @@ export default function ContactPage() {
               Demandez une démo gratuite
             </h1>
             <p className="text-lg text-muted-foreground">
-              Prenez 30 minutes pour découvrir Econo&apos;kids en conditions
-              réelles. Sans engagement.
+              Découvrez Econo&apos;kids, posez vos questions et vérifiez si le
+              service correspond à votre projet. Sans engagement.
             </p>
           </div>
 
@@ -57,8 +58,8 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Envoyez-nous un email avec les informations suivantes et nous
-                vous recontacterons sous 48h pour planifier une démo.
+                Envoyez-nous un email avec les informations suivantes afin que
+                nous puissions préparer la démonstration.
               </p>
 
               <div className="bg-slate-50 rounded-lg p-4 text-sm">
@@ -83,11 +84,11 @@ export default function ContactPage() {
           {/* Benefits */}
           <div className="grid gap-4 md:grid-cols-3 mb-8">
             <div className="flex items-start gap-3 p-4 bg-white rounded-lg border border-border">
-              <Clock className="h-5 w-5 text-primary shrink-0" />
+              <MessageCircle className="h-5 w-5 text-primary shrink-0" />
               <div>
-                <p className="font-medium text-sm">Réponse rapide</p>
+                <p className="font-medium text-sm">Échange préparé</p>
                 <p className="text-xs text-muted-foreground">
-                  Sous 48h ouvrées
+                  Adapté à votre contexte
                 </p>
               </div>
             </div>
@@ -96,7 +97,7 @@ export default function ContactPage() {
               <div>
                 <p className="font-medium text-sm">Sans engagement</p>
                 <p className="text-xs text-muted-foreground">
-                  Démo gratuite de 30 min
+                  Démonstration gratuite
                 </p>
               </div>
             </div>

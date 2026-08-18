@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "Comment les enseignants sont-ils accompagnés ?",
     answer:
-      "Un tutoriel intégré guide l'enseignant et les élèves au premier lancement. L'application est intuitive et ne nécessite pas de formation particulière. Notre équipe support est disponible par email pour répondre à toutes vos questions.",
+      "Un tutoriel intégré guide l'enseignant et les élèves au premier lancement. Le niveau d'accompagnement souhaité peut être précisé dans le devis, et le support reste disponible par email.",
   },
   {
     question: "Quels équipements sont nécessaires ?",
@@ -21,17 +21,17 @@ const faqs = [
   {
     question: "Comment est gérée la conformité RGPD ?",
     answer:
-      "Très strictement. Données chiffrées. Hébergement 100% France. Suppression automatique fin d'année scolaire. Export et suppression sur demande en 48h. Nous sommes conformes aux exigences les plus strictes pour les données de mineurs.",
+      "Les données d'identité sont chiffrées, l'application est hébergée chez OVH en France et la base de données chez Neon à Francfort. Des fonctions d'export, d'anonymisation annuelle et de suppression sont prévues. Les modalités exactes sont détaillées dans la politique de confidentialité.",
   },
   {
     question: "Peut-on tester avant de s'engager ?",
     answer:
-      "Oui. Nous proposons une démo gratuite de 30 minutes où nous vous montrons l'application en conditions réelles. Contactez-nous pour planifier une présentation.",
+      "Oui. Vous pouvez demander une démonstration gratuite afin de voir l'application et poser vos questions avant toute décision.",
   },
   {
     question: "Comment obtenir un devis ?",
     answer:
-      "Contactez-nous par email à support@econokids.fr. Nous vous proposerons une offre adaptée au nombre d'élèves de votre commune sous 48h.",
+      "Contactez-nous par email à support@econokids.fr. Nous reviendrons vers vous pour préciser le nombre de classes, le périmètre d'accompagnement et préparer un devis.",
   },
 ];
 

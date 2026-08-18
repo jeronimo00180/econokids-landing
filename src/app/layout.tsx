@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Econo'kids | Éducation financière ludique pour enfants de 8 à 13 ans",
+  title: "Éducation financière pour enfants | Econo'kids",
   description:
     "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire. Essai gratuit 14 jours.",
   keywords: [
@@ -29,10 +29,13 @@ export const metadata: Metadata = {
   creator: "Econo'kids",
   publisher: "Econo'kids",
   robots: "index, follow",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://econokids.fr",
+    url: "https://www.econokids.fr/",
     siteName: "Econo'kids",
     title: "Econo'kids | Éducation financière ludique pour enfants de 8 à 13 ans",
     description:
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
       "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
     images: ["/images/og-image.png"],
   },
-  metadataBase: new URL("https://econokids.fr"),
+  metadataBase: new URL("https://www.econokids.fr"),
 };
 
 export default function RootLayout({

@@ -8,12 +8,16 @@ import {
 } from "@/components/ui/accordion";
 import { usePostHog } from "posthog-js/react";
 import { faqs } from "@/lib/faq-data";
+import {
+  COOKIE_PREFERENCES_KEY,
+  captureConsentedEvent,
+} from "@/lib/analytics-consent.mjs";
 
 export function FAQ() {
   const posthog = usePostHog();
 
   const trackFAQOpen = (question: string) => {
-    posthog?.capture("faq_opened", {
+    captureConsentedEvent(posthog, localStorage.getItem(COOKIE_PREFERENCES_KEY), "faq_opened", {
       question: question,
     });
   };

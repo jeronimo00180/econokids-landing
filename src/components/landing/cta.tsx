@@ -3,15 +3,22 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Clock, CreditCard } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
+import {
+  COOKIE_PREFERENCES_KEY,
+  captureConsentedEvent,
+  forwardStoredAttribution,
+} from "@/lib/analytics-consent.mjs";
+import type { MouseEvent } from "react";
 
 export function CTA() {
   const posthog = usePostHog();
 
-  const trackCTA = () => {
-    posthog?.capture("cta_clicked", {
+  const trackCTA = (event: MouseEvent<HTMLAnchorElement>) => {
+    captureConsentedEvent(posthog, localStorage.getItem(COOKIE_PREFERENCES_KEY), "cta_clicked", {
       cta_name: "essai_gratuit_bottom",
       cta_location: "cta_section",
     });
+    forwardStoredAttribution(event.currentTarget, window.localStorage);
   };
 
   return (
@@ -23,9 +30,9 @@ export function CTA() {
           </h2>
 
           <p className="mx-auto max-w-[600px] text-white/80 md:text-lg mb-8">
-            En quelques semaines, votre enfant saura budgéter, épargner et faire
-            des choix réfléchis. Des compétences que la plupart des adultes
-            n&apos;ont toujours pas. Et tout ça en s&apos;amusant.
+            Votre enfant pourra s&apos;entraîner à budgéter, épargner et comparer ses
+            choix dans un environnement ludique. Vous suivrez sa progression
+            depuis votre espace parent.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row justify-center mb-8">
@@ -52,7 +59,7 @@ export function CTA() {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4" />
-              <span>Satisfait ou remboursé 30 jours</span>
+              <span>14 jours d&apos;essai sans carte</span>
             </div>
             <div className="flex items-center gap-2">
               <CreditCard className="h-4 w-4" />

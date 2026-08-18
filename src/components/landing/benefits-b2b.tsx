@@ -13,36 +13,36 @@ const benefits = [
     icon: Clock,
     title: "Clé en main pour vos enseignants",
     description:
-      "Tout est prêt : mini-cours thématiques, exercices pratiques, dashboard de suivi. Les enseignants supervisent des sessions de 30 minutes. Ils ne préparent rien, tout est dans l'app.",
-    highlight: "Gain de temps considérable",
+      "L'application réunit mini-cours thématiques, exercices pratiques et tableau de suivi. L'enseignant conserve la maîtrise du rythme et de l'organisation des séances.",
+    highlight: "Supports regroupés dans l'application",
   },
   {
     icon: Users,
-    title: "Zéro intervention technique requise",
+    title: "Mise en route légère",
     description:
-      "Econo'kids fonctionne directement via le navigateur web (Chrome, Safari, Firefox). Aucune installation sur les serveurs de la mairie. Pour un confort optimal, l'app peut s'ajouter en un clic sur l'écran d'accueil des tablettes.",
+      "Econo'kids fonctionne directement via un navigateur web récent. Une connexion internet et la création des accès restent nécessaires ; aucune installation sur les serveurs de la mairie n'est demandée.",
     highlight: "Web App prête à l'emploi",
   },
   {
     icon: Rocket,
     title: "Soyez pionnier dans votre région",
     description:
-      "Econo'kids est la première application française d'éducation financière pour le 3ème cycle. Votre commune sera parmi les premières à l'adopter. Une image moderne, innovante, tournée vers l'avenir.",
+      "Econo'kids propose une approche française, ludique et progressive de l'éducation budgétaire pour le cycle 3. Un pilote permet d'en mesurer l'intérêt avant un déploiement plus large.",
     highlight: "Différenciation politique",
   },
   {
     icon: BarChart3,
     title: "Des résultats concrets",
     description:
-      "Dashboard enseignant complet : badges obtenus, calculs réussis (avec détail des aides utilisées), cours terminés. Vous pouvez mesurer l'impact sur vos élèves et communiquer des résultats chiffrés.",
-    highlight: "Impact mesurable",
+      "Le tableau de bord enseignant présente les badges obtenus, les calculs réussis avec le niveau d'aide utilisé et les cours terminés. Il permet de suivre l'activité et la progression dans l'application.",
+    highlight: "Suivi d'usage visible",
   },
   {
     icon: Shield,
-    title: "Conformité RGPD stricte",
+    title: "Protection des données documentée",
     description:
-      "Données enfants chiffrées. Hébergement 100% France. Suppression automatique fin d'année scolaire. Export et suppression sur demande. Nous respectons le RGPD à la lettre.",
-    highlight: "Zéro risque juridique",
+      "Les données d'identité des enfants sont chiffrées. L'application est hébergée en France, la base dans l'Union européenne, et des fonctions d'export, d'anonymisation et de suppression sont prévues.",
+    highlight: "Collecte limitée et contrôles d'accès",
   },
 ];
 

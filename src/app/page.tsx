@@ -16,8 +16,17 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Econo'kids",
-  url: "https://econokids.fr",
-  logo: "https://econokids.fr/images/logo.png",
+  legalName: "Jérôme Rembert EI",
+  identifier: "SIRET 102 279 643 00013",
+  url: "https://www.econokids.fr",
+  logo: "https://www.econokids.fr/images/logo.png",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "61 rue de Lyon",
+    postalCode: "75012",
+    addressLocality: "Paris",
+    addressCountry: "FR",
+  },
   contactPoint: {
     "@type": "ContactPoint",
     email: "support@econokids.fr",
@@ -33,7 +42,7 @@ const softwareApplicationJsonLd = {
   operatingSystem: "Web",
   description:
     "Application éducative d'éducation financière pour enfants de 8 à 13 ans : une simulation de vie ludique pour apprendre à gérer un budget, épargner et faire des choix réfléchis.",
-  url: "https://econokids.fr",
+  url: "https://www.econokids.fr",
   audience: {
     "@type": "PeopleAudience",
     suggestedMinAge: 8,

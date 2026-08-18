@@ -12,12 +12,12 @@ const faqsMairies = [
   {
     question: "Comment se passe le processus d'achat pour une mairie ?",
     answer:
-      "Nous nous adaptons à vos procédures. Pour les petites communes, un simple bon de commande suffit généralement (montants inférieurs aux seuils de marchés publics). Pour les plus grandes collectivités, nous pouvons répondre à vos consultations. Nous fournissons tous les documents nécessaires : devis détaillé, CGV, attestations.",
+      "Nous nous adaptons aux procédures indiquées par la collectivité. Le devis et les documents contractuels précisent le périmètre proposé avant toute décision.",
   },
   {
     question: "Peut-on intégrer Econo'kids dans le budget 'numérique éducatif' ?",
     answer:
-      "Oui, Econo'kids entre parfaitement dans les lignes budgétaires dédiées au numérique éducatif ou aux fournitures pédagogiques. À moins de 10€/élève/an, c'est l'équivalent d'un cahier d'exercices. Nous pouvons vous fournir un argumentaire pour votre commission.",
+      "Selon les règles de votre collectivité, Econo'kids peut être étudié dans les dépenses de numérique éducatif ou de ressources pédagogiques. Un devis par classe permet de connaître le coût exact avant décision.",
   },
   {
     question: "Qui gère les comptes des élèves ?",
@@ -32,17 +32,17 @@ const faqsMairies = [
   {
     question: "Les données sont-elles supprimées en fin d'année scolaire ?",
     answer:
-      "Par défaut, oui - conformément au RGPD et aux recommandations pour les données de mineurs. Les données sont automatiquement supprimées en juillet. Vous pouvez exporter des statistiques anonymisées avant suppression si vous souhaitez mesurer l'impact du programme.",
+      "Le nettoyage annuel traite les anciens comptes élèves et enseignants après le 1er août, sous réserve que la tâche programmée soit active. Les établissements peuvent exporter leurs statistiques avant l'anonymisation.",
   },
   {
     question: "Peut-on tester avec une seule école avant de déployer sur toute la commune ?",
     answer:
-      "Absolument. C'est même recommandé. Nous proposons des tarifs adaptés pour un pilote sur 1-2 classes. Cela permet de valider l'adhésion des enseignants et des élèves avant un déploiement plus large.",
+      "Oui. Un pilote sur une ou deux classes peut être défini dans le devis afin d'évaluer l'usage avant un éventuel déploiement plus large.",
   },
   {
     question: "Y a-t-il un engagement de durée ?",
     answer:
-      "Non, les contrats sont annuels sans reconduction tacite. Vous décidez chaque année de renouveler ou non. Nous proposons cependant une remise de 10% pour les engagements sur 3 ans.",
+      "La durée, les conditions de renouvellement et de résiliation sont précisées dans le devis et le contrat soumis à la collectivité.",
   },
 ];
 

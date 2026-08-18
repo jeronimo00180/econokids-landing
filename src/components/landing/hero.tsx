@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
 import { Carousel, CarouselSlide } from "@/components/ui/carousel";
+import {
+  COOKIE_PREFERENCES_KEY,
+  captureConsentedEvent,
+  forwardStoredAttribution,
+} from "@/lib/analytics-consent.mjs";
+import type { MouseEvent } from "react";
 
 // Images du carrousel (WebP optimisées via npm run optimize-images)
 const heroSlides: CarouselSlide[] = [
@@ -48,11 +54,12 @@ const heroSlides: CarouselSlide[] = [
 export function Hero() {
   const posthog = usePostHog();
 
-  const trackCTA = (ctaName: string) => {
-    posthog?.capture("cta_clicked", {
+  const trackCTA = (ctaName: string, event?: MouseEvent<HTMLAnchorElement>) => {
+    captureConsentedEvent(posthog, localStorage.getItem(COOKIE_PREFERENCES_KEY), "cta_clicked", {
       cta_name: ctaName,
       cta_location: "hero",
     });
+    if (event) forwardStoredAttribution(event.currentTarget, window.localStorage);
   };
 
   return (
@@ -73,18 +80,18 @@ export function Hero() {
             </p>
 
             <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl">
-              Econo&apos;kids transforme l&apos;argent de poche en jeu : une simulation de vie 100% sécurisée pour les 8-13 ans. Sans carte bancaire réelle.
+              Econo&apos;kids transforme le budget en jeu : une simulation de vie conçue pour les 8-13 ans, sans argent ni carte bancaire réels.
             </p>
 
             {/* Trust indicators */}
             <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 text-success" />
-                <span>Conforme RGPD</span>
+                <span>Données enfants chiffrées</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 text-success" />
-                <span>Hébergement France</span>
+                <span>Application hébergée en France</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 text-success" />
@@ -97,7 +104,7 @@ export function Hero() {
               <Button size="xl" asChild>
                 <a
                   href="https://app.econokids.fr/inscription"
-                  onClick={() => trackCTA("essai_gratuit_hero")}
+                  onClick={(event) => trackCTA("essai_gratuit_hero", event)}
                 >
                   Démarrer l&apos;essai gratuit de 14 jours
                 </a>
@@ -113,7 +120,7 @@ export function Hero() {
             </div>
 
             <p className="text-sm text-muted-foreground">
-              Satisfait ou remboursé 30 jours. Aucun engagement. <strong className="text-foreground">Aucune carte bancaire requise pour l&apos;essai.</strong>
+              Aucun engagement. <strong className="text-foreground">Aucune carte bancaire requise pour l&apos;essai.</strong>
             </p>
           </div>
 
@@ -122,7 +129,7 @@ export function Hero() {
             <div className="w-full max-w-lg">
               <Carousel
                 slides={heroSlides}
-                autoPlay={true}
+                autoPlay={false}
                 autoPlayInterval={5000}
                 showArrows={true}
                 showDots={true}

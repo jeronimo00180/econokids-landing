@@ -11,9 +11,10 @@ import { CTAB2B } from "@/components/landing/cta-b2b";
 import { Footer } from "@/components/landing/footer";
 
 export const metadata: Metadata = {
-  title: "Econo'kids pour Écoles & Mairies | Programme EDUCFI",
+  title: "Éducation financière à l'école | Econo'kids",
   description:
-    "Programme pédagogique EDUCFI clé en main. Vos élèves CM1/CM2/6ème apprennent à gérer un budget en jouant. Démo gratuite.",
+    "Application pédagogique inspirée des principes EDUCFI pour découvrir le budget en CM1, CM2 et 6ème. Démo gratuite.",
+  alternates: { canonical: "/mairies/" },
   keywords: [
     "éducation financière école",
     "EDUCFI",
@@ -25,10 +26,10 @@ export const metadata: Metadata = {
     "programme scolaire",
   ],
   openGraph: {
-    title: "Econo'kids pour Écoles & Mairies | Programme EDUCFI",
+    title: "Éducation financière à l'école | Econo'kids",
     description:
-      "Programme pédagogique aligné EDUCFI. Formez vos citoyens de demain à gérer leur argent.",
-    url: "https://econokids.fr/mairies",
+      "Une application pédagogique indépendante, inspirée des principes EDUCFI.",
+    url: "https://www.econokids.fr/mairies/",
   },
 };
 

@@ -38,8 +38,8 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
-              La première application française d&apos;éducation financière pour
-              les enfants de 8 à 13 ans.
+              Une simulation ludique pour découvrir le budget, l&apos;épargne et les
+              choix financiers de 8 à 13 ans.
             </p>
             <p className="text-sm text-muted-foreground">
               Fabriqué avec ❤️ en France

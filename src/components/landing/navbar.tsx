@@ -1,11 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Home, Sparkles, CreditCard, HelpCircle } from "lucide-react";
+import { Menu, Sparkles, CreditCard, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePostHog } from "posthog-js/react";
+import {
+  COOKIE_PREFERENCES_KEY,
+  captureConsentedEvent,
+  forwardStoredAttribution,
+} from "@/lib/analytics-consent.mjs";
 import {
   Sheet,
   SheetContent,
@@ -24,11 +29,12 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const posthog = usePostHog();
 
-  const trackClick = (ctaName: string) => {
-    posthog?.capture("cta_clicked", {
+  const trackClick = (event: MouseEvent<HTMLAnchorElement>, ctaName: string) => {
+    captureConsentedEvent(posthog, localStorage.getItem(COOKIE_PREFERENCES_KEY), "cta_clicked", {
       cta_name: ctaName,
       cta_location: "navbar",
     });
+    forwardStoredAttribution(event.currentTarget, window.localStorage);
   };
 
   return (
@@ -64,7 +70,7 @@ export function Navbar() {
           <Button variant="ghost" asChild>
             <a
               href="https://app.econokids.fr/login?tab=parent"
-              onClick={() => trackClick("se_connecter")}
+              onClick={(event) => trackClick(event, "se_connecter")}
             >
               Se connecter
             </a>
@@ -72,7 +78,7 @@ export function Navbar() {
           <Button asChild>
             <a
               href="https://app.econokids.fr/inscription"
-              onClick={() => trackClick("commencer")}
+              onClick={(event) => trackClick(event, "commencer")}
             >
               Commencer
             </a>
@@ -126,8 +132,8 @@ export function Navbar() {
               <Button variant="outline" className="w-full" size="lg" asChild>
                 <a
                   href="https://app.econokids.fr/login?tab=parent"
-                  onClick={() => {
-                    trackClick("se_connecter_mobile");
+                  onClick={(event) => {
+                    trackClick(event, "se_connecter_mobile");
                     setMobileMenuOpen(false);
                   }}
                 >
@@ -137,8 +143,8 @@ export function Navbar() {
               <Button className="w-full" size="lg" asChild>
                 <a
                   href="https://app.econokids.fr/inscription"
-                  onClick={() => {
-                    trackClick("commencer_mobile");
+                  onClick={(event) => {
+                    trackClick(event, "commencer_mobile");
                     setMobileMenuOpen(false);
                   }}
                 >

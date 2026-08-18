@@ -12,9 +12,8 @@ export function CTAB2B() {
             </h2>
 
             <p className="text-white/90 md:text-lg mb-8 max-w-xl mx-auto">
-              Chaque année scolaire sans éducation financière est une génération
-              d&apos;élèves non préparée. Prenez 30 minutes pour découvrir
-              Econo&apos;kids.
+              Découvrez comment Econo&apos;kids peut compléter vos actions d&apos;éducation
+              budgétaire et financière auprès des élèves du cycle 3.
             </p>
 
             <Button

@@ -2,16 +2,16 @@ import { AlertTriangle } from "lucide-react";
 
 const stats = [
   {
-    value: "0 heure",
-    label: "d'éducation financière au programme scolaire français",
+    value: "Dès l'école",
+    label: "des ressources EDUCFI existent pour aborder le budget et les moyens de paiement",
   },
   {
-    value: "1 adulte sur 2",
-    label: "n'a aucune épargne de précaution en France",
+    value: "148 013",
+    label: "dossiers de surendettement déposés en France en 2025 selon la Banque de France",
   },
   {
-    value: "800 000",
-    label: "dossiers de surendettement par an",
+    value: "40 modules",
+    label: "répartis en 6 thèmes et 3 niveaux dans Econo'kids",
   },
 ];
 
@@ -46,10 +46,9 @@ export function StatsB2B() {
           <div className="inline-flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-lg p-4 text-left">
             <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
             <p className="text-sm text-amber-800">
-              Ces adultes en difficulté financière étaient des enfants il y a
-              10-15 ans. Des enfants de vos écoles. En tant qu&apos;élu ou
-              responsable éducation, vous avez le pouvoir de changer ça. Pour
-              les enfants de votre commune. Dès maintenant.
+              Econo&apos;kids est un outil pédagogique indépendant, inspiré des
+              principes EDUCFI. Il complète le travail des équipes éducatives
+              sans se substituer aux programmes officiels.
             </p>
           </div>
         </div>

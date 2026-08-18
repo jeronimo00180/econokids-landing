@@ -35,8 +35,9 @@ export function Carousel({
 
   const autoplayPlugin = Autoplay({
     delay: autoPlayInterval,
-    stopOnInteraction: false,
+    stopOnInteraction: true,
     stopOnMouseEnter: true,
+    stopOnFocusIn: true,
   });
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -66,10 +67,11 @@ export function Carousel({
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
     emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
     return () => {
       emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi, onSelect]);
 
@@ -128,9 +130,11 @@ export function Carousel({
             <div className="flex touch-pan-y">
               {slides.map((slide, index) => (
                 <div key={index} className="flex-[0_0_100%] min-w-0">
-                  <div
-                    className="relative aspect-13/10 cursor-zoom-in group"
+                  <button
+                    type="button"
+                    className="relative aspect-13/10 w-full cursor-zoom-in group"
                     onClick={() => setLightboxOpen(true)}
+                    aria-label={`Agrandir : ${slide.alt}`}
                   >
                     <Image
                       src={slide.src}
@@ -146,7 +150,7 @@ export function Carousel({
                         <span className="text-white text-sm font-medium drop-shadow-lg">Agrandir</span>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 </div>
               ))}
             </div>
