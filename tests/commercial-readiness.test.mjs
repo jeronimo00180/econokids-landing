@@ -85,3 +85,31 @@ test("le SEO utilise le domaine canonique www et des routes Next générées", (
   assert.equal(existsSync(new URL("public/robots.txt", root)), false);
   assert.doesNotMatch(read("src/app/page.tsx"), /https:\/\/econokids\.fr/);
 });
+
+test("toutes les tranches d'âge publiques ciblent les enfants de 9 à 13 ans", () => {
+  const contents = sourceFiles(fileURLToPath(new URL("src/", root)))
+    .map((file) => readFileSync(file, "utf8"))
+    .join("\n");
+
+  assert.doesNotMatch(contents, /\b8\s*(?:-|–|à)\s*13\s*ans\b/i);
+  assert.doesNotMatch(contents, /\b9\s*(?:-|–|à)\s*12\s*ans\b/i);
+  assert.match(contents, /\b9\s*(?:-|–|à)\s*13\s*ans\b/i);
+
+  const homepage = read("src/app/page.tsx");
+  assert.match(homepage, /suggestedMinAge:\s*9/);
+  assert.match(homepage, /suggestedMaxAge:\s*13/);
+
+  const hero = read("src/components/landing/hero.tsx");
+  const problem = read("src/components/landing/problem.tsx");
+  assert.match(hero, /De 9 à 13 ans, apprenez-lui/);
+  assert.doesNotMatch(hero, /À 10 ans/);
+  assert.doesNotMatch(problem, /enfant de 10 ans/);
+});
+
+test("le titre des acquis reste sur une ligne sur ordinateur sans contraindre le mobile", () => {
+  const learningOutcomes = read("src/components/landing/learning-outcomes.tsx");
+
+  assert.match(learningOutcomes, /lg:whitespace-nowrap/);
+  assert.match(learningOutcomes, /max-w-5xl/);
+  assert.doesNotMatch(learningOutcomes, /(?<!:)whitespace-nowrap/);
+});

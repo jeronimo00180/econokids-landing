@@ -41,11 +41,11 @@ const softwareApplicationJsonLd = {
   applicationCategory: "EducationalApplication",
   operatingSystem: "Web",
   description:
-    "Application éducative d'éducation financière pour enfants de 8 à 13 ans : une simulation de vie ludique pour apprendre à gérer un budget, épargner et faire des choix réfléchis.",
+    "Application éducative d'éducation financière pour enfants de 9 à 13 ans : une simulation de vie ludique pour apprendre à gérer un budget, épargner et faire des choix réfléchis.",
   url: "https://www.econokids.fr",
   audience: {
     "@type": "PeopleAudience",
-    suggestedMinAge: 8,
+    suggestedMinAge: 9,
     suggestedMaxAge: 13,
   },
   offers: [

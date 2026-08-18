@@ -20,7 +20,7 @@ const problems = [
     title: "Seul face au défi",
     stat: "Où commencer ?",
     description:
-      "Vous voulez leur apprendre, mais par où commencer ? Quels mots utiliser pour un enfant de 10 ans ?",
+      "Vous voulez leur apprendre, mais par où commencer ? Quels mots utiliser pour un enfant de 9 à 13 ans ?",
   },
   {
     icon: ShoppingCart,

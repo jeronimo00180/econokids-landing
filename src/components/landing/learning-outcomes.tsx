@@ -41,8 +41,8 @@ export function LearningOutcomes() {
     <section className="py-10 md:py-14 bg-emerald-50">
       <div className="container">
         {/* Partie A — Acquis pédagogiques */}
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
+        <div className="text-center max-w-5xl mx-auto mb-8">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl lg:whitespace-nowrap">
             Au fil de la simulation,{" "}
             <span className="text-primary">votre enfant s&apos;entraîne à :</span>
           </h2>

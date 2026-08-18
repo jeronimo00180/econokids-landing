@@ -55,7 +55,7 @@ export function AppPreviewB2B() {
             </h2>
 
             <p className="text-lg text-muted-foreground mb-6">
-              Une simulation de vie économique adaptée aux 9-12 ans. Vos élèves
+              Une simulation de vie économique adaptée aux 9 à 13 ans. Vos élèves
               vivent une année complète : ils choisissent un métier, reçoivent
               un salaire, paient leurs charges et épargnent pour leurs projets.
             </p>

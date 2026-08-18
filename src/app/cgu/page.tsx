@@ -26,7 +26,7 @@ export default function CGUPage() {
             <p>
               Les présentes Conditions Générales d&apos;Utilisation (CGU) régissent l&apos;accès
               et l&apos;utilisation du service Econo&apos;kids, une application web éducative
-              d&apos;éducation financière destinée aux enfants de 8 à 13 ans.
+              d&apos;éducation financière destinée aux enfants de 9 à 13 ans.
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 2 - Éditeur</h2>
@@ -61,7 +61,7 @@ export default function CGUPage() {
 
             <h3 className="text-lg font-medium mt-6 mb-3">4.2 Conditions d&apos;âge</h3>
             <p>
-              Le service est destiné aux enfants de 8 à 13 ans, sous la
+              Le service est destiné aux enfants de 9 à 13 ans, sous la
               supervision d&apos;un parent ou tuteur légal. L&apos;inscription en tant que parent
               requiert d&apos;avoir au moins 18 ans.
             </p>

@@ -7,12 +7,12 @@ export const faqs: FaqItem[] = [
   {
     question: "À quel âge peut-on commencer ?",
     answer:
-      "Econo'kids est conçu pour les enfants de 8 à 13 ans, avec des activités adaptées à la lecture, aux opérations de base et à la découverte de la valeur des choses.",
+      "Econo'kids est conçu pour les enfants de 9 à 13 ans, avec des activités adaptées à la lecture, aux opérations de base et à la découverte de la valeur des choses.",
   },
   {
     question: "Mon enfant est plus jeune ou plus âgé, est-ce adapté ?",
     answer:
-      "Le cœur du programme est pensé pour les 8-13 ans. Pour un enfant plus jeune, un accompagnement renforcé peut être nécessaire. Au-delà de 13 ans, nous vous conseillons de vérifier pendant l'essai si le niveau et le format lui conviennent.",
+      "Le cœur du programme est pensé pour les 9 à 13 ans. En dehors de cette tranche d'âge, nous vous conseillons de vérifier pendant l'essai si le niveau et le format conviennent à votre enfant.",
   },
   {
     question: "Combien de temps par session ?",

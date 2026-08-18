@@ -69,7 +69,7 @@ export function Hero() {
           {/* Contenu texte */}
           <div className="flex flex-col justify-center space-y-5">
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-              À 10 ans, apprenez-lui à gérer son argent{" "}
+              De 9 à 13 ans, apprenez-lui à gérer son argent{" "}
               <span className="text-primary">
                 en s&apos;amusant
               </span>
@@ -80,7 +80,7 @@ export function Hero() {
             </p>
 
             <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl">
-              Econo&apos;kids transforme le budget en jeu : une simulation de vie conçue pour les 8-13 ans, sans argent ni carte bancaire réels.
+              Econo&apos;kids transforme le budget en jeu : une simulation de vie conçue pour les 9 à 13 ans, sans argent ni carte bancaire réels.
             </p>
 
             {/* Trust indicators */}
