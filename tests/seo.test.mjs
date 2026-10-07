@@ -8,6 +8,19 @@ function readBuffer(relativePath) {
   return readFileSync(new URL(relativePath, root));
 }
 
+function read(relativePath) {
+  return readBuffer(relativePath).toString("utf8");
+}
+
+const PAGES_WITH_METADATA = [
+  "src/app/layout.tsx",
+  "src/app/mairies/page.tsx",
+  "src/app/contact/page.tsx",
+  "src/app/cgu/page.tsx",
+  "src/app/confidentialite/page.tsx",
+  "src/app/mentions-legales/page.tsx",
+];
+
 // Lit largeur, hauteur et type de couleur dans l'en-tête IHDR d'un PNG.
 function pngHeader(relativePath) {
   const buffer = readBuffer(relativePath);
@@ -36,8 +49,18 @@ test("les icônes du site sont légères et aux tailles attendues", () => {
 });
 
 test("l'image de partage annonce la même tranche d'âge que le site (9 à 13 ans)", () => {
-  const generator = readBuffer("scripts/generate-og-image.js").toString("utf8");
+  const generator = read("scripts/generate-og-image.js");
 
   assert.doesNotMatch(generator, /\b8\s*(?:-|–|à)\s*13\s*ans\b/i);
   assert.match(generator, /\b9 à 13 ans\b/);
+});
+
+test("chaque page publie l'image de partage et ses propres balises Open Graph et Twitter", () => {
+  const seo = read("src/lib/seo.ts");
+  assert.match(seo, /images:\s*\[OG_IMAGE\]/);
+  assert.match(seo, /twitter:/);
+
+  for (const file of PAGES_WITH_METADATA) {
+    assert.match(read(file), /socialMetadata\(/, `${file} doit utiliser socialMetadata()`);
+  }
 });

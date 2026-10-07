@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Mentions légales | Econo'kids";
+const description = "Mentions légales du site Econo'kids";
 
 export const metadata: Metadata = {
-  title: "Mentions légales | Econo'kids",
-  description: "Mentions légales du site Econo'kids",
+  title,
+  description,
   alternates: { canonical: "/mentions-legales/" },
-  openGraph: { url: "/mentions-legales/" },
+  ...socialMetadata({ title, description, path: "/mentions-legales/" }),
 };
 
 export default function MentionsLegalesPage() {

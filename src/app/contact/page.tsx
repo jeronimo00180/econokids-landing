@@ -4,17 +4,18 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Mail, MessageCircle, Shield, Building2 } from "lucide-react";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact | Econo'kids",
   description:
     "Contactez-nous pour une démo gratuite d'Econo'kids, l'application d'éducation financière pour les écoles et mairies.",
   alternates: { canonical: "/contact/" },
-  openGraph: {
+  ...socialMetadata({
     title: "Contact | Econo'kids",
     description: "Contactez-nous pour une démo gratuite d'Econo'kids.",
-    url: "https://www.econokids.fr/contact/",
-  },
+    path: "/contact/",
+  }),
 };
 
 export default function ContactPage() {

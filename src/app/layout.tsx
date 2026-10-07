@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { CookieConsent } from "@/components/cookie-consent";
 import { PostHogProvider } from "@/components/posthog-provider";
+import { socialMetadata } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,30 +33,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    url: "https://www.econokids.fr/",
-    siteName: "Econo'kids",
+  ...socialMetadata({
     title: "Econo'kids | Éducation financière ludique pour enfants de 9 à 13 ans",
     description:
       "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
-    images: [
-      {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Econo'kids - Éducation financière ludique pour enfants",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Econo'kids | Éducation financière ludique pour enfants de 9 à 13 ans",
-    description:
-      "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
-    images: ["/images/og-image.png"],
-  },
+    path: "/",
+  }),
   metadataBase: new URL("https://www.econokids.fr"),
 };
 

@@ -9,6 +9,7 @@ import { FAQB2B } from "@/components/landing/faq-b2b";
 import { FAQMairies } from "@/components/landing/faq-mairies";
 import { CTAB2B } from "@/components/landing/cta-b2b";
 import { Footer } from "@/components/landing/footer";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Éducation financière à l'école | Econo'kids",
@@ -25,12 +26,12 @@ export const metadata: Metadata = {
     "budget école",
     "programme scolaire",
   ],
-  openGraph: {
+  ...socialMetadata({
     title: "Éducation financière à l'école | Econo'kids",
     description:
       "Une application pédagogique indépendante, inspirée des principes EDUCFI.",
-    url: "https://www.econokids.fr/mairies/",
-  },
+    path: "/mairies/",
+  }),
 };
 
 export default function MairiesPage() {

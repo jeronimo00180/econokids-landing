@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Politique de confidentialité | Econo'kids";
+const description =
+  "Politique de confidentialité et protection des données personnelles d'Econo'kids";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité | Econo'kids",
-  description: "Politique de confidentialité et protection des données personnelles d'Econo'kids",
+  title,
+  description,
   alternates: { canonical: "/confidentialite/" },
-  openGraph: { url: "/confidentialite/" },
+  ...socialMetadata({ title, description, path: "/confidentialite/" }),
 };
 
 export default function ConfidentialitePage() {

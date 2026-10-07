@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Conditions Générales d'Utilisation | Econo'kids";
+const description = "Conditions générales d'utilisation et de vente d'Econo'kids";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales d'Utilisation | Econo'kids",
-  description: "Conditions générales d'utilisation et de vente d'Econo'kids",
+  title,
+  description,
   alternates: { canonical: "/cgu/" },
-  openGraph: { url: "/cgu/" },
+  ...socialMetadata({ title, description, path: "/cgu/" }),
 };
 
 export default function CGUPage() {
