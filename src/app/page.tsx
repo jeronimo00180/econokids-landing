@@ -11,12 +11,22 @@ import { FAQ } from "@/components/landing/faq";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
 import { faqs } from "@/lib/faq-data";
-import { faqPageJsonLd } from "@/lib/seo";
+import { BRAND_ALTERNATE_NAMES, faqPageJsonLd } from "@/lib/seo";
+
+// Nom du site dans les résultats de Google (site names).
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Econo'kids",
+  alternateName: BRAND_ALTERNATE_NAMES,
+  url: "https://www.econokids.fr/",
+};
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Econo'kids",
+  alternateName: BRAND_ALTERNATE_NAMES,
   legalName: "Jérôme Rembert EI",
   identifier: "SIRET 102 279 643 00013",
   url: "https://www.econokids.fr",
@@ -39,6 +49,7 @@ const softwareApplicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Econo'kids",
+  alternateName: BRAND_ALTERNATE_NAMES,
   applicationCategory: "EducationalApplication",
   operatingSystem: "Web",
   description:
@@ -92,6 +103,12 @@ const homeFaqJsonLd = faqPageJsonLd(faqs);
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webSiteJsonLd),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import type { FaqItem } from "@/lib/faq-data";
 
+// Graphies de la marque que les internautes tapent aussi : sans apostrophe,
+// « Econo'kids » n'est pas trouvé (audit SEO du 7 octobre 2026). Le texte
+// visible du site garde « Econo'kids » tant que la graphie n'est pas tranchée.
+export const BRAND_ALTERNATE_NAMES = ["EconoKids", "Econokids"];
+
 // Image de partage commune (générée par scripts/generate-og-image.js).
 const OG_IMAGE = {
   url: "/images/og-image.png",

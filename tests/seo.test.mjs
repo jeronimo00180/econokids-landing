@@ -79,3 +79,13 @@ test("la page Mairies publie en données structurées les FAQ qu'elle affiche", 
     assert.doesNotMatch(content, /question:\s*"/, `${component} ne doit plus contenir ses questions en dur`);
   }
 });
+
+test("les données structurées de l'accueil donnent aussi la graphie sans apostrophe", () => {
+  const seo = read("src/lib/seo.ts");
+  assert.match(seo, /BRAND_ALTERNATE_NAMES = \["EconoKids", "Econokids"\]/);
+
+  const homepage = read("src/app/page.tsx");
+  assert.match(homepage, /"@type": "WebSite"/);
+  const alternateNameUses = homepage.match(/alternateName: BRAND_ALTERNATE_NAMES/g) ?? [];
+  assert.equal(alternateNameUses.length, 3, "WebSite, Organization et SoftwareApplication");
+});
