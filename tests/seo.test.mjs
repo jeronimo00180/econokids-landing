@@ -34,3 +34,10 @@ test("les icônes du site sont légères et aux tailles attendues", () => {
   assert.equal(appleIcon.height, 180);
   assert.ok(statSync(new URL("public/apple-touch-icon.png", root)).size < MAX_BYTES);
 });
+
+test("l'image de partage annonce la même tranche d'âge que le site (9 à 13 ans)", () => {
+  const generator = readBuffer("scripts/generate-og-image.js").toString("utf8");
+
+  assert.doesNotMatch(generator, /\b8\s*(?:-|–|à)\s*13\s*ans\b/i);
+  assert.match(generator, /\b9 à 13 ans\b/);
+});
