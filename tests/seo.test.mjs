@@ -64,3 +64,18 @@ test("chaque page publie l'image de partage et ses propres balises Open Graph et
     assert.match(read(file), /socialMetadata\(/, `${file} doit utiliser socialMetadata()`);
   }
 });
+
+test("la page Mairies publie en données structurées les FAQ qu'elle affiche", () => {
+  const page = read("src/app/mairies/page.tsx");
+  assert.match(page, /application\/ld\+json/);
+  assert.match(page, /faqPageJsonLd\(\[\.\.\.faqsB2B, \.\.\.faqsMairies\]\)/);
+
+  for (const component of [
+    "src/components/landing/faq-b2b.tsx",
+    "src/components/landing/faq-mairies.tsx",
+  ]) {
+    const content = read(component);
+    assert.match(content, /@\/lib\/faq-mairies-data/);
+    assert.doesNotMatch(content, /question:\s*"/, `${component} ne doit plus contenir ses questions en dur`);
+  }
+});

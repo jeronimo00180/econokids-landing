@@ -7,44 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Building2 } from "lucide-react";
-
-const faqsMairies = [
-  {
-    question: "Comment se passe le processus d'achat pour une mairie ?",
-    answer:
-      "Nous nous adaptons aux procédures indiquées par la collectivité. Le devis et les documents contractuels précisent le périmètre proposé avant toute décision.",
-  },
-  {
-    question: "Peut-on intégrer Econo'kids dans le budget 'numérique éducatif' ?",
-    answer:
-      "Selon les règles de votre collectivité, Econo'kids peut être étudié dans les dépenses de numérique éducatif ou de ressources pédagogiques. Un devis par classe permet de connaître le coût exact avant décision.",
-  },
-  {
-    question: "Qui gère les comptes des élèves ?",
-    answer:
-      "Vous avez le choix : soit la mairie centralise la gestion via un responsable éducation, soit chaque directeur d'école gère ses classes. Dans les deux cas, vous disposez d'un tableau de bord avec une vue globale sur toutes les écoles de la commune.",
-  },
-  {
-    question: "Que se passe-t-il en cas de changement d'enseignant ou d'élève en cours d'année ?",
-    answer:
-      "L'interface d'administration permet d'ajouter ou retirer des élèves à tout moment. Les données sont liées à l'élève, pas à l'enseignant. Si un élève change de classe, sa progression est conservée.",
-  },
-  {
-    question: "Les données sont-elles supprimées en fin d'année scolaire ?",
-    answer:
-      "Le nettoyage annuel traite les anciens comptes élèves et enseignants après le 1er août, sous réserve que la tâche programmée soit active. Les établissements peuvent exporter leurs statistiques avant l'anonymisation.",
-  },
-  {
-    question: "Peut-on tester avec une seule école avant de déployer sur toute la commune ?",
-    answer:
-      "Oui. Un pilote sur une ou deux classes peut être défini dans le devis afin d'évaluer l'usage avant un éventuel déploiement plus large.",
-  },
-  {
-    question: "Y a-t-il un engagement de durée ?",
-    answer:
-      "La durée, les conditions de renouvellement et de résiliation sont précisées dans le devis et le contrat soumis à la collectivité.",
-  },
-];
+import { faqsMairies } from "@/lib/faq-mairies-data";
 
 export function FAQMairies() {
   return (

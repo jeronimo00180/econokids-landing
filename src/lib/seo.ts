@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { FaqItem } from "@/lib/faq-data";
 
 // Image de partage commune (générée par scripts/generate-og-image.js).
 const OG_IMAGE = {
@@ -40,5 +41,22 @@ export function socialMetadata({
       description,
       images: [OG_IMAGE.url],
     },
+  };
+}
+
+// Données structurées FAQPage, construites à partir des questions affichées
+// sur la page (elles doivent rester identiques au texte visible).
+export function faqPageJsonLd(items: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 }

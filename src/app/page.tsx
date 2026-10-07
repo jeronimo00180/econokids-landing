@@ -11,6 +11,7 @@ import { FAQ } from "@/components/landing/faq";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
 import { faqs } from "@/lib/faq-data";
+import { faqPageJsonLd } from "@/lib/seo";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -86,18 +87,7 @@ const softwareApplicationJsonLd = {
   ],
 };
 
-const faqPageJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
+const homeFaqJsonLd = faqPageJsonLd(faqs);
 
 export default function HomePage() {
   return (
@@ -117,7 +107,7 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqPageJsonLd),
+          __html: JSON.stringify(homeFaqJsonLd),
         }}
       />
       <Navbar />
