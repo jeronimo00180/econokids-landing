@@ -11,9 +11,9 @@ const footerLinks = {
     { label: "FAQ", href: "/#faq" },
   ],
   legal: [
-    { label: "Mentions légales", href: "/mentions-legales" },
-    { label: "Politique de confidentialité", href: "/confidentialite" },
-    { label: "CGU", href: "/cgu" },
+    { label: "Mentions légales", href: "/mentions-legales/" },
+    { label: "Politique de confidentialité", href: "/confidentialite/" },
+    { label: "CGU", href: "/cgu/" },
     { label: "Gestion des cookies", href: "#cookies", isCookieLink: true },
   ],
   contact: [
@@ -114,7 +114,7 @@ export function Footer() {
                 Pour les mairies et écoles
               </p>
               <Link
-                href="/mairies"
+                href="/mairies/"
                 className="text-sm text-primary hover:underline font-medium"
               >
                 Demander une Démo Gratuite pour Mon Établissement →

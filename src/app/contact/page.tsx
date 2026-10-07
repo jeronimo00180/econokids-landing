@@ -116,7 +116,7 @@ export default function ContactPage() {
           {/* Back link */}
           <div className="text-center">
             <Link
-              href="/mairies"
+              href="/mairies/"
               className="text-primary hover:underline text-sm"
             >
               ← Retour à la page mairies

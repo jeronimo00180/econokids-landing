@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
-import { readFileSync, statSync } from "node:fs";
+import { readdirSync, readFileSync, statSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
@@ -88,4 +90,25 @@ test("les données structurées de l'accueil donnent aussi la graphie sans apost
   assert.match(homepage, /"@type": "WebSite"/);
   const alternateNameUses = homepage.match(/alternateName: BRAND_ALTERNATE_NAMES/g) ?? [];
   assert.equal(alternateNameUses.length, 3, "WebSite, Organization et SoftwareApplication");
+});
+
+function sourceFiles(directory) {
+  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) return sourceFiles(path);
+    return /\.(ts|tsx)$/.test(entry.name) ? [path] : [];
+  });
+}
+
+test("les liens internes pointent directement vers l'URL avec barre finale", () => {
+  // trailingSlash: true : un lien sans barre finale coûte une redirection 308.
+  const internalHref = /href\s*[:=]\s*\{?\s*["'](\/[^"'#?]*)["']/g;
+  const offenders = sourceFiles(fileURLToPath(new URL("src/", root))).flatMap((file) =>
+    [...readFileSync(file, "utf8").matchAll(internalHref)]
+      .map((match) => match[1])
+      .filter((path) => !path.endsWith("/") && !/\.[a-z0-9]+$/i.test(path))
+      .map((path) => `${file}: ${path}`)
+  );
+
+  assert.deepEqual(offenders, []);
 });

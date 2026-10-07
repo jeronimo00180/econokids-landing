@@ -208,7 +208,7 @@ export default function CGUPage() {
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 11 - Données personnelles</h2>
             <p>
               Le traitement des données personnelles est décrit dans notre{" "}
-              <a href="/confidentialite" className="text-primary hover:underline">
+              <a href="/confidentialite/" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>.
             </p>

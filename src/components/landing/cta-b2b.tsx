@@ -21,7 +21,7 @@ export function CTAB2B() {
               className="bg-white text-primary hover:bg-white/90"
               asChild
             >
-              <a href="/contact">Demander une démo gratuite</a>
+              <a href="/contact/">Demander une démo gratuite</a>
             </Button>
 
             {/* Contact direct */}
