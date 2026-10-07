@@ -41,14 +41,14 @@ const features = [
     icon: BookOpen,
     title: "Mini-cours thématiques",
     description:
-      "7 thèmes essentiels, 3 niveaux de difficulté. L'argent au quotidien, le travail, l'inflation, l'économie circulaire, les pièges de la pub.",
+      "6 thèmes essentiels, 3 niveaux de difficulté et 40 modules pour progresser du budget quotidien jusqu'aux choix de consommation.",
     highlight: "Apprentissage progressif",
   },
   {
     icon: Trophy,
     title: "9 badges à débloquer",
     description:
-      "Apprentissage, Calculateur, Économe, Généreux, Investisseur... Chaque badge récompense un accomplissement. Collection et fierté garanties.",
+      "Apprentissage, Calculateur, Économe, Généreux, Investisseur... Chaque badge matérialise une étape franchie et encourage la progression.",
     highlight: "Motivation et progression",
   },
 ];

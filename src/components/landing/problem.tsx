@@ -3,24 +3,24 @@ import { HelpCircle, BookX, TrendingDown, ShoppingCart } from "lucide-react";
 const problems = [
   {
     icon: BookX,
-    title: "L'école fait l'impasse",
-    stat: "0h au programme",
+    title: "Des repères dès l'école",
+    stat: "EDUCFI",
     description:
-      "0 heure d'éducation financière au programme scolaire français. Vos enfants apprennent les fractions, mais pas comment faire un budget.",
+      "Le dispositif public EDUCFI propose des ressources dès l'école. Econo'kids offre un terrain d'entraînement complémentaire à la maison.",
   },
   {
     icon: TrendingDown,
-    title: "Des adultes en difficulté",
-    stat: "1 adulte sur 2",
+    title: "Un enjeu très concret",
+    stat: "148 013 dossiers",
     description:
-      "1 Français sur 2 n'a aucune épargne de précaution. 800 000 dossiers de surendettement chaque année.",
+      "148 013 dossiers de surendettement ont été déposés en France en 2025, selon la Banque de France.",
   },
   {
     icon: HelpCircle,
     title: "Seul face au défi",
     stat: "Où commencer ?",
     description:
-      "Vous voulez leur apprendre, mais par où commencer ? Quels mots utiliser pour un enfant de 10 ans ?",
+      "Vous voulez leur apprendre, mais par où commencer ? Quels mots utiliser pour un enfant de 9 à 13 ans ?",
   },
   {
     icon: ShoppingCart,
@@ -38,8 +38,8 @@ export function Problem() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
-            L&apos;école leur apprend les maths.{" "}
-            <span className="text-primary">Pas à gérer leur argent.</span>
+            Les maths donnent les outils.{" "}
+            <span className="text-primary">La pratique donne les bons réflexes.</span>
           </h2>
         </div>
 
@@ -65,11 +65,10 @@ export function Problem() {
         {/* Agitation paragraph */}
         <div className="mt-8 max-w-3xl mx-auto text-center">
           <p className="text-muted-foreground leading-relaxed">
-            Chaque jour qui passe sans éducation financière, votre enfant prend
-            des habitudes. La gratification instantanée. L&apos;envie de tout
-            avoir. L&apos;incompréhension de l&apos;effort derrière l&apos;argent.{" "}
+            Parler de budget, d&apos;épargne et de choix permet de relier les calculs
+            à des situations concrètes du quotidien.{" "}
             <strong className="text-foreground">
-              Ce n&apos;est pas une fatalité. Mais ça commence maintenant.
+              Econo&apos;kids propose un cadre ludique pour s&apos;entraîner en famille.
             </strong>
           </p>
         </div>

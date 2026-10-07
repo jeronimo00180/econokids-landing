@@ -7,12 +7,12 @@ export const faqs: FaqItem[] = [
   {
     question: "À quel âge peut-on commencer ?",
     answer:
-      "Econo'kids est conçu pour les enfants de 8 à 13 ans. C'est l'âge idéal : ils maîtrisent la lecture, les opérations de base, et commencent à comprendre la valeur des choses.",
+      "Econo'kids est conçu pour les enfants de 9 à 13 ans, avec des activités adaptées à la lecture, aux opérations de base et à la découverte de la valeur des choses.",
   },
   {
     question: "Mon enfant est plus jeune ou plus âgé, est-ce adapté ?",
     answer:
-      "Le cœur du programme est pensé pour les 8-13 ans. Un enfant de 7 ans bon lecteur s'y amusera tout autant avec un peu d'aide au démarrage. Au-delà de 13 ans, c'est une excellente révision des bases avant notre future version dédiée aux adolescents, actuellement en préparation !",
+      "Le cœur du programme est pensé pour les 9 à 13 ans. En dehors de cette tranche d'âge, nous vous conseillons de vérifier pendant l'essai si le niveau et le format conviennent à votre enfant.",
   },
   {
     question: "Combien de temps par session ?",
@@ -22,7 +22,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Mon enfant va-t-il se décourager s'il fait des erreurs ?",
     answer:
-      "Non ! Notre système d'aide est conçu pour ça. Après 3 erreurs, on lui montre une partie du résultat. Après 5 erreurs, on lui donne la solution complète avec des encouragements. L'objectif n'est jamais de punir, mais d'apprendre. Chaque message est positif.",
+      "Le système d'aide est conçu pour limiter le blocage. Après 3 erreurs, une partie du résultat est affichée ; après 5 erreurs, la solution complète est proposée avec un message d'encouragement. Le parent peut suivre les aides utilisées.",
   },
   {
     question: "Puis-je suivre les progrès de mon enfant ?",
@@ -32,7 +32,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Les données de mon enfant sont-elles sécurisées ?",
     answer:
-      "Oui, c'est notre priorité absolue. Prénom et nom sont chiffrés. Hébergement 100% en France. Pas de publicité, pas de tracking. Conforme RGPD strict. Vous pouvez exporter ou supprimer toutes les données à tout moment.",
+      "Nous limitons les données collectées et chiffrons le prénom de l'enfant. L'application est hébergée chez OVH en France et la base de données chez Neon à Francfort. Il n'y a ni publicité ni outil analytics dans l'espace enfant. Le parent peut demander l'export ou la suppression des données depuis son espace.",
   },
   {
     question: "Puis-je ajouter plusieurs enfants ?",
@@ -42,11 +42,11 @@ export const faqs: FaqItem[] = [
   {
     question: "Puis-je annuler à tout moment ?",
     answer:
-      "Oui, sans engagement. Vous pouvez annuler depuis votre espace parent en 2 clics. Vous gardez l'accès jusqu'à la fin de votre période payée.",
+      "Oui, sans engagement de durée au-delà de la période souscrite. Vous pouvez annuler depuis votre espace parent et gardez l'accès jusqu'à la fin de la période payée.",
   },
   {
     question: "Je suis enseignant, comment utiliser Econo'kids en classe ?",
     answer:
-      "Econo'kids propose également une offre dédiée aux collectivités et établissements scolaires. Contactez-nous à support@econokids.fr pour découvrir notre programme éducatif avec accompagnement enseignant, tableau de bord de suivi de classe et ressources pédagogiques.",
+      "Econo'kids propose également une offre dédiée aux collectivités et établissements scolaires. Contactez-nous à support@econokids.fr pour découvrir le parcours, le tableau de bord de classe et définir l'accompagnement souhaité dans un devis.",
   },
 ];

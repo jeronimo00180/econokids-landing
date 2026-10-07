@@ -7,44 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Building2 } from "lucide-react";
-
-const faqsMairies = [
-  {
-    question: "Comment se passe le processus d'achat pour une mairie ?",
-    answer:
-      "Nous nous adaptons à vos procédures. Pour les petites communes, un simple bon de commande suffit généralement (montants inférieurs aux seuils de marchés publics). Pour les plus grandes collectivités, nous pouvons répondre à vos consultations. Nous fournissons tous les documents nécessaires : devis détaillé, CGV, attestations.",
-  },
-  {
-    question: "Peut-on intégrer Econo'kids dans le budget 'numérique éducatif' ?",
-    answer:
-      "Oui, Econo'kids entre parfaitement dans les lignes budgétaires dédiées au numérique éducatif ou aux fournitures pédagogiques. À moins de 10€/élève/an, c'est l'équivalent d'un cahier d'exercices. Nous pouvons vous fournir un argumentaire pour votre commission.",
-  },
-  {
-    question: "Qui gère les comptes des élèves ?",
-    answer:
-      "Vous avez le choix : soit la mairie centralise la gestion via un responsable éducation, soit chaque directeur d'école gère ses classes. Dans les deux cas, vous disposez d'un tableau de bord avec une vue globale sur toutes les écoles de la commune.",
-  },
-  {
-    question: "Que se passe-t-il en cas de changement d'enseignant ou d'élève en cours d'année ?",
-    answer:
-      "L'interface d'administration permet d'ajouter ou retirer des élèves à tout moment. Les données sont liées à l'élève, pas à l'enseignant. Si un élève change de classe, sa progression est conservée.",
-  },
-  {
-    question: "Les données sont-elles supprimées en fin d'année scolaire ?",
-    answer:
-      "Par défaut, oui - conformément au RGPD et aux recommandations pour les données de mineurs. Les données sont automatiquement supprimées en juillet. Vous pouvez exporter des statistiques anonymisées avant suppression si vous souhaitez mesurer l'impact du programme.",
-  },
-  {
-    question: "Peut-on tester avec une seule école avant de déployer sur toute la commune ?",
-    answer:
-      "Absolument. C'est même recommandé. Nous proposons des tarifs adaptés pour un pilote sur 1-2 classes. Cela permet de valider l'adhésion des enseignants et des élèves avant un déploiement plus large.",
-  },
-  {
-    question: "Y a-t-il un engagement de durée ?",
-    answer:
-      "Non, les contrats sont annuels sans reconduction tacite. Vous décidez chaque année de renouveler ou non. Nous proposons cependant une remise de 10% pour les engagements sur 3 ans.",
-  },
-];
+import { faqsMairies } from "@/lib/faq-mairies-data";
 
 export function FAQMairies() {
   return (

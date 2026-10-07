@@ -18,9 +18,9 @@ export function HeroB2B() {
           </h1>
 
           <p className="text-lg text-muted-foreground md:text-xl mb-6 max-w-2xl mx-auto">
-            0 heure d&apos;éducation financière au programme scolaire. Pourtant,
-            gérer un budget est une compétence essentielle pour la vie. Econo&apos;kids
-            permet à vos élèves du 3ème cycle (CM1/CM2/6ème) d&apos;apprendre en s&apos;amusant.
+            L&apos;EDUCFI encourage l&apos;apprentissage des notions budgétaires dès l&apos;école.
+            Econo&apos;kids propose aux élèves du cycle 3 (CM1, CM2 et 6ème) un support
+            pratique et ludique pour les mettre en situation.
           </p>
 
           {/* Badges rassurants */}
@@ -29,34 +29,34 @@ export function HeroB2B() {
               <span className="text-blue-600 font-medium text-sm">🎓 Inspiré des recommandations EDUCFI</span>
             </div>
             <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-lg px-4 py-2">
-              <span className="text-green-600 font-medium text-sm">💰 Moins de 10€/élève/an</span>
+              <span className="text-green-600 font-medium text-sm">💰 Tarification par classe sur devis</span>
             </div>
             <div className="inline-flex items-center gap-2 bg-purple-50 border border-purple-200 rounded-lg px-4 py-2">
               <Globe className="h-4 w-4 text-purple-600" />
-              <span className="text-purple-600 font-medium text-sm">Web App - Zéro installation</span>
+              <span className="text-purple-600 font-medium text-sm">Web App sans installation serveur</span>
             </div>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 mb-10 max-w-xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">0</div>
-              <div className="text-sm text-muted-foreground">préparation enseignant</div>
+              <div className="text-3xl font-bold text-primary">Tutoriel</div>
+              <div className="text-sm text-muted-foreground">de prise en main intégré</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">autonome pour l&apos;élève</div>
+              <div className="text-3xl font-bold text-primary">Suivi</div>
+              <div className="text-sm text-muted-foreground">par l&apos;enseignant</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">1 clic</div>
-              <div className="text-sm text-muted-foreground">pour démarrer</div>
+              <div className="text-3xl font-bold text-primary">Navigateur</div>
+              <div className="text-sm text-muted-foreground">web récent requis</div>
             </div>
           </div>
 
           {/* CTA */}
           <div className="flex flex-col gap-3 sm:flex-row justify-center mb-8">
             <Button size="xl" asChild>
-              <a href="/contact">Demander une démo gratuite</a>
+              <a href="/contact/">Demander une démo gratuite</a>
             </Button>
           </div>
 

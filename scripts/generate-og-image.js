@@ -70,7 +70,7 @@ function buildBackgroundSvg() {
 function buildTextSvg() {
   const title = escapeXml("L'éducation financière, en jouant");
   const subtitle = escapeXml(
-    "Pour les 8-13 ans · Essai gratuit de 14 jours"
+    "Pour les 9 à 13 ans · Essai gratuit de 14 jours"
   );
   const domain = escapeXml("econokids.fr");
 

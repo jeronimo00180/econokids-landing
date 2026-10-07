@@ -1,9 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import {
+  buildAnalyticsConsentCookie,
+  COOKIE_CONSENT_EVENT,
+  COOKIE_CONSENT_KEY,
+  COOKIE_PREFERENCES_KEY,
+} from "@/lib/analytics-consent.mjs";
 
 type CookieConsent = "pending" | "accepted" | "rejected" | "custom";
 
@@ -13,47 +19,37 @@ interface CookiePreferences {
   marketing: boolean;
 }
 
-const COOKIE_CONSENT_KEY = "econokids_cookie_consent";
-const COOKIE_PREFERENCES_KEY = "econokids_cookie_preferences";
+const DEFAULT_PREFERENCES: CookiePreferences = {
+  essential: true,
+  analytics: false,
+  marketing: false,
+};
+
+function subscribeToConsent(onStoreChange: () => void) {
+  window.addEventListener(COOKIE_CONSENT_EVENT, onStoreChange);
+  return () => window.removeEventListener(COOKIE_CONSENT_EVENT, onStoreChange);
+}
+
+function getConsentSnapshot() {
+  return localStorage.getItem(COOKIE_CONSENT_KEY) ?? "";
+}
 
 export function CookieConsent() {
-  const [showBanner, setShowBanner] = useState(false);
+  const consent = useSyncExternalStore(subscribeToConsent, getConsentSnapshot, () => "server");
   const [showDetails, setShowDetails] = useState(false);
-  const [preferences, setPreferences] = useState<CookiePreferences>({
-    essential: true,
-    analytics: false,
-    marketing: false,
-  });
-
-  useEffect(() => {
-    // Vérifier si l'utilisateur a déjà fait un choix
-    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (!consent) {
-      setShowBanner(true);
-    } else {
-      // Charger les préférences existantes
-      const savedPrefs = localStorage.getItem(COOKIE_PREFERENCES_KEY);
-      if (savedPrefs) {
-        try {
-          setPreferences(JSON.parse(savedPrefs));
-        } catch {
-          localStorage.removeItem(COOKIE_PREFERENCES_KEY);
-          localStorage.removeItem(COOKIE_CONSENT_KEY);
-          setShowBanner(true);
-        }
-      }
-    }
-  }, []);
+  const [preferences, setPreferences] = useState<CookiePreferences>(DEFAULT_PREFERENCES);
+  const showBanner = consent === "";
 
   const saveConsent = (consent: CookieConsent, prefs: CookiePreferences) => {
     localStorage.setItem(COOKIE_CONSENT_KEY, consent);
     localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(prefs));
+    document.cookie = buildAnalyticsConsentCookie(
+      prefs.analytics,
+      window.location.hostname
+    );
     setPreferences(prefs);
-    setShowBanner(false);
-
-    // Déclencher un événement pour que les scripts puissent réagir
     window.dispatchEvent(
-      new CustomEvent("cookieConsentChanged", { detail: prefs })
+      new CustomEvent(COOKIE_CONSENT_EVENT, { detail: prefs })
     );
   };
 
@@ -61,7 +57,7 @@ export function CookieConsent() {
     saveConsent("accepted", {
       essential: true,
       analytics: true,
-      marketing: true,
+      marketing: false,
     });
   };
 
@@ -80,17 +76,25 @@ export function CookieConsent() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-gray-200 shadow-lg">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-consent-title"
+      className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-gray-200 shadow-lg"
+    >
       <div className="container max-w-4xl mx-auto">
         {!showDetails ? (
           // Bannière simplifiée
           <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
             <div className="flex-1">
+              <h2 id="cookie-consent-title" className="font-semibold mb-1">
+                Vos préférences de confidentialité
+              </h2>
               <p className="text-sm text-gray-700">
-                Nous utilisons des cookies pour améliorer votre expérience sur notre site.
-                Les cookies essentiels sont nécessaires au fonctionnement du site.{" "}
+                Avec votre accord, PostHog nous aide à comprendre l&apos;usage du site.
+                Le refus n&apos;empêche aucune fonctionnalité essentielle.{" "}
                 <Link
-                  href="/confidentialite"
+                  href="/confidentialite/"
                   className="text-primary hover:underline"
                 >
                   En savoir plus
@@ -124,7 +128,7 @@ export function CookieConsent() {
               <X className="h-5 w-5" />
             </button>
 
-            <h3 className="font-semibold mb-4">Gestion des cookies</h3>
+            <h2 id="cookie-consent-title" className="font-semibold mb-4">Gestion des cookies</h2>
 
             <div className="space-y-4 mb-6">
               {/* Cookies essentiels */}
@@ -163,8 +167,8 @@ export function CookieConsent() {
                     Cookies d&apos;analyse
                   </label>
                   <p className="text-xs text-gray-500">
-                    Nous aident à comprendre comment vous utilisez le site (PostHog -
-                    hébergé en Europe, données anonymisées).
+                    Mesure d&apos;audience PostHog hébergée dans l&apos;Union européenne.
+                    Nous collectons uniquement des données de navigation après votre accord.
                   </p>
                 </div>
               </div>
@@ -175,9 +179,7 @@ export function CookieConsent() {
                   type="checkbox"
                   id="marketing"
                   checked={preferences.marketing}
-                  onChange={(e) =>
-                    setPreferences({ ...preferences, marketing: e.target.checked })
-                  }
+                  disabled
                   className="mt-1 h-4 w-4 accent-primary"
                 />
                 <div>
@@ -185,8 +187,7 @@ export function CookieConsent() {
                     Cookies marketing
                   </label>
                   <p className="text-xs text-gray-500">
-                    Utilisés pour mesurer l&apos;efficacité de nos campagnes publicitaires.
-                    Non utilisés actuellement.
+                    Aucun cookie publicitaire n&apos;est utilisé actuellement.
                   </p>
                 </div>
               </div>
@@ -208,7 +209,7 @@ export function CookieConsent() {
               Vous pouvez modifier vos préférences à tout moment en cliquant sur
               &quot;Cookies&quot; en bas de page.{" "}
               <Link
-                href="/confidentialite"
+                href="/confidentialite/"
                 className="text-primary hover:underline"
               >
                 Politique de confidentialité
@@ -222,44 +223,10 @@ export function CookieConsent() {
 }
 
 // Hook pour vérifier le consentement dans les autres composants
-export function useCookieConsent() {
-  const [consent, setConsent] = useState<CookiePreferences>({
-    essential: true,
-    analytics: false,
-    marketing: false,
-  });
-
-  useEffect(() => {
-    const savedPrefs = localStorage.getItem(COOKIE_PREFERENCES_KEY);
-    if (savedPrefs) {
-      try {
-        setConsent(JSON.parse(savedPrefs));
-      } catch {
-        localStorage.removeItem(COOKIE_PREFERENCES_KEY);
-      }
-    }
-
-    const handleConsentChange = (e: CustomEvent<CookiePreferences>) => {
-      setConsent(e.detail);
-    };
-
-    window.addEventListener(
-      "cookieConsentChanged",
-      handleConsentChange as EventListener
-    );
-    return () => {
-      window.removeEventListener(
-        "cookieConsentChanged",
-        handleConsentChange as EventListener
-      );
-    };
-  }, []);
-
-  return consent;
-}
-
 // Fonction pour ouvrir le panneau de cookies (depuis le footer par exemple)
 export function openCookieSettings() {
   localStorage.removeItem(COOKIE_CONSENT_KEY);
-  window.location.reload();
+  localStorage.removeItem(COOKIE_PREFERENCES_KEY);
+  document.cookie = buildAnalyticsConsentCookie(false, window.location.hostname);
+  window.dispatchEvent(new CustomEvent(COOKIE_CONSENT_EVENT, { detail: DEFAULT_PREFERENCES }));
 }

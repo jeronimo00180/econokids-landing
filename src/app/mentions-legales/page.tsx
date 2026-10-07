@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Mentions légales | Econo'kids";
+const description = "Mentions légales du site Econo'kids";
 
 export const metadata: Metadata = {
-  title: "Mentions légales | Econo'kids",
-  description: "Mentions légales du site Econo'kids",
+  title,
+  description,
+  alternates: { canonical: "/mentions-legales/" },
+  ...socialMetadata({ title, description, path: "/mentions-legales/" }),
 };
 
 export default function MentionsLegalesPage() {
@@ -17,7 +23,7 @@ export default function MentionsLegalesPage() {
 
           <div className="prose prose-slate max-w-none">
             <p className="text-sm text-muted-foreground mb-8">
-              Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
+              Dernière mise à jour : 18 août 2026
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">1. Éditeur du site</h2>
@@ -25,15 +31,15 @@ export default function MentionsLegalesPage() {
               Le site <strong>econokids.fr</strong> est édité par :
             </p>
             <ul className="list-none pl-0 space-y-1">
-              <li><strong>Nom :</strong> XXX (Auto-entrepreneur)</li>
-              <li><strong>SIRET :</strong> XXX</li>
-              <li><strong>Adresse :</strong> XXX</li>
+              <li><strong>Nom :</strong> Jérôme Rembert EI</li>
+              <li><strong>SIRET :</strong> 102 279 643 00013</li>
+              <li><strong>Adresse :</strong> 61 rue de Lyon, 75012 Paris</li>
               <li><strong>Email :</strong> support@econokids.fr</li>
             </ul>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">2. Directeur de la publication</h2>
             <p>
-              Le directeur de la publication est : <strong>XXX</strong>
+              Le directeur de la publication est : <strong>Jérôme Rembert</strong>
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">3. Hébergement</h2>
@@ -41,10 +47,14 @@ export default function MentionsLegalesPage() {
               Le site est hébergé par :
             </p>
             <ul className="list-none pl-0 space-y-1">
-              <li><strong>Nom :</strong> OVH SAS</li>
-              <li><strong>Adresse :</strong> 2 rue Kellermann, 59100 Roubaix, France</li>
-              <li><strong>Téléphone :</strong> 1007</li>
+              <li><strong>Nom :</strong> Vercel Inc.</li>
+              <li><strong>Adresse :</strong> 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis</li>
+              <li><strong>Site :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">vercel.com</a></li>
             </ul>
+            <p>
+              L&apos;application est exploitée sur une infrastructure OVH en France et sa base
+              de données est hébergée par Neon dans la région européenne de Francfort.
+            </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">4. Propriété intellectuelle</h2>
             <p>
@@ -59,7 +69,7 @@ export default function MentionsLegalesPage() {
             <p>
               Les informations concernant la collecte et le traitement des données
               personnelles sont détaillées dans notre{" "}
-              <a href="/confidentialite" className="text-primary hover:underline">
+              <a href="/confidentialite/" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>.
             </p>
@@ -75,7 +85,7 @@ export default function MentionsLegalesPage() {
               Le site utilise des cookies essentiels au fonctionnement du service et
               des cookies d&apos;analyse pour améliorer l&apos;expérience utilisateur. Pour plus
               d&apos;informations, consultez notre{" "}
-              <a href="/confidentialite" className="text-primary hover:underline">
+              <a href="/confidentialite/" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>.
             </p>

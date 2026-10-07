@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { CookieConsent } from "@/components/cookie-consent";
 import { PostHogProvider } from "@/components/posthog-provider";
+import { socialMetadata } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Econo'kids | Éducation financière ludique pour enfants de 8 à 13 ans",
+  title: "Éducation financière pour enfants | Econo'kids",
   description:
     "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire. Essai gratuit 14 jours.",
   keywords: [
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     "épargne",
     "apprentissage",
     "jeu éducatif",
-    "8-13 ans",
+    "9 à 13 ans",
     "argent de poche",
     "simulation",
   ],
@@ -29,31 +30,16 @@ export const metadata: Metadata = {
   creator: "Econo'kids",
   publisher: "Econo'kids",
   robots: "index, follow",
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    url: "https://econokids.fr",
-    siteName: "Econo'kids",
-    title: "Econo'kids | Éducation financière ludique pour enfants de 8 à 13 ans",
+  alternates: {
+    canonical: "/",
+  },
+  ...socialMetadata({
+    title: "Econo'kids | Éducation financière ludique pour enfants de 9 à 13 ans",
     description:
       "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
-    images: [
-      {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Econo'kids - Éducation financière ludique pour enfants",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Econo'kids | Éducation financière ludique pour enfants de 8 à 13 ans",
-    description:
-      "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
-    images: ["/images/og-image.png"],
-  },
-  metadataBase: new URL("https://econokids.fr"),
+    path: "/",
+  }),
+  metadataBase: new URL("https://www.econokids.fr"),
 };
 
 export default function RootLayout({

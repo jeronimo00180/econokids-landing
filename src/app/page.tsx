@@ -11,13 +11,33 @@ import { FAQ } from "@/components/landing/faq";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
 import { faqs } from "@/lib/faq-data";
+import { BRAND_ALTERNATE_NAMES, faqPageJsonLd } from "@/lib/seo";
+
+// Nom du site dans les résultats de Google (site names).
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Econo'kids",
+  alternateName: BRAND_ALTERNATE_NAMES,
+  url: "https://www.econokids.fr/",
+};
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Econo'kids",
-  url: "https://econokids.fr",
-  logo: "https://econokids.fr/images/logo.png",
+  alternateName: BRAND_ALTERNATE_NAMES,
+  legalName: "Jérôme Rembert EI",
+  identifier: "SIRET 102 279 643 00013",
+  url: "https://www.econokids.fr",
+  logo: "https://www.econokids.fr/images/logo.png",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "61 rue de Lyon",
+    postalCode: "75012",
+    addressLocality: "Paris",
+    addressCountry: "FR",
+  },
   contactPoint: {
     "@type": "ContactPoint",
     email: "support@econokids.fr",
@@ -29,14 +49,15 @@ const softwareApplicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Econo'kids",
+  alternateName: BRAND_ALTERNATE_NAMES,
   applicationCategory: "EducationalApplication",
   operatingSystem: "Web",
   description:
-    "Application éducative d'éducation financière pour enfants de 8 à 13 ans : une simulation de vie ludique pour apprendre à gérer un budget, épargner et faire des choix réfléchis.",
-  url: "https://econokids.fr",
+    "Application éducative d'éducation financière pour enfants de 9 à 13 ans : une simulation de vie ludique pour apprendre à gérer un budget, épargner et faire des choix réfléchis.",
+  url: "https://www.econokids.fr",
   audience: {
     "@type": "PeopleAudience",
-    suggestedMinAge: 8,
+    suggestedMinAge: 9,
     suggestedMaxAge: 13,
   },
   offers: [
@@ -77,22 +98,17 @@ const softwareApplicationJsonLd = {
   ],
 };
 
-const faqPageJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
+const homeFaqJsonLd = faqPageJsonLd(faqs);
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webSiteJsonLd),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -108,7 +124,7 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqPageJsonLd),
+          __html: JSON.stringify(homeFaqJsonLd),
         }}
       />
       <Navbar />

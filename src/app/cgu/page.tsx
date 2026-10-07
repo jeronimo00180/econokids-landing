@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Conditions Générales d'Utilisation | Econo'kids";
+const description = "Conditions générales d'utilisation et de vente d'Econo'kids";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales d'Utilisation | Econo'kids",
-  description: "Conditions générales d'utilisation et de vente d'Econo'kids",
+  title,
+  description,
+  alternates: { canonical: "/cgu/" },
+  ...socialMetadata({ title, description, path: "/cgu/" }),
 };
 
 export default function CGUPage() {
@@ -17,21 +23,21 @@ export default function CGUPage() {
 
           <div className="prose prose-slate max-w-none">
             <p className="text-sm text-muted-foreground mb-8">
-              Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
+              Dernière mise à jour : 18 août 2026
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 1 - Objet</h2>
             <p>
               Les présentes Conditions Générales d&apos;Utilisation (CGU) régissent l&apos;accès
               et l&apos;utilisation du service Econo&apos;kids, une application web éducative
-              d&apos;éducation financière destinée aux enfants de 8 à 13 ans.
+              d&apos;éducation financière destinée aux enfants de 9 à 13 ans.
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 2 - Éditeur</h2>
             <ul className="list-none pl-0 space-y-1">
-              <li><strong>Nom :</strong> XXX (Auto-entrepreneur)</li>
-              <li><strong>SIRET :</strong> XXX</li>
-              <li><strong>Adresse :</strong> XXX</li>
+              <li><strong>Nom :</strong> Jérôme Rembert EI</li>
+              <li><strong>SIRET :</strong> 102 279 643 00013</li>
+              <li><strong>Adresse :</strong> 61 rue de Lyon, 75012 Paris</li>
               <li><strong>Email :</strong> support@econokids.fr</li>
             </ul>
 
@@ -44,7 +50,7 @@ export default function CGUPage() {
             <ul className="list-disc pl-6 space-y-1">
               <li>Une simulation de budget sur 12 mois virtuels</li>
               <li>40 cours pédagogiques structurés</li>
-              <li>Plus de 200 exercices de calcul</li>
+              <li>Des exercices de calcul contextualisés</li>
               <li>Un système de badges et de progression</li>
               <li>Un dashboard de suivi pour les parents</li>
             </ul>
@@ -59,7 +65,7 @@ export default function CGUPage() {
 
             <h3 className="text-lg font-medium mt-6 mb-3">4.2 Conditions d&apos;âge</h3>
             <p>
-              Le service est destiné aux enfants de 8 à 13 ans, sous la
+              Le service est destiné aux enfants de 9 à 13 ans, sous la
               supervision d&apos;un parent ou tuteur légal. L&apos;inscription en tant que parent
               requiert d&apos;avoir au moins 18 ans.
             </p>
@@ -107,20 +113,31 @@ export default function CGUPage() {
               droit de rétractation.
             </p>
 
-            <h3 className="text-lg font-medium mt-6 mb-3">6.2 Exception pour contenus numériques</h3>
+            <h3 className="text-lg font-medium mt-6 mb-3">6.2 Exercice du droit de rétractation</h3>
             <p>
-              Conformément à l&apos;article L221-28 du Code de la consommation, le droit de
-              rétractation ne peut être exercé pour les contenus numériques dont
-              l&apos;exécution a commencé avec votre accord exprès et renoncement au droit
-              de rétractation.
+              Pour exercer ce droit, envoyez avant l&apos;expiration du délai une déclaration
+              dénuée d&apos;ambiguïté à support@econokids.fr ou par courrier à Jérôme Rembert EI,
+              61 rue de Lyon, 75012 Paris. Vous pouvez utiliser le formulaire ci-dessous,
+              sans que cela soit obligatoire.
             </p>
 
-            <h3 className="text-lg font-medium mt-6 mb-3">6.3 Garantie satisfait ou remboursé</h3>
-            <p>
-              Indépendamment du droit de rétractation légal, nous offrons une garantie
-              satisfait ou remboursé de 30 jours. Si le service ne vous convient pas,
-              contactez-nous à support@econokids.fr pour obtenir un remboursement.
-            </p>
+            <h3 className="text-lg font-medium mt-6 mb-3">Formulaire type de rétractation</h3>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm">
+              <p>
+                À l&apos;attention de Jérôme Rembert EI, 61 rue de Lyon, 75012 Paris —
+                support@econokids.fr
+              </p>
+              <p className="mt-3">
+                Je vous notifie par la présente ma rétractation du contrat portant sur le
+                service Econo&apos;kids souscrit le [date de souscription].
+              </p>
+              <p className="mt-3">
+                Nom du consommateur : [nom]<br />
+                Adresse e-mail du compte : [adresse e-mail]<br />
+                Date : [date]<br />
+                Signature du consommateur (uniquement en cas d&apos;envoi sur papier) : [signature]
+              </p>
+            </div>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 7 - Licence d&apos;utilisation</h2>
 
@@ -190,10 +207,10 @@ export default function CGUPage() {
 
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 11 - Données personnelles</h2>
             <p>
-              Le traitement des données personnelles est régi par notre{" "}
-              <a href="/confidentialite" className="text-primary hover:underline">
+              Le traitement des données personnelles est décrit dans notre{" "}
+              <a href="/confidentialite/" className="text-primary hover:underline">
                 Politique de confidentialité
-              </a>, conforme au RGPD.
+              </a>.
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 12 - Modifications</h2>

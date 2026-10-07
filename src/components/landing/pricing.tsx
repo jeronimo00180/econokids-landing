@@ -4,6 +4,12 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { usePostHog } from "posthog-js/react";
+import {
+  COOKIE_PREFERENCES_KEY,
+  captureConsentedEvent,
+  forwardStoredAttribution,
+} from "@/lib/analytics-consent.mjs";
+import type { MouseEvent } from "react";
 
 const features = [
   "Jusqu'à 3 enfants",
@@ -14,17 +20,18 @@ const features = [
   "Dashboard parent",
   "Mises à jour incluses",
   "Support par email",
-  "Données sécurisées (RGPD strict)",
+  "Données enfants chiffrées et collecte limitée",
 ];
 
 export function Pricing() {
   const posthog = usePostHog();
 
-  const trackCTA = () => {
-    posthog?.capture("cta_clicked", {
+  const trackCTA = (event: MouseEvent<HTMLAnchorElement>) => {
+    captureConsentedEvent(posthog, localStorage.getItem(COOKIE_PREFERENCES_KEY), "cta_clicked", {
       cta_name: "essai_gratuit_pricing",
       cta_location: "pricing_section",
     });
+    forwardStoredAttribution(event.currentTarget, window.localStorage);
   };
 
   return (
@@ -83,7 +90,7 @@ export function Pricing() {
                 </a>
               </Button>
               <p className="text-xs text-muted-foreground text-center">
-                14 jours d&apos;essai gratuit · Satisfait ou remboursé 30 jours · Annulable à tout moment
+                14 jours d&apos;essai gratuit sans carte · Annulable à tout moment
               </p>
             </CardFooter>
           </Card>

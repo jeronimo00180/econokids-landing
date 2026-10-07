@@ -15,7 +15,12 @@ export function TestimonialsCarousel() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true }),
+    Autoplay({
+      delay: 6000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+      stopOnFocusIn: true,
+    }),
   ]);
 
   const scrollTo = useCallback(
@@ -32,10 +37,11 @@ export function TestimonialsCarousel() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
     emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
     return () => {
       emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
     };
   }, [emblaApi, onSelect]);
 

@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Politique de confidentialité | Econo'kids";
+const description =
+  "Politique de confidentialité et protection des données personnelles d'Econo'kids";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité | Econo'kids",
-  description: "Politique de confidentialité et protection des données personnelles d'Econo'kids",
+  title,
+  description,
+  alternates: { canonical: "/confidentialite/" },
+  ...socialMetadata({ title, description, path: "/confidentialite/" }),
 };
 
 export default function ConfidentialitePage() {
@@ -17,7 +24,7 @@ export default function ConfidentialitePage() {
 
           <div className="prose prose-slate max-w-none">
             <p className="text-sm text-muted-foreground mb-8">
-              Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
+              Dernière mise à jour : 18 août 2026
             </p>
 
             <p className="mb-6">
@@ -28,9 +35,9 @@ export default function ConfidentialitePage() {
 
             <h2 className="text-xl font-semibold mt-8 mb-4">1. Responsable du traitement</h2>
             <ul className="list-none pl-0 space-y-1">
-              <li><strong>Nom :</strong> XXX (Auto-entrepreneur)</li>
-              <li><strong>SIRET :</strong> XXX</li>
-              <li><strong>Adresse :</strong> XXX</li>
+              <li><strong>Nom :</strong> Jérôme Rembert EI</li>
+              <li><strong>SIRET :</strong> 102 279 643 00013</li>
+              <li><strong>Adresse :</strong> 61 rue de Lyon, 75012 Paris</li>
               <li><strong>Email :</strong> support@econokids.fr</li>
             </ul>
 
@@ -38,8 +45,8 @@ export default function ConfidentialitePage() {
 
             <h3 className="text-lg font-medium mt-6 mb-3">Pour les parents (compte payant)</h3>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Email</li>
-              <li>Mot de passe (chiffré)</li>
+              <li>Prénom et adresse email</li>
+              <li>Mot de passe haché de manière non réversible</li>
               <li>Informations de paiement (traitées par Stripe, non stockées chez nous)</li>
             </ul>
 
@@ -56,9 +63,9 @@ export default function ConfidentialitePage() {
 
             <h3 className="text-lg font-medium mt-6 mb-3">Données collectées automatiquement</h3>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Adresse IP (pour la sécurité)</li>
-              <li>Type de navigateur et appareil</li>
-              <li>Pages visitées et temps de session</li>
+              <li>Adresse IP et journaux techniques nécessaires à la sécurité</li>
+              <li>Après consentement : pages consultées sur le site public et l&apos;espace parent, type d&apos;appareil et provenance de campagne</li>
+              <li>Aucune mesure d&apos;audience dans l&apos;espace enfant</li>
             </ul>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">3. Finalités du traitement</h2>
@@ -82,9 +89,14 @@ export default function ConfidentialitePage() {
             <h2 className="text-xl font-semibold mt-8 mb-4">5. Partage des données</h2>
             <p>Nous partageons vos données uniquement avec :</p>
             <ul className="list-disc pl-6 space-y-1">
-              <li><strong>Stripe :</strong> traitement des paiements</li>
-              <li><strong>OVH :</strong> hébergement (France)</li>
-              <li><strong>PostHog :</strong> analytics hébergé en Europe (eu.i.posthog.com), soumis au consentement cookies</li>
+              <li><strong>Vercel :</strong> hébergement et diffusion du site public</li>
+              <li><strong>OVH :</strong> hébergement de l&apos;application en France</li>
+              <li><strong>Neon :</strong> base de données dans la région européenne de Francfort</li>
+              <li><strong>Stripe :</strong> paiements et gestion des abonnements</li>
+              <li><strong>Resend :</strong> envoi des emails transactionnels</li>
+              <li><strong>Upstash :</strong> limitation de débit et protection contre les abus</li>
+              <li><strong>Sentry :</strong> diagnostic des erreurs techniques</li>
+              <li><strong>PostHog :</strong> mesure d&apos;audience dans l&apos;Union européenne, uniquement après consentement</li>
             </ul>
             <p className="mt-2 font-semibold">
               Nous ne vendons jamais vos données personnelles.
@@ -94,7 +106,7 @@ export default function ConfidentialitePage() {
             <ul className="list-disc pl-6 space-y-1">
               <li>Chiffrement des données sensibles (prénom des enfants)</li>
               <li>Connexions HTTPS uniquement</li>
-              <li>Hébergement 100% en France</li>
+              <li>Application hébergée en France et base de données dans l&apos;Union européenne</li>
               <li>Accès restreint aux données</li>
               <li>Mots de passe hashés (non réversibles)</li>
             </ul>
@@ -102,7 +114,8 @@ export default function ConfidentialitePage() {
             <h2 className="text-xl font-semibold mt-8 mb-4">7. Conservation des données</h2>
             <ul className="list-disc pl-6 space-y-1">
               <li><strong>Comptes actifs :</strong> durée de l&apos;abonnement</li>
-              <li><strong>Après résiliation :</strong> suppression sous 30 jours</li>
+              <li><strong>Après résiliation :</strong> accès maintenu jusqu&apos;à la fin de la période payée</li>
+              <li><strong>Après suppression du compte :</strong> suppression ou anonymisation des données, hors obligations légales de conservation</li>
               <li><strong>Données comptables :</strong> 10 ans (obligation légale)</li>
             </ul>
 
@@ -123,7 +136,8 @@ export default function ConfidentialitePage() {
               </a>
             </p>
             <p className="mt-2">
-              Délai de réponse : 30 jours maximum.
+              Nous répondons en principe dans un délai d&apos;un mois. Ce délai peut être
+              prolongé dans les cas prévus par la réglementation ; vous en serez alors informé.
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">9. Cookies</h2>
@@ -138,28 +152,31 @@ export default function ConfidentialitePage() {
             <p>
               Nous utilisons PostHog Analytics, hébergé en Europe (eu.i.posthog.com).
               PostHog dépose des cookies uniquement après votre consentement explicite.
-              Les données collectées incluent : pages visitées, temps de session,
-              et données de navigation anonymisées. Vous pouvez refuser ces cookies
+              Les données collectées peuvent inclure les pages visitées, la durée de visite,
+              le type d&apos;appareil et la provenance de la campagne. Elles ne contiennent ni
+              nom, ni email, ni donnée issue de l&apos;espace enfant. Vous pouvez refuser ces cookies
               via la bannière de consentement.
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">10. Protection des mineurs</h2>
             <p>
-              Econo&apos;kids est destiné aux enfants de 8 à 13 ans, sous la supervision
+              Econo&apos;kids est destiné aux enfants de 9 à 13 ans, sous la supervision
               de leurs parents. Nous appliquons des mesures renforcées :
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Collecte minimale de données (prénom uniquement)</li>
               <li>Chiffrement des données des enfants</li>
-              <li>Pas de publicité ni de tracking</li>
+              <li>Pas de publicité et aucun outil analytics dans l&apos;espace enfant</li>
               <li>Contrôle parental via le compte parent</li>
               <li>Suppression des données sur demande du parent</li>
             </ul>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">11. Transferts internationaux</h2>
             <p>
-              Vos données sont hébergées en France (OVH). Nous ne transférons pas vos
-              données en dehors de l&apos;Union Européenne.
+              L&apos;application est hébergée chez OVH en France et la base de données chez Neon
+              à Francfort. Certains prestataires sont établis hors de l&apos;Union européenne ;
+              leurs éventuels transferts sont encadrés par leurs engagements contractuels et
+              les mécanismes de protection applicables.
             </p>
 
             <h2 className="text-xl font-semibold mt-8 mb-4">12. Modifications</h2>
