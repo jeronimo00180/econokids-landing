@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Scripts Node (CommonJS) hors application Next.js
     "scripts/**",
+    // Anciens composants gardés pour mémoire après la refonte d'octobre 2026
+    "archives/**",
   ]),
 ]);
 

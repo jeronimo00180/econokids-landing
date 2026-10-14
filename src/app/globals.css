@@ -12,10 +12,10 @@
 :root {
   /* Couleurs principales */
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #23483c;
 
   /* Primary - Bleu Econo'kids */
-  --primary: #3b82f6;
+  --primary: #286b51;
   --primary-foreground: #ffffff;
   --primary-50: #eff6ff;
   --primary-100: #dbeafe;
@@ -107,7 +107,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -117,7 +117,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   line-height: 1.6;
 }
 

@@ -1,19 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
+import "@/components/site/site.css";
 import { CookieConsent } from "@/components/cookie-consent";
 import { PostHogProvider } from "@/components/posthog-provider";
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  weight: ["500", "600", "800"],
+  variable: "--font-outfit",
 });
 
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
+});
+
+const SIGNATURE = "Apprendre à se servir de l'argent, en jouant.";
+const DESCRIPTION =
+  "Le jeu de la ville où votre enfant de 9 à 13 ans apprend à se servir de l'argent : un salaire, des dépenses, de l'épargne et des projets, avec de l'argent fictif. Essai gratuit de 14 jours.";
+
 export const metadata: Metadata = {
-  title: "Éducation financière pour enfants | Econo'kids",
-  description:
-    "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire. Essai gratuit 14 jours.",
+  title: `Econo'kids | ${SIGNATURE}`,
+  description: DESCRIPTION,
   keywords: [
     "éducation financière",
     "enfants",
@@ -37,23 +49,21 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://www.econokids.fr/",
     siteName: "Econo'kids",
-    title: "Econo'kids | Éducation financière ludique pour enfants de 9 à 13 ans",
-    description:
-      "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
+    title: `Econo'kids | ${SIGNATURE}`,
+    description: DESCRIPTION,
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Econo'kids - Éducation financière ludique pour enfants",
+        alt: "La ville d'Econo'kids, le jeu où l'on apprend à se servir de l'argent",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Econo'kids | Éducation financière ludique pour enfants de 9 à 13 ans",
-    description:
-      "Apprenez à vos enfants à gérer un budget en jouant. Simulation de vie sécurisée sans carte bancaire.",
+    title: `Econo'kids | ${SIGNATURE}`,
+    description: DESCRIPTION,
     images: ["/images/og-image.png"],
   },
   metadataBase: new URL("https://www.econokids.fr"),
@@ -65,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={inter.variable}>
+    <html lang="fr" className={`${outfit.variable} ${dmSans.variable}`}>
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>

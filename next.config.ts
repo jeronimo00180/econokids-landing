@@ -47,6 +47,14 @@ const nextConfig: NextConfig = {
   // URLs propres avec trailing slash (/mairies/ au lieu de /mairies)
   trailingSlash: true,
 
+  // Anciennes adresses (avant la refonte d'octobre 2026) : tout mène à la page Écoles et mairies.
+  async redirects() {
+    return [
+      { source: "/mairies/", destination: "/ecoles/", permanent: true },
+      { source: "/contact/", destination: "/ecoles/", permanent: true },
+    ];
+  },
+
   // Headers de sécurité (migrés depuis Nginx)
   async headers() {
     return [

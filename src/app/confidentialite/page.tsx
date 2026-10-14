@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité | Econo'kids",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ConfidentialitePage() {
   return (
     <>
-      <Navbar />
+      <div className="ek"><SiteHeader /></div>
       <main className="py-16 md:py-24">
         <div className="container max-w-3xl">
           <h1 className="text-3xl font-bold mb-8">Politique de confidentialité</h1>
@@ -205,7 +205,7 @@ export default function ConfidentialitePage() {
           </div>
         </div>
       </main>
-      <Footer />
+      <div className="ek"><SiteFooter /></div>
     </>
   );
 }

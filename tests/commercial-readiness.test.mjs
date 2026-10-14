@@ -72,7 +72,7 @@ test("le discours public ne contient plus de promesse absolue ou de chiffre non 
     assert.equal(contents.includes(claim), false, `Formulation interdite encore présente : ${claim}`);
   }
 
-  assert.match(read("src/components/landing/features.tsx"), /6 thèmes/);
+  assert.match(read("src/lib/site-content.ts"), /6 thèmes/);
 });
 
 test("le SEO utilise le domaine canonique www et des routes Next générées", () => {
@@ -99,17 +99,7 @@ test("toutes les tranches d'âge publiques ciblent les enfants de 9 à 13 ans", 
   assert.match(homepage, /suggestedMinAge:\s*9/);
   assert.match(homepage, /suggestedMaxAge:\s*13/);
 
-  const hero = read("src/components/landing/hero.tsx");
-  const problem = read("src/components/landing/problem.tsx");
-  assert.match(hero, /De 9 à 13 ans, apprenez-lui/);
-  assert.doesNotMatch(hero, /À 10 ans/);
-  assert.doesNotMatch(problem, /enfant de 10 ans/);
+  assert.doesNotMatch(contents, /À 10 ans/);
+  assert.doesNotMatch(contents, /enfant de 10 ans/);
 });
 
-test("le titre des acquis reste sur une ligne sur ordinateur sans contraindre le mobile", () => {
-  const learningOutcomes = read("src/components/landing/learning-outcomes.tsx");
-
-  assert.match(learningOutcomes, /lg:whitespace-nowrap/);
-  assert.match(learningOutcomes, /max-w-5xl/);
-  assert.doesNotMatch(learningOutcomes, /(?<!:)whitespace-nowrap/);
-});

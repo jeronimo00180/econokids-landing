@@ -1,15 +1,18 @@
-import { Navbar } from "@/components/landing/navbar";
-import { Hero } from "@/components/landing/hero";
-import { Problem } from "@/components/landing/problem";
-import { HowItWorks } from "@/components/landing/how-it-works";
-import { Features } from "@/components/landing/features";
-import { LearningOutcomes } from "@/components/landing/learning-outcomes";
-// Invisible tant que src/lib/testimonials-data.ts est vide — ajouter les vrais témoignages là-bas
-import { TestimonialsCarousel } from "@/components/landing/testimonials-carousel";
-import { Pricing } from "@/components/landing/pricing";
-import { FAQ } from "@/components/landing/faq";
-import { CTA } from "@/components/landing/cta";
-import { Footer } from "@/components/landing/footer";
+import { CarteVille } from "@/components/site/CarteVille";
+import {
+  Apprentissages,
+  Confiance,
+  EncartEcoles,
+  Film,
+  Heros,
+  Parents,
+  Questions,
+  Reseaux,
+  Rythme,
+} from "@/components/site/SectionsAccueil";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { Tarifs } from "@/components/site/Tarifs";
 import { faqs } from "@/lib/faq-data";
 
 const organizationJsonLd = {
@@ -41,7 +44,7 @@ const softwareApplicationJsonLd = {
   applicationCategory: "EducationalApplication",
   operatingSystem: "Web",
   description:
-    "Application éducative d'éducation financière pour enfants de 9 à 13 ans : une simulation de vie ludique pour apprendre à gérer un budget, épargner et faire des choix réfléchis.",
+    "Le jeu de la ville où les enfants de 9 à 13 ans apprennent à se servir de l'argent : un salaire, des dépenses, de l'épargne et des projets, avec de l'argent fictif.",
   url: "https://www.econokids.fr",
   audience: {
     "@type": "PeopleAudience",
@@ -120,19 +123,32 @@ export default function HomePage() {
           __html: JSON.stringify(faqPageJsonLd),
         }}
       />
-      <Navbar />
-      <main>
-        <Hero />
-        <Problem />
-        <HowItWorks />
-        <Features />
-        <LearningOutcomes />
-        <TestimonialsCarousel />
-        <Pricing />
-        <FAQ />
-        <CTA />
-      </main>
-      <Footer />
+      <div className="ek">
+        <SiteHeader />
+        <main id="haut">
+          <Heros />
+          <section id="ville" className="ek-section">
+            <div className="ek-contenu">
+              <div className="ek-titre-section">
+                <p className="ek-surtitre">Une ville à explorer</p>
+                <h2>Neuf bâtiments, neuf façons de comprendre l&apos;argent</h2>
+                <p className="ek-lead">Touchez un bâtiment pour voir ce que votre enfant y fait.</p>
+              </div>
+              <CarteVille />
+            </div>
+          </section>
+          <Apprentissages />
+          <Film />
+          <Rythme />
+          <Parents />
+          <Confiance />
+          <Tarifs />
+          <Questions />
+          <Reseaux />
+          <EncartEcoles />
+        </main>
+        <SiteFooter />
+      </div>
     </>
   );
 }

@@ -91,14 +91,19 @@ test("les paramètres marketing consentis sont transmis aux liens vers l'applica
   assert.equal(target.searchParams.get("utm_medium"), "cpc");
   assert.equal(target.searchParams.has("email"), false);
 
+  assert.match(
+    readFileSync(new URL("../src/components/site/CtaLink.tsx", import.meta.url), "utf8"),
+    /forwardStoredAttribution/
+  );
+  // Chaque lien vers l'application passe par CtaLink, qui transmet l'origine de la visite.
   const ctaFiles = [
-    "../src/components/landing/navbar.tsx",
-    "../src/components/landing/hero.tsx",
-    "../src/components/landing/cta.tsx",
-    "../src/components/landing/pricing.tsx",
+    ["../src/components/site/SiteHeader.tsx", /<CtaLink href=\{LIENS\.inscription\}/],
+    ["../src/components/site/SectionsAccueil.tsx", /<CtaLink href=\{LIENS\.inscription\}/],
+    ["../src/components/site/Tarifs.tsx", /<CtaLink href=\{LIENS\.inscription\}/],
+    ["../src/components/site/SiteFooter.tsx", /<CtaLink href=\{LIENS\.connexion\}/],
   ];
-  for (const file of ctaFiles) {
-    assert.match(readFileSync(new URL(file, import.meta.url), "utf8"), /forwardStoredAttribution/);
+  for (const [file, pattern] of ctaFiles) {
+    assert.match(readFileSync(new URL(file, import.meta.url), "utf8"), pattern);
   }
 });
 
