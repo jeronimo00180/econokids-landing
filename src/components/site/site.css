@@ -192,3 +192,7 @@
 .ek-heros-visuel video { position: relative; z-index: 1; }
 @media (prefers-reduced-motion: reduce) { .ek-heros-visuel video { display: none; } }
 .ek a.ek-pastille { z-index: 2; }
+
+/* Mot du créateur */
+.ek-createur { max-width: 46rem; margin: 0 auto; display: grid; gap: 14px; background: var(--papier); border: 1px solid var(--ligne); border-radius: 26px; padding: 34px 30px; font-size: 1.12rem; }
+.ek-createur-signature { font-family: var(--titre); font-weight: 600; color: var(--feuillage); margin-top: 6px; }

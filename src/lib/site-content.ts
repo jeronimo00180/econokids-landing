@@ -116,3 +116,14 @@ export const ECOLES = {
   ],
   presentation: "Nous vous montrons le jeu et le programme en 20 minutes, en visio ou dans votre école.",
 };
+
+// Mot du créateur, validé par Jérôme le 15/10/2026 (texte provisoire qu'il pourra enrichir d'un souvenir).
+export const CREATEUR = {
+  paragraphes: [
+    "Au départ, j'ai créé Econo'kids pour mes enfants.",
+    "Je voulais qu'ils comprennent une chose simple : l'argent est un outil. Il sert à payer ce dont on a besoin, à se faire plaisir sans regret, et à réaliser ses projets.",
+    "Et je voulais qu'ils l'apprennent en jouant. Alors j'ai construit une ville, où l'on reçoit un salaire, où l'on paie ses factures et où l'on met de côté pour ce qui compte. Avec de l'argent fictif, à leur rythme.",
+    "Aujourd'hui, cette ville est ouverte à toutes les familles et aux écoles.",
+  ],
+  signature: "Jérôme, papa et créateur d'Econo'kids",
+};

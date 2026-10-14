@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CtaLink } from "@/components/site/CtaLink";
 import { faqs } from "@/lib/faq-data";
-import { APPRENTISSAGES, CHIFFRES, ETAPES, GARANTIES, HEROS, LIENS, PARENTS, SIGNATURE } from "@/lib/site-content";
+import { APPRENTISSAGES, CHIFFRES, CREATEUR, ETAPES, GARANTIES, HEROS, LIENS, PARENTS, SIGNATURE } from "@/lib/site-content";
 
 export function Heros() {
   return (
@@ -15,7 +15,7 @@ export function Heros() {
           <CtaLink href={LIENS.inscription} nom="essai_gratuit" emplacement="heros" className="ek-bouton ek-plein">
             Démarrer l&apos;essai gratuit de 14 jours
           </CtaLink>
-          <a className="ek-bouton ek-clair" href="#film">Voir le film (39 s)</a>
+          <a className="ek-bouton ek-clair" href="#film">Voir le film</a>
         </div>
         <ul className="ek-garanties">
           {HEROS.garanties.map((garantie) => (
@@ -131,7 +131,7 @@ export function Film() {
       <div className="ek-contenu">
         <div className="ek-titre-section">
           <p className="ek-surtitre">Le film</p>
-          <h2>39 secondes dans la ville</h2>
+          <h2>Un tour dans la ville</h2>
         </div>
         <video className="ek-film" src="/videos/film-econokids.mp4" poster="/images/site/ville-decouverte-automne.webp" controls playsInline preload="none" />
       </div>
@@ -278,6 +278,23 @@ export function EncartEcoles() {
               Découvrir le programme pour les écoles
             </Link>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Createur() {
+  return (
+    <section id="createur" className="ek-section">
+      <div className="ek-contenu">
+        <div className="ek-createur">
+          <p className="ek-surtitre">Pourquoi Econo&apos;kids</p>
+          <h2>Le mot du créateur</h2>
+          {CREATEUR.paragraphes.map((paragraphe) => (
+            <p key={paragraphe}>{paragraphe}</p>
+          ))}
+          <p className="ek-createur-signature">{CREATEUR.signature}</p>
         </div>
       </div>
     </section>

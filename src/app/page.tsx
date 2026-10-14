@@ -2,6 +2,7 @@ import { CarteVille } from "@/components/site/CarteVille";
 import {
   Apprentissages,
   Confiance,
+  Createur,
   EncartEcoles,
   Film,
   Heros,
@@ -149,6 +150,7 @@ export default function HomePage() {
           <Rythme />
           <Parents />
           <Confiance />
+          <Createur />
           <Tarifs />
           <Questions />
           <Reseaux />

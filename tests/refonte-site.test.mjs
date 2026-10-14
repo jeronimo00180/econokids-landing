@@ -109,3 +109,15 @@ test("la page d'accueil n'annonce aucune fonction qui n'existe pas encore sans l
 test("aucun témoignage n'est publié tant qu'il n'y en a pas de vrai", () => {
   assert.match(read("src/lib/testimonials-data.ts"), /=\s*\[\s*\]/);
 });
+
+test("le film n'affiche pas sa durée (demande de Jérôme du 15/10/2026)", () => {
+  const contents = allSource();
+  assert.doesNotMatch(contents, /\(39 s\)|39 secondes/);
+});
+
+test("le mot du créateur validé par Jérôme figure sur la page d'accueil", () => {
+  const contenu = unescapeJsx(read("src/lib/site-content.ts"));
+  assert.ok(contenu.includes("Au départ, j'ai créé Econo'kids pour mes enfants."));
+  assert.ok(contenu.includes("Jérôme, papa et créateur d'Econo'kids"));
+  assert.match(read("src/app/page.tsx"), /<Createur \/>/);
+});
