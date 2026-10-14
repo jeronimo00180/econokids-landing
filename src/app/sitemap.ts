@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${BASE_URL}/`, lastModified: LAST_CONTENT_UPDATE, changeFrequency: "weekly", priority: 1 },
     { url: `${BASE_URL}/ecoles/`, lastModified: LAST_CONTENT_UPDATE, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/tableau-argent-de-poche/`, lastModified: new Date("2026-10-15T00:00:00+02:00"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/cgu/`, lastModified: LAST_CONTENT_UPDATE, changeFrequency: "yearly", priority: 0.2 },
     { url: `${BASE_URL}/confidentialite/`, lastModified: LAST_CONTENT_UPDATE, changeFrequency: "yearly", priority: 0.2 },
     { url: `${BASE_URL}/mentions-legales/`, lastModified: LAST_CONTENT_UPDATE, changeFrequency: "yearly", priority: 0.2 },

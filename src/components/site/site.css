@@ -196,3 +196,18 @@
 /* Mot du créateur */
 .ek-createur { max-width: 46rem; margin: 0 auto; display: grid; gap: 14px; background: var(--papier); border: 1px solid var(--ligne); border-radius: 26px; padding: 34px 30px; font-size: 1.12rem; }
 .ek-createur-signature { font-family: var(--titre); font-weight: 600; color: var(--feuillage); margin-top: 6px; }
+
+/* Page du tableau d'argent de poche à imprimer */
+.ek-note { font-size: 0.95rem; color: var(--encre-douce); }
+.ek-apercus { display: flex; justify-content: center; align-items: flex-start; padding: 6px 0 40px; }
+.ek-apercus img { width: 52%; height: auto; border-radius: 10px; box-shadow: var(--ombre); background: #ffffff; }
+.ek-apercus .ek-apercu-1 { position: relative; z-index: 2; transform: rotate(-3deg); }
+.ek-apercus .ek-apercu-2 { margin-left: -8%; transform: rotate(3deg) translateY(30px); }
+.ek-reperes { display: grid; }
+.ek-reperes p { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--ligne); }
+.ek-reperes b { font-family: var(--titre); font-weight: 800; color: var(--feuillage); white-space: nowrap; }
+.ek-source { font-size: 0.85rem; color: var(--encre-douce); }
+.ek-conseils { margin: 0; padding-left: 1.4rem; display: grid; gap: 10px; list-style: decimal; }
+.ek-conseils li::marker { font-family: var(--titre); font-weight: 800; color: var(--or-fonce); }
+.ek h1.ek-h1-page { font-size: clamp(2.3rem, 4.6vw, 3.6rem); }
+.ek-bloc h3 + .ek-reperes { margin-top: -4px; }

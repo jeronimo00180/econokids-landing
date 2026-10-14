@@ -21,6 +21,7 @@ export function SiteFooter() {
           <Link href="/#apprend">Ce qu&apos;il apprend</Link>
           <Link href="/#film">Le film</Link>
           <Link href="/#tarifs">Tarifs</Link>
+          <Link href="/tableau-argent-de-poche/">Tableau d&apos;argent de poche</Link>
           <CtaLink href={LIENS.connexion} nom="connexion" emplacement="pied">Se connecter</CtaLink>
         </div>
         <div>
