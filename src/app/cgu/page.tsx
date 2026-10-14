@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Conditions Générales d'Utilisation | Econo'kids";
+const description = "Conditions générales d'utilisation et de vente d'Econo'kids";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales d'Utilisation | Econo'kids",
-  description: "Conditions générales d'utilisation et de vente d'Econo'kids",
+  title,
+  description,
   alternates: { canonical: "/cgu/" },
-  openGraph: { url: "/cgu/" },
+  ...socialMetadata({ title, description, path: "/cgu/" }),
 };
 
 export default function CGUPage() {
@@ -204,7 +208,7 @@ export default function CGUPage() {
             <h2 className="text-xl font-semibold mt-8 mb-4">Article 11 - Données personnelles</h2>
             <p>
               Le traitement des données personnelles est décrit dans notre{" "}
-              <a href="/confidentialite" className="text-primary hover:underline">
+              <a href="/confidentialite/" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>.
             </p>

@@ -56,7 +56,7 @@ export function HeroB2B() {
           {/* CTA */}
           <div className="flex flex-col gap-3 sm:flex-row justify-center mb-8">
             <Button size="xl" asChild>
-              <a href="/contact">Demander une démo gratuite</a>
+              <a href="/contact/">Demander une démo gratuite</a>
             </Button>
           </div>
 

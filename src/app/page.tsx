@@ -14,11 +14,22 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { Tarifs } from "@/components/site/Tarifs";
 import { faqs } from "@/lib/faq-data";
+import { BRAND_ALTERNATE_NAMES, faqPageJsonLd } from "@/lib/seo";
+
+// Nom du site dans les résultats de Google (site names).
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Econo'kids",
+  alternateName: BRAND_ALTERNATE_NAMES,
+  url: "https://www.econokids.fr/",
+};
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Econo'kids",
+  alternateName: BRAND_ALTERNATE_NAMES,
   legalName: "Jérôme Rembert EI",
   identifier: "SIRET 102 279 643 00013",
   url: "https://www.econokids.fr",
@@ -41,6 +52,7 @@ const softwareApplicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Econo'kids",
+  alternateName: BRAND_ALTERNATE_NAMES,
   applicationCategory: "EducationalApplication",
   operatingSystem: "Web",
   description:
@@ -89,22 +101,17 @@ const softwareApplicationJsonLd = {
   ],
 };
 
-const faqPageJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
+const homeFaqJsonLd = faqPageJsonLd(faqs);
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webSiteJsonLd),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -120,7 +127,7 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqPageJsonLd),
+          __html: JSON.stringify(homeFaqJsonLd),
         }}
       />
       <div className="ek">

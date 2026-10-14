@@ -105,7 +105,7 @@ export const ECOLES = {
   ],
   mairie: [
     "Les classes de la commune réunies dans un même espace.",
-    "Les données des élèves effacées chaque année après le 1er août.",
+    "Un nettoyage annuel des comptes élèves après le 1er août.",
     "Un tarif sur devis, selon le nombre de classes.",
   ],
   donnees: [

@@ -3,24 +3,28 @@ import Image from "next/image";
 import { ContactEcoles } from "@/components/site/ContactEcoles";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { faqsB2B, faqsMairies } from "@/lib/faq-mairies-data";
+import { faqPageJsonLd, socialMetadata } from "@/lib/seo";
 import { ECOLES } from "@/lib/site-content";
 
+const title = "Éducation financière à l'école, du CM1 à la 6e | Econo'kids";
+const description =
+  "Apprendre à se servir de l'argent, en classe : six séances de 30 minutes dans la ville d'Econo'kids pour le CM1, le CM2 et la 6e. Guide de l'enseignant, argent fictif, sans email d'élève.";
+
 export const metadata: Metadata = {
-  title: "Éducation financière à l'école, du CM1 à la 6e | Econo'kids",
-  description:
-    "Apprendre à se servir de l'argent, en classe : six séances de 30 minutes dans la ville d'Econo'kids pour le CM1, le CM2 et la 6e. Guide de l'enseignant, argent fictif, sans email d'élève.",
+  title,
+  description,
   alternates: { canonical: "/ecoles/" },
-  openGraph: {
-    url: "/ecoles/",
-    title: "Econo'kids pour les écoles et les mairies",
-    description: "Six séances de 30 minutes pour apprendre à se servir de l'argent, en classe.",
-    images: [{ url: "/images/og-image.png", width: 1200, height: 630, alt: "Econo'kids, la ville où l'on apprend à se servir de l'argent" }],
-  },
+  ...socialMetadata({ title, description, path: "/ecoles/" }),
 };
+
+const questionsEcoles = [...faqsB2B, ...faqsMairies];
+const faqJsonLd = faqPageJsonLd([...faqsB2B, ...faqsMairies]);
 
 export default function EcolesPage() {
   return (
     <div className="ek">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <SiteHeader />
       <main>
         <div className="ek-contenu ek-heros">
@@ -101,6 +105,23 @@ export default function EcolesPage() {
                   <li key={ligne.fort}><b>{ligne.fort}</b>{ligne.suite}</li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="questions" className="ek-section">
+          <div className="ek-contenu">
+            <div className="ek-titre-section">
+              <p className="ek-surtitre">Questions</p>
+              <h2>Ce que les écoles et les mairies nous demandent</h2>
+            </div>
+            <div className="ek-faq">
+              {questionsEcoles.map((faq) => (
+                <details key={faq.question}>
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
         </section>

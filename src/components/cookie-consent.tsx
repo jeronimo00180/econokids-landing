@@ -94,7 +94,7 @@ export function CookieConsent() {
                 Avec votre accord, PostHog nous aide à comprendre l&apos;usage du site.
                 Le refus n&apos;empêche aucune fonctionnalité essentielle.{" "}
                 <Link
-                  href="/confidentialite"
+                  href="/confidentialite/"
                   className="text-primary hover:underline"
                 >
                   En savoir plus
@@ -209,7 +209,7 @@ export function CookieConsent() {
               Vous pouvez modifier vos préférences à tout moment en cliquant sur
               &quot;Cookies&quot; en bas de page.{" "}
               <Link
-                href="/confidentialite"
+                href="/confidentialite/"
                 className="text-primary hover:underline"
               >
                 Politique de confidentialité

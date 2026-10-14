@@ -48,7 +48,7 @@ export function NavbarB2B() {
             <a href="https://app.econokids.fr/login">Accès écoles</a>
           </Button>
           <Button asChild>
-            <a href="/contact">Demander une démo</a>
+            <a href="/contact/">Demander une démo</a>
           </Button>
         </div>
 
@@ -86,7 +86,7 @@ export function NavbarB2B() {
                 <a href="https://app.econokids.fr/login">Accès écoles</a>
               </Button>
               <Button className="w-full" asChild>
-                <a href="/contact">Demander une démo</a>
+                <a href="/contact/">Demander une démo</a>
               </Button>
             </div>
           </div>

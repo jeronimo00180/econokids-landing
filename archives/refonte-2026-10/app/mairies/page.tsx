@@ -9,6 +9,8 @@ import { FAQB2B } from "@/components/landing/faq-b2b";
 import { FAQMairies } from "@/components/landing/faq-mairies";
 import { CTAB2B } from "@/components/landing/cta-b2b";
 import { Footer } from "@/components/landing/footer";
+import { faqPageJsonLd, socialMetadata } from "@/lib/seo";
+import { faqsB2B, faqsMairies } from "@/lib/faq-mairies-data";
 
 export const metadata: Metadata = {
   title: "Éducation financière à l'école | Econo'kids",
@@ -25,17 +27,26 @@ export const metadata: Metadata = {
     "budget école",
     "programme scolaire",
   ],
-  openGraph: {
+  ...socialMetadata({
     title: "Éducation financière à l'école | Econo'kids",
     description:
       "Une application pédagogique indépendante, inspirée des principes EDUCFI.",
-    url: "https://www.econokids.fr/mairies/",
-  },
+    path: "/mairies/",
+  }),
 };
+
+// Les deux FAQ affichées sur la page, dans l'ordre d'affichage.
+const mairiesFaqJsonLd = faqPageJsonLd([...faqsB2B, ...faqsMairies]);
 
 export default function MairiesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(mairiesFaqJsonLd),
+        }}
+      />
       <NavbarB2B />
       <main>
         <HeroB2B />

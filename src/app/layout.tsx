@@ -4,6 +4,7 @@ import "./globals.css";
 import "@/components/site/site.css";
 import { CookieConsent } from "@/components/cookie-consent";
 import { PostHogProvider } from "@/components/posthog-provider";
+import { socialMetadata } from "@/lib/seo";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -44,28 +45,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    url: "https://www.econokids.fr/",
-    siteName: "Econo'kids",
+  ...socialMetadata({
     title: `Econo'kids | ${SIGNATURE}`,
     description: DESCRIPTION,
-    images: [
-      {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "La ville d'Econo'kids, le jeu où l'on apprend à se servir de l'argent",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `Econo'kids | ${SIGNATURE}`,
-    description: DESCRIPTION,
-    images: ["/images/og-image.png"],
-  },
+    path: "/",
+  }),
   metadataBase: new URL("https://www.econokids.fr"),
 };
 

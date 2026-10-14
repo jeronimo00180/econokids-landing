@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Mentions légales | Econo'kids";
+const description = "Mentions légales du site Econo'kids";
 
 export const metadata: Metadata = {
-  title: "Mentions légales | Econo'kids",
-  description: "Mentions légales du site Econo'kids",
+  title,
+  description,
   alternates: { canonical: "/mentions-legales/" },
-  openGraph: { url: "/mentions-legales/" },
+  ...socialMetadata({ title, description, path: "/mentions-legales/" }),
 };
 
 export default function MentionsLegalesPage() {
@@ -65,7 +69,7 @@ export default function MentionsLegalesPage() {
             <p>
               Les informations concernant la collecte et le traitement des données
               personnelles sont détaillées dans notre{" "}
-              <a href="/confidentialite" className="text-primary hover:underline">
+              <a href="/confidentialite/" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>.
             </p>
@@ -81,7 +85,7 @@ export default function MentionsLegalesPage() {
               Le site utilise des cookies essentiels au fonctionnement du service et
               des cookies d&apos;analyse pour améliorer l&apos;expérience utilisateur. Pour plus
               d&apos;informations, consultez notre{" "}
-              <a href="/confidentialite" className="text-primary hover:underline">
+              <a href="/confidentialite/" className="text-primary hover:underline">
                 Politique de confidentialité
               </a>.
             </p>

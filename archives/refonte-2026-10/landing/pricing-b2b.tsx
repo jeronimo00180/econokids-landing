@@ -40,7 +40,7 @@ export function PricingB2B() {
         {/* CTA */}
         <div className="mt-10 text-center">
           <Button size="lg" asChild>
-            <a href="/contact">Demander un devis personnalisé</a>
+            <a href="/contact/">Demander un devis personnalisé</a>
           </Button>
         </div>
 
